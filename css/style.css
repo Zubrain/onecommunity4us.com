@@ -1,0 +1,318 @@
+  body::before {
+    display: block;
+    content: '';
+    height: 70px;
+
+  }
+
+
+  body {
+  box-sizing: border-box;
+  }
+
+  .astalavee-color {
+    color: #410056;
+}
+
+  .astalavee-orange {
+    color: #F86601;
+}
+  
+  .bg-astalavee {
+    background-color: #410056;
+  }
+
+  .navbar-dark .navbar-nav .nav-link {
+    color: #cbd5f7;
+    font-weight: 500;
+
+  }
+
+  .navbar-dark .navbar-nav .nav-link:hover {
+    color: #FFFFFF;
+  }
+
+  .navbar-dark .navbar-toggler-icon {
+    background-image: url(../img/menu-icon.png);
+  }
+
+  .navbar-dark .navbar-toggler {
+    color: rgba(255,255,255,.55);
+    border-color: transparent;
+  }
+
+  .navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: none;
+}
+  
+
+    .btn-login { 
+      color: #FFFFFF;
+      border: 2px solid #FFFFFF;
+      box-sizing: border-box;
+      font-weight: 600;
+      font-size: 16px;
+      outline: none;
+    }
+    
+    .btn-login:hover {
+      color: #410056;
+      background-color: #FFFFFF;
+      border: 2px solid #FFFFFF;
+    }
+    
+    .btn-login:active {
+        outline: none;
+        border: 2px solid #FFFFFF;
+    }
+
+
+    .btn-signup { 
+      outline: none;
+      color: #410056;
+      border: 2px solid #FFFFFF;
+      box-sizing: border-box;
+      font-weight: 600;
+      font-size: 16px;
+      background-color: #FFFFFF;
+      transition: transform ease-in-out .2s;
+    }
+    
+    .btn-signup:hover {
+      color: #410056;
+      background-color: #FFFFFF;
+      box-shadow: rgba(255, 255, 255, 0.2) 0px 18px 50px -10px;
+      transform: scale(1.1);
+    }
+    
+    .btn-signup:active {
+        outline: none;
+        border: 2px solid #FFFFFF;
+    }
+    
+   .blog-body {
+    background-image: radial-gradient(circle at 77% 66%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 9%,transparent 9%, transparent 43%,transparent 43%, transparent 100%),radial-gradient(circle at 6% 56%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 20%,transparent 20%, transparent 56%,transparent 56%, transparent 100%),radial-gradient(circle at 48% 45%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 15%,transparent 15%, transparent 85%,transparent 85%, transparent 100%),radial-gradient(circle at 89% 6%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 5%,transparent 5%, transparent 32%,transparent 32%, transparent 100%),radial-gradient(circle at 71% 38%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 14%,transparent 14%, transparent 21%,transparent 21%, transparent 100%),radial-gradient(circle at 84% 78%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 11%,transparent 11%, transparent 85%,transparent 85%, transparent 100%),radial-gradient(circle at 92% 72%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 42%,transparent 42%, transparent 51%,transparent 51%, transparent 100%),radial-gradient(circle at 73% 95%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 48%,transparent 48%, transparent 63%,transparent 63%, transparent 100%),radial-gradient(circle at 29% 29%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 24%,transparent 24%, transparent 73%,transparent 73%, transparent 100%),linear-gradient(90deg, hsl(147,0%,99%),hsl(147,0%,99%));
+    /* background-image: linear-gradient(112.5deg, rgb(214, 214, 214) 0%, rgb(214, 214, 214) 10%,rgb(195, 195, 195) 10%, rgb(195, 195, 195) 53%,rgb(176, 176, 176) 53%, rgb(176, 176, 176) 55%,rgb(157, 157, 157) 55%, rgb(157, 157, 157) 60%,rgb(137, 137, 137) 60%, rgb(137, 137, 137) 88%,rgb(118, 118, 118) 88%, rgb(118, 118, 118) 91%,rgb(65,0,87) 91%, rgb(65,0,87) 100%),linear-gradient(157.5deg, rgb(214, 214, 214) 0%, rgb(214, 214, 214) 10%,rgb(195, 195, 195) 10%, rgb(195, 195, 195) 53%,rgb(176, 176, 176) 53%, rgb(176, 176, 176) 55%,rgb(157, 157, 157) 55%, rgb(157, 157, 157) 60%,rgb(137, 137, 137) 60%, rgb(137, 137, 137) 88%,rgb(118, 118, 118) 88%, rgb(118, 118, 118) 91%,rgb(65,0,87) 91%, rgb(65,0,87) 100%),linear-gradient(135deg, rgb(214, 214, 214) 0%, rgb(214, 214, 214) 10%,rgb(195, 195, 195) 10%, rgb(195, 195, 195) 53%,rgb(176, 176, 176) 53%, rgb(176, 176, 176) 55%,rgb(157, 157, 157) 55%, rgb(157, 157, 157) 60%,rgb(137, 137, 137) 60%, rgb(137, 137, 137) 88%,rgb(118, 118, 118) 88%, rgb(118, 118, 118) 91%,rgb(65,0,87) 91%, rgb(65,0,87) 100%),linear-gradient(90deg, rgb(195, 195, 195),rgb(228, 228, 228)); background-blend-mode:overlay,overlay,overlay,normal; */
+  }
+
+   .astalavee-header {
+     color: #410056;
+   }
+
+   /* Padding for devices larger than 768px */
+  @media (min-width: 768px) {
+    .hero-box {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+  }
+
+   /* Padding for devices smaller than 768px */
+  @media (max-width: 767px) {
+    .hero-box {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+  }
+
+
+  .hero-paragraph {
+    color: #F86601;
+    font-weight: 600;
+  }
+
+  
+  .btn-watch-demo { 
+    color: #410056;
+    border: 2px solid #410056;
+    box-sizing: border-box;
+    outline: none;
+  }
+  
+  .btn-watch-demo:hover {
+    color: #410056;
+    background-color: #FFFFFF;
+    border: 2px solid #410056;
+  }
+  
+  .btn-watch-demo:focus {
+      outline: none;
+      border: 2px solid #410056;
+  }
+
+  .btn-sign-up{ 
+    color: #FFFFFF;
+    background-color: #410056;
+    border: 2px solid #410056;
+    box-sizing: border-box;
+    outline: none;
+  }
+  
+  .btn-sign-up:hover {
+    color: #410056;
+    background-color: #FFFFFF;
+    border: 2px solid #410056;
+  }
+  
+  .btn-sign-up:focus {
+      outline: none;
+      border: 2px solid #410056;
+  }
+
+  .astalavee-section {
+    background-image: radial-gradient(circle at 85% 1%, rgba(237,237,237, 0.027450980392156862) 0%, rgba(237,237,237, 0.027450980392156862) 96%,transparent 96%, transparent 100%),radial-gradient(circle at 14% 15%, rgba(237,237,237, 0.027450980392156862) 0%, rgba(237,237,237, 0.027450980392156862) 1%,transparent 1%, transparent 100%),radial-gradient(circle at 60% 90%, rgba(237,237,237, 0.027450980392156862) 0%, rgba(237,237,237, 0.027450980392156862) 20%,transparent 20%, transparent 100%),radial-gradient(circle at 79% 7%, rgba(237,237,237, 0.027450980392156862) 0%, rgba(237,237,237, 0.027450980392156862) 78%,transparent 78%, transparent 100%),radial-gradient(circle at 55% 65%, rgba(237,237,237, 0.027450980392156862) 0%, rgba(237,237,237, 0.027450980392156862) 52%,transparent 52%, transparent 100%),linear-gradient(167deg, rgb(65,0,87),rgb(65,0,86));
+  }
+
+  .feature-icon {
+    width: 15%;
+  }
+
+  .feature-paragraph {
+    color: #CCD6F3;
+    font-weight: 400;
+
+  }
+
+  .what-we-do-section {
+    background-image: radial-gradient(circle at 77% 66%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 9%,transparent 9%, transparent 43%,transparent 43%, transparent 100%),radial-gradient(circle at 6% 56%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 20%,transparent 20%, transparent 56%,transparent 56%, transparent 100%),radial-gradient(circle at 48% 45%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 15%,transparent 15%, transparent 85%,transparent 85%, transparent 100%),radial-gradient(circle at 89% 6%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 5%,transparent 5%, transparent 32%,transparent 32%, transparent 100%),radial-gradient(circle at 71% 38%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 14%,transparent 14%, transparent 21%,transparent 21%, transparent 100%),radial-gradient(circle at 84% 78%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 11%,transparent 11%, transparent 85%,transparent 85%, transparent 100%),radial-gradient(circle at 92% 72%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 42%,transparent 42%, transparent 51%,transparent 51%, transparent 100%),radial-gradient(circle at 73% 95%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 48%,transparent 48%, transparent 63%,transparent 63%, transparent 100%),radial-gradient(circle at 29% 29%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 24%,transparent 24%, transparent 73%,transparent 73%, transparent 100%),linear-gradient(90deg, hsl(147,0%,99%),hsl(147,0%,99%));
+
+  }
+
+   /* Padding for devices larger than 768px */
+   @media (min-width: 768px) {
+    .take-control-paragraph {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  }
+
+  /* Padding for devices larger than 992px */
+  @media (min-width: 992px) {
+    .take-control-paragraph {
+      padding-left: 220px;
+      padding-right: 220px;
+    }
+  }
+
+  .btn-get-started { 
+    outline: none;
+    color: #410056;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    transition: transform ease-in-out .2s;
+  }
+  
+  .btn-get-started:hover {
+    color: #410056;
+    background-color: #FFFFFF;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 18px 50px -10px;
+    transform: scale(1.1);
+  }
+  
+  .btn-get-started:active {
+      outline: none;
+      border: 2px solid #FFFFFF;
+  }
+
+  .footer-section {
+    background-image: radial-gradient(circle at 77% 66%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 9%,transparent 9%, transparent 43%,transparent 43%, transparent 100%),radial-gradient(circle at 6% 56%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 20%,transparent 20%, transparent 56%,transparent 56%, transparent 100%),radial-gradient(circle at 48% 45%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 15%,transparent 15%, transparent 85%,transparent 85%, transparent 100%),radial-gradient(circle at 89% 6%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 5%,transparent 5%, transparent 32%,transparent 32%, transparent 100%),radial-gradient(circle at 71% 38%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 14%,transparent 14%, transparent 21%,transparent 21%, transparent 100%),radial-gradient(circle at 84% 78%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 11%,transparent 11%, transparent 85%,transparent 85%, transparent 100%),radial-gradient(circle at 92% 72%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 42%,transparent 42%, transparent 51%,transparent 51%, transparent 100%),radial-gradient(circle at 73% 95%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 48%,transparent 48%, transparent 63%,transparent 63%, transparent 100%),radial-gradient(circle at 29% 29%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 24%,transparent 24%, transparent 73%,transparent 73%, transparent 100%),linear-gradient(90deg, hsl(147,0%,99%),hsl(147,0%,99%));
+
+  } 
+
+  .footer-logo {
+    width: 70%;
+  }
+
+  /* Padding for devices larger than 768px */
+  @media (min-width: 768px) {
+    .footer-section {
+     padding-top: 100px !important;
+     padding-bottom: 100px !important;
+    }
+  }
+
+  /* Padding for devices larger than 768px */
+  @media (max-width: 320px) {
+    .top-header {
+     font-size: 2rem;
+    }
+  }
+
+  .login-section {
+    background-image: radial-gradient(circle at 77% 66%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 9%,transparent 9%, transparent 43%,transparent 43%, transparent 100%),radial-gradient(circle at 6% 56%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 20%,transparent 20%, transparent 56%,transparent 56%, transparent 100%),radial-gradient(circle at 48% 45%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 15%,transparent 15%, transparent 85%,transparent 85%, transparent 100%),radial-gradient(circle at 89% 6%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 5%,transparent 5%, transparent 32%,transparent 32%, transparent 100%),radial-gradient(circle at 71% 38%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 14%,transparent 14%, transparent 21%,transparent 21%, transparent 100%),radial-gradient(circle at 84% 78%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 11%,transparent 11%, transparent 85%,transparent 85%, transparent 100%),radial-gradient(circle at 92% 72%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 42%,transparent 42%, transparent 51%,transparent 51%, transparent 100%),radial-gradient(circle at 73% 95%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 48%,transparent 48%, transparent 63%,transparent 63%, transparent 100%),radial-gradient(circle at 29% 29%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 24%,transparent 24%, transparent 73%,transparent 73%, transparent 100%),linear-gradient(90deg, hsl(147,0%,99%),hsl(147,0%,99%));
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .form-outline .form-control {
+    border: 2px solid #410056;
+    border-radius: 4px;
+    height: 3.125rem;
+  }
+
+
+  input:focus~label{
+    border-radius: 5px;
+  }
+
+  .form-outline .form-control:focus~.form-label {
+    color: #410056;
+}
+
+.form-outline .form-control~.form-label {
+  padding-top: .75rem;
+  }
+
+
+  .btn-login-page {
+    transition: transform ease-in-out .2s;
+  }
+
+
+  .btn-login-page:hover {
+    transform: scale(1.1);
+  }
+
+  .mini-icon {
+    color: rgba(0, 0, 0, 0.42);;
+  }
+
+  .btn-load-more { 
+    outline: none;
+    color: #F86601;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    transition: transform ease-in-out .2s;
+  }
+  
+  .btn-load-more:hover {
+    color: #F86601;
+    background-color: #FFFFFF;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 18px 50px -10px;
+    transform: scale(1.1);
+  }
+  
+  .btn-load-more:active {
+      outline: none;
+      border: 2px solid #FFFFFF;
+  }
+  
+  .input-group .search-bar, .input-group-text {
+    border: 2px solid #410056;
+  }
+
+
+  .form-control:focus { 
+    box-shadow: none;
+  }
+  .comment-form .form-control:focus { 
+    border: 1px solid #410056;
+  }
+
+  .invalid { 
+    color:red; 
+    }
