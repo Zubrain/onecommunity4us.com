@@ -15,9 +15,6 @@
             $receiver_lastname = $row['user_lastname'];
             $receiver_phone = $row['user_mobile'];
          }
-         $query = "UPDATE users SET user_regift_first= '$receiver_username' WHERE username = '$username' ";
-         $insert_user_regift = mysqli_query($connection,$query);
-         confirmQuery($insert_user_regift);
         
     }else{
         redirect("index.php");
@@ -27,6 +24,11 @@
     <?php
     //first request post request
             if(isset($_POST['confirm_regift'])){
+              //this query will update gift just to know that the person has regifted first one but not confirmed
+              $query = "UPDATE users SET user_regift_first= '$receiver_username' WHERE username = '$username' ";
+              $insert_user_regift = mysqli_query($connection,$query);
+              confirmQuery($insert_user_regift);
+
                 echo "<div><p class='alert alert-success fw-bold' role='alert'>Your re-gift of <b>£250</b> will be confirmed by $receiver_username shortly</p></div>";
                 
                 $query = "SELECT user_regifted_first_one, user_regifted_first_two, user_regifted_first_three, user_regifted_first_four FROM users WHERE username = '$receiver_username' ";
@@ -57,13 +59,13 @@
 
                   }
                 }
-                header( "refresh:10;url=index.php" );   
+                header( "refresh:5;url=index.php" );   
             }
         ?>
         <h1><?php echo (isset($receiver_id))? 'First ': '' ?>Regifting instructions</h1>
         <p class="fs-5">Please kindly follow your re-gifting instructions</p>
 
-        <div class="alert alert-warning" role="alert">
+        <div class="alert alert-success" role="alert">
         <p>You are required to send <b>£250</b> gift to <b><?php echo $receiver_username?></b> and keep <b>£150</b></p>
             <p>Here are the details of the Receiver</p>
             <p><b>Name:</b> <?php echo $receiver_firstname.' '.$receiver_lastname?></p>
@@ -72,7 +74,7 @@
             <p>After re-gifting, click the button below to confirm you have re-gifted</p>
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                    <input class="btn btn-secondary" type="submit" name="confirm_regift" value="I have Re-gifted" >
+                    <input class="btn btn-success bg-purple border-0" type="submit" name="confirm_regift" value="I have Re-gifted" >
                 </div>  
             </form>
         </div>

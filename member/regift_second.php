@@ -16,9 +16,6 @@
             $receiver_lastname = $row['user_lastname'];
             $receiver_phone = $row['user_mobile'];
          }
-         $query = "UPDATE users SET user_regift_second= '$receiver_username' WHERE username = '$username' ";
-         $insert_user_regift = mysqli_query($connection,$query);
-         confirmQuery($insert_user_regift);
         
     }else{
         redirect("index.php");
@@ -28,6 +25,11 @@
     <?php
     //second regift post request
             if(isset($_POST['confirm_regift'])){
+                //this query will update gift just to know that the person has regifted second one but not confirmed
+                $query = "UPDATE users SET user_regift_second= '$receiver_username' WHERE username = '$username' ";
+                $insert_user_regift = mysqli_query($connection,$query);
+                confirmQuery($insert_user_regift);
+
                 echo "<div><p class='alert alert-success fw-bold' role='alert'>Your re-gift of <b>£780</b> will be confirmed by $receiver_username shortly</p></div>";
                 
                 $query = "SELECT user_regifted_second_one, user_regifted_second_two, user_regifted_second_three, user_regifted_second_four FROM users WHERE username = '$receiver_username' ";
@@ -68,10 +70,11 @@
                     $updatequery = "UPDATE users SET user_regift_admin_second= 'admin' WHERE user_id= $user_id";
                     $update_regifted = mysqli_query($connection,$updatequery);
                     confirmQuery($update_regifted);
+                    header( "refresh:3;url=regift_second.php?regift_second=$receiver_id" );   
                 }
-                header( "refresh:3;url=regift_second.php?regift_second=$receiver_id" );   
+                
         ?>
-        <h1><?php echo (isset($receiver_id))? 'Second ': '' ?>Regifting instructions</h1>
+        <h1><?php echo (isset($receiver_id))? 'Second ': '' ?>Re-gifting instructions</h1>
         <p class="fs-5">Please kindly follow your re-gifting instructions and ensure to pay maintenance fee of £20</p>
 
         <div class="alert alert-success" role="alert">
@@ -97,7 +100,7 @@
                 <p>After re-gifting, click the button below to confirm you have re-gifted</p>
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <input class="btn btn-dark" type="submit" name="confirm_regift" value="I have Re-gifted" >
+                        <input class="btn btn-dark bg-purple" type="submit" name="confirm_regift" value="I have Re-gifted" >
                     </div>  
                 </form>
                 </div>

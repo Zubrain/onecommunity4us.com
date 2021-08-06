@@ -29,6 +29,9 @@
             $upline_user_right = $row['user_right'];
             $upline_referral = $row['user_referral'];
             $upline_user_gift_confirmed = $row['user_gift_confirmed'];
+            $upline_user_regift_first_confirmed = $row['user_regift_first_confirmed'];
+            $upline_user_regift_second_confirmed = $row['user_regift_second_confirmed'];
+            $upline_user_regift_admin_second_confirmed = $row['user_regift_admin_second_confirmed'];
          }
         }else{
             $upline_id = '-';
@@ -226,6 +229,7 @@
             $current_user_gifted_four_confirm = $row['user_gifted_four_confirm'];
             //fetch current user re-gifted first one to four
             $current_user_regift_first = $row['user_regift_first'];
+            $current_user_regift_first_confirmed = $row['user_regift_first_confirmed'];
             $current_user_regifted_first_one = $row['user_regifted_first_one'];
             $current_user_regifted_first_two = $row['user_regifted_first_two'];
             $current_user_regifted_first_three = $row['user_regifted_first_three'];
@@ -237,7 +241,9 @@
             $current_user_regifted_first_four_confirm = $row['user_regifted_first_four_confirm'];
             //fetch current user re-gifted second one to four
             $current_user_regift_second = $row['user_regift_second'];
+            $current_user_regift_second_confirmed = $row['user_regift_second_confirmed'];
             $current_user_regift_admin_second = $row['user_regift_admin_second'];
+            $current_user_regift_admin_second_confirmed = $row['user_regift_admin_second_confirmed'];
             $current_user_regifted_second_one = $row['user_regifted_second_one'];
             $current_user_regifted_second_two = $row['user_regifted_second_two'];
             $current_user_regifted_second_three = $row['user_regifted_second_three'];
@@ -280,7 +286,7 @@
                     // && $user_left_user_left != '' && $user_left_user_right != '' && $user_right_user_left != '' && $user_right_user_right != ''
                     //Gifting function
                     if(isset($user_left_user_left) && isset($user_left_user_right) && isset($user_right_user_left) && isset($user_right_user_right)){
-                     if((($user_left_user_left != '' && $user_left_user_right != '' && $user_right_user_left != '' && $user_right_user_right != '') && $current_user_gift == '' && $upline_user_gift_confirmed != '') && $current_user_gift_confirmed == ''){
+                     if(($user_left_user_left != '' && $user_left_user_right != '' && $user_right_user_left != '' && $user_right_user_right != '') && ($upline_user_gift_confirmed != '') && ($current_user_gift_confirmed == '')){
                         ?><a class="small text-white stretched-link" href="gift.php?id=<?php echo (isset($upline_id))? $upline_id: ''?>">View Gifting Details</a>
                     <?php 
                      
@@ -303,7 +309,7 @@
                     <div class="card-footer d-flex align-items-center justify-content-between">
                     <?php
                     //Gifted function
-                    if((($current_user_gifted_one != '' || $current_user_gifted_two != '' || $current_user_gifted_three != '' || $current_user_gifted_four != '') && $current_user_gift != '') && ($current_user_gifted_one_confirm == '' || $current_user_gifted_two_confirm == '' || $current_user_gifted_three_confirm == '' || $current_user_gifted_four_confirm == '')){
+                    if((($current_user_gifted_one != '' || $current_user_gifted_two != '' || $current_user_gifted_three != '' || $current_user_gifted_four != '') && $current_user_gift != '') && ($current_user_gifted_one_confirm == '' || $current_user_gifted_two_confirm == '' || $current_user_gifted_three_confirm == '' || $current_user_gifted_four_confirm == '') && ($current_user_gift_confirmed != '')){
                         echo "<a class='small text-white stretched-link' href='notification.php'>Confirm Gifts</a>";                   
                     }else{
                         echo "<a class='small text-white stretched-link disabled' href='notification.php'>View Details</a>";
@@ -319,15 +325,20 @@
                     <div class="card-footer d-flex align-items-center justify-content-between">
                         <?php
                             //Regift function
-                            
-                            if(($current_user_gifted_one_confirm != '' && $current_user_gifted_two_confirm != '' && $current_user_gifted_three_confirm != '' && $current_user_gifted_four_confirm != '') && $current_user_regift_first == ''){
+                        if(isset($user_left_user_left) && isset($user_left_user_right) && isset($user_right_user_left) && isset($user_right_user_right)){
+                            if(($current_user_gifted_one_confirm != '' && $current_user_gifted_two_confirm != '' && $current_user_gifted_three_confirm != '' && $current_user_gifted_four_confirm != '') && $upline_user_regift_first_confirmed != '' && $current_user_regift_first_confirmed == ''){
                                 echo "<a class='small text-white stretched-link' href='regift.php?regift_first=$upline_id'>First ReGift</a>";
-                            }elseif(($current_user_regifted_first_one_confirm != '' && $current_user_regifted_first_two_confirm != '' && $current_user_regifted_first_three_confirm != '' && $current_user_regifted_first_four_confirm != '') && ($current_user_regift_second == '' || $current_user_regift_admin_second == '')){
+                            //second regift condition
+                            }elseif(($current_user_regifted_first_one_confirm != '' && $current_user_regifted_first_two_confirm != '' && $current_user_regifted_first_three_confirm != '' && $current_user_regifted_first_four_confirm != '') && $upline_user_regift_second_confirmed != '' && $current_user_regift_second_confirmed == '' && $upline_user_regift_admin_second_confirmed != ''){
                                 echo "<a class='small text-white stretched-link' href='regift_second.php?regift_second=$upline_id'>Second ReGift</a>";
                             }else{
                                 echo "<a class='small text-white stretched-link disabled' href='regift.php?regift_first=$upline_id'>View Details</a>";
                             }
-                        ?>
+                        }else{
+                            ?><a class="small text-white stretched-link disabled" href="regift.php?regift_first=<?php echo (isset($upline_id))? $upline_id: ''?>">Re-Gifting disabled</a>
+                            <?php
+                        }
+                            ?>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
@@ -337,9 +348,9 @@
                     <div class="card-body fw-bold ">Regifted</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
                         <?php
-                            if((($current_user_regifted_first_one != '' || $current_user_regifted_first_two != '' || $current_user_regifted_first_three != '' || $current_user_regifted_first_four != '') && $current_user_regift_first != '')  && ($current_user_regifted_first_one_confirm == '' || $current_user_regifted_first_two_confirm == '' || $current_user_regifted_first_three_confirm == '' || $current_user_regifted_first_four_confirm == '')){
+                            if((($current_user_regifted_first_one != '' || $current_user_regifted_first_two != '' || $current_user_regifted_first_three != '' || $current_user_regifted_first_four != '') && $current_user_regift_first != '')  && ($current_user_regifted_first_one_confirm == '' || $current_user_regifted_first_two_confirm == '' || $current_user_regifted_first_three_confirm == '' || $current_user_regifted_first_four_confirm == '') && ($current_user_regift_first_confirmed != '')){
                                 echo "<a class='small text-white stretched-link' href='notification.php'>Confirm ReGifts</a>";
-                            }elseif((($current_user_regifted_second_one != '' || $current_user_regifted_second_two != '' || $current_user_regifted_second_three != '' || $current_user_regifted_second_four != '') && $current_user_regift_admin_second != '')  && ($current_user_regifted_second_one_confirm == '' || $current_user_regifted_second_two_confirm == '' || $current_user_regifted_second_three_confirm == '' || $current_user_regifted_second_four_confirm == '')){
+                            }elseif((($current_user_regifted_second_one != '' || $current_user_regifted_second_two != '' || $current_user_regifted_second_three != '' || $current_user_regifted_second_four != '') && $current_user_regift_admin_second != '')  && ($current_user_regifted_second_one_confirm == '' || $current_user_regifted_second_two_confirm == '' || $current_user_regifted_second_three_confirm == '' || $current_user_regifted_second_four_confirm == '') && $current_user_regift_second_confirmed != '' && $current_user_regift_admin_second_confirmed != ''){
                                 echo "<a class='small text-white stretched-link' href='notification.php'>Confirm ReGifts</a>";
                             }else{
                                 echo "<a class='small text-white stretched-link disabled' href='notification.php'>View Details</a>";

@@ -54,6 +54,11 @@
         $confirm_regift_one = $_GET['confirm_regift'];
         echo "<div><p class='alert alert-success fw-bold' role='alert'>Thanks for confirming re-gift from $confirm_regift_one</p></div>";
         
+        // First ReGifting confirmation
+        $query= "UPDATE users SET user_regift_first_confirmed= 'first_regift_confirmed' WHERE username= '$confirm_regift_one' ";
+        $confirm_first_regifting = mysqli_query($connection, $query);
+        confirmQuery($confirm_first_regifting);
+
         $query = "SELECT user_regifted_first_one, user_regifted_first_two, user_regifted_first_three, user_regifted_first_four FROM users WHERE user_id = $user_id";
         $result = mysqli_query($connection, $query);
 
@@ -90,6 +95,12 @@
         //to confirm the second re-gifting 
     if(isset($_GET['confirm_regift_second'])){
         $confirm_regift_second = $_GET['confirm_regift_second'];
+
+        // Second ReGifting confirmation
+        $query= "UPDATE users SET user_regift_second_confirmed= 'second_regift_confirmed' WHERE username= '$confirm_regift_second' ";
+        $confirm_second_regifting = mysqli_query($connection, $query);
+        confirmQuery($confirm_second_regifting);
+
         echo "<div><p class='alert alert-success fw-bold' role='alert'>Thanks for confirming second re-gift from $confirm_regift_second</p></div>";
         
         $query = "SELECT user_regifted_second_one, user_regifted_second_two, user_regifted_second_three, user_regifted_second_four FROM users WHERE user_id = $user_id";
