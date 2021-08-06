@@ -5,13 +5,13 @@
     <div class="container-fluid px-4">
         <div class="row">
             <div class="col-md-6">
-                <h1 class="mt-4">All Users</h1>
+                <h1 class="mt-4 purple">All Users</h1>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Admin Area</li>
                 </ol>
             </div>
             <div class="col-md-6">
-                <h3 class="mt-4">Total Number of users:
+                <h3 class="mt-4 purple">Total Number of users:
                     <?php echo $user_count=recordCount('users'); ?>
                 </h3>
             </div>

@@ -141,7 +141,7 @@
                     <thead>
                         <h4 class="m-3">Gift Confirmation</h4>
                         <tr>
-                            <th>#</th>
+                            <th>S/N</th>
                             <th>Name of User</th>
                             <th>Confirm Gift</th>
                         </tr>
@@ -210,7 +210,6 @@
                                 $sum_gift = $one + $two + $three + $four;
                                 // echo $sum_gift;
                                 ?>   
-                        </tr>
                         
                     </tbody>
                 </table>
@@ -223,7 +222,7 @@
                     <thead>
                         <h4 class="m-3">First Re-gift Confirmations</h4>
                         <tr>
-                            <th>#</th>
+                            <th>S/N</th>
                             <th>Name of User</th>
                             <th>Confirm First ReGift</th>
                         </tr>
@@ -306,7 +305,7 @@
                     <thead>
                         <h4 class="m-3">Second Re-gift Confirmations</h4>
                         <tr>
-                            <th>#</th>
+                            <th>S/N</th>
                             <th>Name of User</th>
                             <th>Confirm Second ReGift</th>
                         </tr>
