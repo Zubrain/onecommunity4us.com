@@ -1,7 +1,5 @@
 <?php  include "includes/config.php"; ?>
-<?php  ob_start(); ?>
-<?php  session_start(); ?>
-<?php include "includes/function.php";?>
+<?php include "includes/header.php"; ?>
 <?php
 if($_SERVER['REQUEST_METHOD'] == "POST") {
     $username = trim($_POST['username']);
@@ -39,7 +37,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     if($password !== $confirmpassword){
         $error['confirmpassword'] = 'Password does not match';
     }   
-    if(referral_exists($refer)){
+    if(referral_used($refer)){
         $error['referral'] = 'Maximum limit reached! Enter One Community as Referrer';
     }
     foreach ($error as $key => $value) {
@@ -51,6 +49,17 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     register_user($username, $email, $password, $firstname, $lastname, $phone, $refer);
     login_user($username, $password);
 }
+}
+?>
+<?php
+if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'admin'){
+    redirect("/onecommunity4us.com/admin/index.php");
+}elseif(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'member'){
+    redirect("/onecommunity4us.com/member/index.php");
+}elseif(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'orphan'){
+    redirect("/onecommunity4us.com/orphan/index.php");
+}else{
+
 }
 ?>
 <?php
@@ -71,63 +80,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
         $ref_name = 'One Community';
     }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="icons/font/bootstrap-icons.css" />
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="css/style.css" />
-
-    <title>One Community</title>
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg fixed-top bg-astalavee navbar-dark py-3 shadow">
-        <div class="container">
-            <a href="#" class="navbar-brand">
-                <h2>One Community</h2>
-                <!-- <img src="images/" class="img-fluid" alt="logo" width="170"> -->
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navmenu">
-                <ul class="navbar-nav ms-auto pt-2">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">What we do</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Contact Us</a>
-                    </li>
-                </ul>
-                <div class="col-lg-6 col-xl-5 text-lg-end">
-                    <button type="button" class="btn btn-login me-3 px-4 px-sm-5 py-2">Login</button>
-                    <button type="button" class="btn btn-signup px-5 py-2">Sign-up</button>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-
     <!-- Background image -->
     <section class="login-section">
         <div class="d-flex align-items-center" style="background-color: rgba(65, 0, 86, 0.1);">
-            <div class="container py-4">
+            <div class="container py-2">
                 <div class="row justify-content-center">
                     <div class="col-sm-10 col-md-9 col-lg-7 col-xl-6 my-5">
                         <form role="form" action="register.php" method="post" id="register-form" autocomplete="off" class="bg-light rounded shadow-5-strong py-5 px-4 px-sm-5">
                             <!-- 2 column grid layout with text inputs for the first and last names -->
-                            <div class="row mb-4">
+                            <div class="row mb-3">
                                 <div class="col">
                                     <div class="form-outline">
                                         <label class="form-label" for="form3Example1">First name</label>
@@ -143,47 +104,47 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
                             </div>
 
                             <!-- Email input -->
-                            <div class="form-outline mb-4">
+                            <div class="form-outline mb-3">
                                 <label class="form-label" for="form3Example3">Email address</label>
                                 <input type="email" id="email" class="form-control" name="email" autocomplete="on" placeholder="Enter email address" value="<?php echo isset($email) ? $email : '' ?>" required/>
                                 <p class="text-danger"><?php echo isset($error['email']) ? $error['email'] : '' ?></p>
                             </div>
 
                             <!-- Phone Number input -->
-                            <div class="form-outline mb-4">
+                            <div class="form-outline mb-3">
                                 <label class="form-label" for="form3Example3">Mobile Number</label>
                                 <input type="tel" id="phone" class="form-control" name="phone" placeholder="Enter phone number" required/>
                             </div>
                             <!-- Username input -->
-                            <div class="form-outline mb-4">
+                            <div class="form-outline mb-3">
                                 <label class="form-label" for="form3Example3">Username</label>
                                 <input type="text" id="username" class="form-control" name="username" autocomplete="off" placeholder="Enter Username" value="<?php echo isset($username) ? $username : '' ?>" required/>
                                 <p class="text-danger"><?php echo isset($error['username']) ? $error['username'] : '' ?></p>
                             </div>
 
                             <!-- Password input -->
-                            <div class="form-outline mb-4">
+                            <div class="form-outline mb-3">
                                 <label class="form-label" for="form3Example4">Password</label>
                                 <input type="password" class="form-control" name="password" id="key" placeholder="Password" autocomplete="off" />
                                 <p class="text-danger"><?php echo isset($error['password']) ? $error['password'] : '' ?></p>
                             </div>
 
                             <!-- Confirm Password input -->
-                            <div class="form-outline mb-4">
+                            <div class="form-outline mb-3">
                                 <label class="form-label" for="form3Example4">Re-enter Password</label>
                                 <input type="password" id="form3Example4" class="form-control" name="confirmpassword" autocomplete="off" placeholder="Confirm password" />
                                 <p class="text-danger"><?php echo isset($error['confirmpassword']) ? $error['confirmpassword'] : '' ?></p>
                             </div>
 
                             <!-- Referral link input -->
-                            <div class="form-outline mb-4">
+                            <div class="form-outline mb-3">
                                 <label class="form-label" for="form3Example4">Referral</label>
-                                <input type="text" id="form3Example4" class="form-control" name="referral" autocomplete="off" placeholder="Enter Referrer Name" value="<?php echo $ref_name?>" required/>
+                                <input type="text" id="form3Example4" class="form-control" name="referral" autocomplete="off" placeholder="Enter Referrer Name" value="<?php echo (isset($ref_name))? $ref_name: 'One community';?>" required readonly/>
                                 <p class="text-danger"><?php echo isset($error['referral']) ? $error['referral'] : '' ?></p>
                             </div>
 
                             <!-- Checkbox -->
-                            <div class="form-check d-flex justify-content-center mb-4">
+                            <div class="form-check d-flex justify-content-center mb-3">
                                 <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3"/>
                                 <label class="form-check-label" for="form2Example3">
                                     I agree to Terms and Conditions
@@ -194,25 +155,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
                             <div class="d-grid">
                                 <button type="submit" name="register"
                                     class="btn btn-lg bg-astalavee text-light shadow btn-login-page mb-3">Register</button>
-                            </div>
-                            <!-- Register buttons -->
-                            <div class="text-center">
-                                <p>or sign up with:</p>
-                                <button type="button" class="btn bg-astalavee text-light btn-floating mx-1">
-                                    <i class="bi bi-facebook"></i>
-                                </button>
-
-                                <button type="button" class="btn bg-astalavee text-light btn-floating mx-1">
-                                    <i class="bi bi-google"></i>
-                                </button>
-
-                                <button type="button" class="btn bg-astalavee text-light btn-floating mx-1">
-                                    <i class="bi bi-instagram"></i>
-                                </button>
-
-                                <button type="button" class="btn bg-astalavee text-light btn-floating mx-1">
-                                    <i class="bi bi-youtube"></i>
-                                </button>
                             </div>
                         </form>
                     </div>
