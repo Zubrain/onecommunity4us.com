@@ -279,84 +279,129 @@
         </div>
         <div class="row">
             <div class="col-6 col-md-3">
-                <div class="card bg-primary text-white mb-4 shadow">
-                    <div class="card-body fw-bold">Gift</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
                     <?php
-                    // && $user_left_user_left != '' && $user_left_user_right != '' && $user_right_user_left != '' && $user_right_user_right != ''
                     //Gifting function
                     if(isset($user_left_user_left) && isset($user_left_user_right) && isset($user_right_user_left) && isset($user_right_user_right)){
                      if(($user_left_user_left != '' && $user_left_user_right != '' && $user_right_user_left != '' && $user_right_user_right != '') && ($upline_user_gift_confirmed != '') && ($current_user_gift_confirmed == '')){
-                        ?><a class="small text-white stretched-link" href="gift.php?id=<?php echo (isset($upline_id))? $upline_id: ''?>">View Gifting Details</a>
+                        ?>
+            <div class="card bg-primary text-white mb-4 shadow">
+                <div class="card-body fw-bold">Gift</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="gift.php?id=<?php echo (isset($upline_id))? $upline_id: ''?>">View Gifting Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     <?php 
                      
                     }else{
-                        ?><a class="small text-white stretched-link disabled" href="gift.php?id=<?php echo (isset($upline_id))? $upline_id: ''?>">View Details</a>
-                    <?php
+                        ?>
+            <div class="card bg-secondary text-white mb-4 shadow">
+                <div class="card-body fw-bold">Gift</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link disabled" href="gift.php?id=<?php echo (isset($upline_id))? $upline_id: ''?>">Disabled</a>
+                        
+                        <?php
                     }
                 }else{
-                    ?><a class="small text-white stretched-link disabled" href="gift.php?id=<?php echo (isset($upline_id))? $upline_id: ''?>">Gifting disabled</a>
+                    ?>
+            <div class="card bg-secondary text-white mb-4 shadow">
+                <div class="card-body fw-bold">Gift</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link disabled" href="gift.php?id=<?php echo (isset($upline_id))? $upline_id: ''?>">Gifting disabled</a>
                     <?php
                 }
-                    ?>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    ?>   
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-3">
-                <div class="card bg-danger text-white mb-4 shadow">
-                    <div class="card-body fw-bold">Gifted</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
                     <?php
                     //Gifted function
                     if((($current_user_gifted_one != '' || $current_user_gifted_two != '' || $current_user_gifted_three != '' || $current_user_gifted_four != '') && $current_user_gift != '') && ($current_user_gifted_one_confirm == '' || $current_user_gifted_two_confirm == '' || $current_user_gifted_three_confirm == '' || $current_user_gifted_four_confirm == '') && ($current_user_gift_confirmed != '')){
-                        echo "<a class='small text-white stretched-link' href='notification.php'>Confirm Gifts</a>";                   
-                    }else{
-                        echo "<a class='small text-white stretched-link disabled' href='notification.php'>View Details</a>";
+                       ?>
+                    <div class="card bg-danger text-white mb-4 shadow">
+                        <div class="card-body fw-bold">Gifted</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="notification.php">Confirm Gifts</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>    
+                        <?php             
+                    }else{?>
+                         <div class="card bg-secondary text-white mb-4 shadow">
+                    <div class="card-body fw-bold">Gifted</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-white stretched-link disabled" href="notification.php">Disabled</a>
+                        <?php
                     }
                     ?>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-3">
-                <div class="card bg-warning text-white mb-4 shadow">
-                    <div class="card-body fw-bold">Regift</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
                         <?php
                             //Regift function
                         if(isset($user_left_user_left) && isset($user_left_user_right) && isset($user_right_user_left) && isset($user_right_user_right)){
                             if(($current_user_gifted_one_confirm != '' && $current_user_gifted_two_confirm != '' && $current_user_gifted_three_confirm != '' && $current_user_gifted_four_confirm != '') && $upline_user_regift_first_confirmed != '' && $current_user_regift_first_confirmed == ''){
-                                echo "<a class='small text-white stretched-link' href='regift.php?regift_first=$upline_id'>First ReGift</a>";
+                                ?>
+                            <div class="card bg-warning text-white mb-4 shadow">
+                                <div class="card-body fw-bold">Regift</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="regift.php?regift_first=<?php echo (isset($upline_id))? $upline_id: ''?>">First ReGift</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                <?php 
                             //second regift condition
                             }elseif(($current_user_regifted_first_one_confirm != '' && $current_user_regifted_first_two_confirm != '' && $current_user_regifted_first_three_confirm != '' && $current_user_regifted_first_four_confirm != '') && $upline_user_regift_second_confirmed != '' && $current_user_regift_second_confirmed == '' && $upline_user_regift_admin_second_confirmed != ''){
-                                echo "<a class='small text-white stretched-link' href='regift_second.php?regift_second=$upline_id'>Second ReGift</a>";
+                                ?>
+                                <div class="card bg-warning text-white mb-4 shadow">
+                                <div class="card-body fw-bold">Regift</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="regift_second.php?regift_second=<?php echo (isset($upline_id))? $upline_id: ''?>">Second ReGift</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                <?php 
                             }else{
+                                ?>
+                                <div class="card bg-secondary text-white mb-4 shadow">
+                                <div class="card-body fw-bold">Regift</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                <?php
                                 echo "<a class='small text-white stretched-link disabled' href='regift.php?regift_first=$upline_id'>View Details</a>";
                             }
                         }else{
-                            ?><a class="small text-white stretched-link disabled" href="regift.php?regift_first=<?php echo (isset($upline_id))? $upline_id: ''?>">Re-Gifting disabled</a>
+                            ?>
+                                <div class="card bg-secondary text-white mb-4 shadow">
+                                <div class="card-body fw-bold">Regift</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link disabled" href="regift.php?regift_first=<?php echo (isset($upline_id))? $upline_id: ''?>">Re-Gifting disabled</a>
                             <?php
                         }
                             ?>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-3">
-                <div class="card bg-success text-white mb-4 shadow">
-                    <div class="card-body fw-bold ">Regifted</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
                         <?php
                             if((($current_user_regifted_first_one != '' || $current_user_regifted_first_two != '' || $current_user_regifted_first_three != '' || $current_user_regifted_first_four != '') && $current_user_regift_first != '')  && ($current_user_regifted_first_one_confirm == '' || $current_user_regifted_first_two_confirm == '' || $current_user_regifted_first_three_confirm == '' || $current_user_regifted_first_four_confirm == '') && ($current_user_regift_first_confirmed != '')){
-                                echo "<a class='small text-white stretched-link' href='notification.php'>Confirm ReGifts</a>";
+                                ?>
+                                <div class="card bg-success text-white mb-4 shadow">
+                                <div class="card-body fw-bold ">Regifted</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class='small text-white stretched-link' href='notification.php'>Confirm ReGifts</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                <?php
                             }elseif((($current_user_regifted_second_one != '' || $current_user_regifted_second_two != '' || $current_user_regifted_second_three != '' || $current_user_regifted_second_four != '') && $current_user_regift_admin_second != '')  && ($current_user_regifted_second_one_confirm == '' || $current_user_regifted_second_two_confirm == '' || $current_user_regifted_second_three_confirm == '' || $current_user_regifted_second_four_confirm == '') && $current_user_regift_second_confirmed != '' && $current_user_regift_admin_second_confirmed != ''){
-                                echo "<a class='small text-white stretched-link' href='notification.php'>Confirm ReGifts</a>";
-                            }else{
-                                echo "<a class='small text-white stretched-link disabled' href='notification.php'>View Details</a>";
+                               ?>
+                                <div class="card bg-success text-white mb-4 shadow">
+                                <div class="card-body fw-bold ">Regifted</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class='small text-white stretched-link' href='notification.php'>Confirm ReGifts</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                <?php
+                            }else{?>
+                                <div class="card bg-secondary text-white mb-4 shadow">
+                                <div class="card-body fw-bold ">Regifted</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class='small text-white stretched-link disabled' href='notification.php'>Disabled</a>
+                                <?php
                             }
                         ?>
-                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
             </div>
