@@ -22,6 +22,15 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-money-bill purple"></i></div>
                         <span class="purple"> Confirm Fee</span> <span class="badge mx-2 bg-purple"><?php echo $pending_confirmation;?></span>
                     </a>
+                    <?php
+                        $query = "SELECT user_id, username FROM users WHERE user_pledge= 'pledged' AND user_pledge_confirm IS NULL";
+                        $select_users = mysqli_query($connection, $query);
+                        $pledge_confirmation = mysqli_num_rows($select_users);
+                    ?>
+                    <a class="nav-link" href="confirm_pledge.php">
+                        <div class="sb-nav-link-icon"><i class="fas fa-certificate purple"></i></div>
+                        <span class="purple"> Confirm Pledge</span> <span class="badge mx-2 bg-purple"><?php echo $pledge_confirmation;?></span>
+                    </a>
                     <a class="nav-link" href="users.php">
                         <div class="sb-nav-link-icon"><i class="fas fa-users purple"></i></div>
                         <span class="purple"> All Users</span>

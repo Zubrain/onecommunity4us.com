@@ -265,26 +265,47 @@
             <li class="breadcrumb-item active fs-4">Member Area</li>
         </ol>
         <div>
+             <!-- Pledge to the community -->
+    <?php
+            if(isset($_GET['pledge'])){
+                $pledge = escape($_GET['pledge']);
+                echo "<div><p class='alert alert-success fw-bold' role='alert'>Thanks for your Pledge. Kindly wait while we confirm</p></div>";
+                $query = "UPDATE users SET user_pledge='pledged' WHERE user_id = {$pledge} ";
+                $pledge_user_query = mysqli_query($connection,$query);
+                confirmQuery($pledge_user_query);
+                header( "refresh:3;url=index.php" );
+            }
+
+        ?>
+        <!-- End of Pledge to community-->
             <?php 
             if($current_user_regifted_second_one_confirm != '' && $current_user_regifted_second_two_confirm != '' && $current_user_regifted_second_three_confirm != '' && $current_user_regifted_second_four_confirm != ''){
                 if($current_user_pledge == ''){
                 ?>
-                <div class='alert alert-success' role='alert'>
-                    <p class='fw-bold'>Pledge to the Community</p>
+                <div class='alert alert-primary text-center' role='alert'>
+                    <p class='fs-4'>You are required to Pledge to the Community</p>
+                    <div class="d-grid">
+                        <a class="btn btn-primary fs-5 fw-bold" href="index.php?pledge=<?php echo $user_id ;?>">I Pledge</a>
+                    </div>
+                </div>
+
+                <div class='alert alert-success text-center disabled' role='alert'>
+                    <p class='fw-bold'>Would you like to restart with your Referral or Join the Waiting Area?</p>
+                    <div class="flex align-items-center justify-content-between">
+                        <a class="btn btn-success justify-content-between me-2 disabled" href="index.php?referral_link=<?php echo $user_id ;?>">Referral Link</a>
+                        <a class="btn bg-primary text-light justify-content-between disabled" href="index.php?waiting_list=<?php echo $user_id ;?>">Join Waiting Area</a>
+                    </div>
+                </div>
+
+                <?php
+                }elseif($current_user_pledge != '' && $current_user_pledge_confirm == "pledge_confirmed"){?>
+                    <div class='alert alert-success text-center' role='alert'>
+                    <p class='fw-bold'>Would you like to restart with your Referral or Join the Waiting Area?</p>
                     <div class="flex align-items-center justify-content-between">
                         <a class="btn btn-success justify-content-between me-2" href="index.php?referral_link=<?php echo $user_id ;?>">Referral Link</a>
                         <a class="btn bg-primary text-light justify-content-between" href="index.php?waiting_list=<?php echo $user_id ;?>">Join Waiting Area</a>
                     </div>
                 </div>
-
-                <div class='alert alert-success' role='alert'>
-                    <p class='fw-bold'>Would you like to restart with a Referral link or Join the Waiting Area?</p>
-                    <div class="flex align-items-center justify-content-between">
-                        <a class="btn btn-success justify-content-between me-2" href="index.php?referral_link=<?php echo $user_id ;?>">Referral Link</a>
-                        <a class="btn bg-primary text-light justify-content-between" href="index.php?waiting_list=<?php echo $user_id ;?>">Join Waiting Area</a>
-                    </div>
-                </div>
-
                 <?php
                 }
             }
@@ -615,7 +636,7 @@
                 $query = "DELETE FROM users WHERE user_id = {$referral_join} ";
                 $delete_user_query = mysqli_query($connection,$query);
                 confirmQuery($delete_user_query);
-                header( "refresh:3;url=all-members.php" );
+                header( "refresh:3;url=../index.php");
             }
 
         ?>
