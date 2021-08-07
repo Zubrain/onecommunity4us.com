@@ -253,6 +253,9 @@
             $current_user_regifted_second_two_confirm = $row['user_regifted_second_two_confirm'];
             $current_user_regifted_second_three_confirm = $row['user_regifted_second_three_confirm'];
             $current_user_regifted_second_four_confirm = $row['user_regifted_second_four_confirm'];
+            //fetch current user pledge and pledge confirmation
+            $current_user_pledge = $row['user_pledge'];
+            $current_user_pledge_confirm = $row['user_pledge_confirm'];
          }
         }
         ?>
@@ -264,7 +267,16 @@
         <div>
             <?php 
             if($current_user_regifted_second_one_confirm != '' && $current_user_regifted_second_two_confirm != '' && $current_user_regifted_second_three_confirm != '' && $current_user_regifted_second_four_confirm != ''){
+                if($current_user_pledge == ''){
                 ?>
+                <div class='alert alert-success' role='alert'>
+                    <p class='fw-bold'>Pledge to the Community</p>
+                    <div class="flex align-items-center justify-content-between">
+                        <a class="btn btn-success justify-content-between me-2" href="index.php?referral_link=<?php echo $user_id ;?>">Referral Link</a>
+                        <a class="btn bg-primary text-light justify-content-between" href="index.php?waiting_list=<?php echo $user_id ;?>">Join Waiting Area</a>
+                    </div>
+                </div>
+
                 <div class='alert alert-success' role='alert'>
                     <p class='fw-bold'>Would you like to restart with a Referral link or Join the Waiting Area?</p>
                     <div class="flex align-items-center justify-content-between">
@@ -274,6 +286,7 @@
                 </div>
 
                 <?php
+                }
             }
             ?>
         </div>
@@ -361,7 +374,7 @@
                                 <div class="card-body fw-bold">Regift</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                 <?php
-                                echo "<a class='small text-white stretched-link disabled' href='regift.php?regift_first=$upline_id'>View Details</a>";
+                                echo "<a class='small text-white stretched-link disabled' href='regift.php?regift_first=$upline_id'>Disabled</a>";
                             }
                         }else{
                             ?>
