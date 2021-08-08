@@ -635,10 +635,45 @@
             if(isset($_GET['referral_link'])){
                 $referral_join = escape($_GET['referral_link']);
 
-                $query = "DELETE FROM users WHERE user_id = {$referral_join} ";
-                $delete_user_query = mysqli_query($connection,$query);
-                confirmQuery($delete_user_query);
-                header( "refresh:3;url=../index.php");
+                $query = "UPDATE users SET ";
+                $query.= "user_stage= 0, ";
+                $query.= "user_gift= NULL, ";
+                $query.= "user_gifted_one= NULL, ";
+                $query.= "user_gifted_two= NULL, ";
+                $query.= "user_gifted_three= NULL, ";
+                $query.= "user_gifted_four= NULL, ";
+                $query.= "user_gifted_one_confirm= NULL, ";
+                $query.= "user_gifted_two_confirm= NULL, ";
+                $query.= "user_gifted_three_confirm= NULL, ";
+                $query.= "user_gifted_four_confirm= NULL, ";
+                $query.= "user_regift_first= NULL, ";
+                $query.= "user_regifted_first_one= NULL, ";
+                $query.= "user_regifted_first_two= NULL, ";
+                $query.= "user_regifted_first_three= NULL, ";
+                $query.= "user_regifted_first_four= NULL, ";
+                $query.= "user_regifted_first_one_confirm= NULL, ";
+                $query.= "user_regifted_first_two_confirm= NULL, ";
+                $query.= "user_regifted_first_three_confirm= NULL, ";
+                $query.= "user_regifted_first_four_confirm= NULL, ";
+                $query.= "user_regift_second= NULL, ";
+                $query.= "user_regift_admin_second= NULL, ";
+                $query.= "user_regifted_second_one= NULL, ";
+                $query.= "user_regifted_second_two= NULL, ";
+                $query.= "user_regifted_second_three= NULL, ";
+                $query.= "user_regifted_second_four= NULL, ";
+                $query.= "user_regifted_second_one_confirm= NULL, ";
+                $query.= "user_regifted_second_two_confirm= NULL, ";
+                $query.= "user_regifted_second_three_confirm= NULL, ";
+                $query.= "user_regifted_second_four_confirm= NULL ";
+                $query.= "WHERE user_id = {$referral_join} ";
+
+                $referral_query = mysqli_query($connection,$query);
+                confirmQuery($referral_query);
+                $_SESSION['username'] = null;
+                $_SESSION['firstname'] = null;
+                $_SESSION['lastname'] = null;
+                $_SESSION['user_role'] = null;
+                header("Location: ../index.php");               
             }
 
         ?>
