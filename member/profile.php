@@ -8,7 +8,7 @@
         while($row = mysqli_fetch_array($select_user_profile_query)){
             $user_id = $row['user_id'];
             $username = $row['username'];
-            $user_password = $row['user_password']; 
+            $db_user_password = $row['user_password']; 
             $user_firstname = $row['user_firstname'];
             $user_lastname = $row['user_lastname'];
             $user_email = $row['user_email'];
@@ -27,18 +27,20 @@ if(isset($_POST['edit_user'])){
       $user_firstname = $_POST['user_firstname'];
       $user_lastname = $_POST['user_lastname'];
       $user_email = $_POST['user_email'];
+      $user_old_password = $_POST['user_old_password'];
+      $user_new_password = $_POST['user_new_password'];
       $user_password = $_POST['user_password'];
       if(!empty($user_password)){
       $get_user_query = mysqli_query($connection,$query);
       confirmQuery($get_user_query);
 
       $row = mysqli_fetch_array($get_user_query);
-          
-      $db_user_password = $row['user_password'];
+      
+    //   $db_user_password = $row['user_password'];
      
-      if($db_user_password != $user_password){
+      if(password_verify($user_old_password, $db_user_password)){
       $hash_password = password_hash($user_password, PASSWORD_BCRYPT, array('cost' => 12));
-  }  
+  
         $query = "UPDATE users SET ";
         $query.= "user_firstname = '{$user_firstname}', ";
         $query.= "user_lastname= '{$user_lastname}', ";
@@ -51,6 +53,7 @@ if(isset($_POST['edit_user'])){
         confirmQuery($update_user);
         echo "<div><p class='alert alert-success fw-bold' role='alert'>Updated Successfully</p></div>";
         header( "refresh:3;url=index.php" );
+      }
     }
   }
     ?>
@@ -76,11 +79,11 @@ if(isset($_POST['edit_user'])){
                 </div>
                 <div class="form-group mb-3">
                     <label for="post-tags"><b>Old Password</b></label>
-                    <input class="form-control" type="password" name="user_password" autocomplete="off">
+                    <input class="form-control" type="password" name="user_old_password" autocomplete="off">
                 </div>
                 <div class="form-group mb-3">
                     <label for="post-tags"><b>New Password</b></label>
-                    <input class="form-control" type="password" name="user_password" autocomplete="off">
+                    <input class="form-control" type="password" name="user_new_password" autocomplete="off">
                 </div>
                 <div class="form-group mb-3">
                     <label for="post-tags"><b>Confirm New Password</b></label>

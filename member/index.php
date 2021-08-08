@@ -216,6 +216,7 @@
          confirmQuery($current_user_details);
          while ($row = mysqli_fetch_assoc($current_user_details)) {
 
+            $current_user_stage = $row['user_stage'];
             $current_user_gift = $row['user_gift'];
             $current_user_gift_confirmed = $row['user_gift_confirmed'];
             $current_user_gifted_one = $row['user_gifted_one'];
@@ -285,14 +286,14 @@
                 <div class='alert alert-primary text-center' role='alert'>
                     <p class='fs-4'>You are required to Pledge to the Community</p>
                     <div class="d-grid">
-                        <a class="btn btn-primary fs-5 fw-bold" href="index.php?pledge=<?php echo $user_id ;?>">I Pledge</a>
+                        <a class="btn btn-primary fs-5 fw-bold mx-4" href="index.php?pledge=<?php echo $user_id ;?>">I Pledge</a>
                     </div>
                 </div>
 
                 <div class='alert alert-success text-center disabled' role='alert'>
                     <p class='fw-bold'>Would you like to restart with your Referral or Join the Waiting Area?</p>
                     <div class="flex align-items-center justify-content-between">
-                        <a class="btn btn-success justify-content-between me-2 disabled" href="index.php?referral_link=<?php echo $user_id ;?>">Referral Link</a>
+                        <a class="btn btn-success justify-content-between me-2 disabled my-2" href="index.php?referral_link=<?php echo $user_id ;?>">Referral Link</a>
                         <a class="btn bg-primary text-light justify-content-between disabled" href="index.php?waiting_list=<?php echo $user_id ;?>">Join Waiting Area</a>
                     </div>
                 </div>
@@ -521,7 +522,8 @@
 
         <!-- Receiving Gift Circle -->
         <div class="text-center py-5 px-2 my-5 shadow">
-            <h2 class="purple">RG-Board</h2>
+            <h2 class="purple">RG-Board</small></h2>
+            <h5>Stage <?php echo $current_user_stage;?></h5>
             <div class="row my-2 gy-3 px-3">
                 <!-- Current User Name -->
                 <div class="col-12">

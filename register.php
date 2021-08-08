@@ -47,7 +47,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
    }//foreach
    if(empty($error)){
     register_user($username, $email, $password, $firstname, $lastname, $phone, $refer);
-    login_user($username, $password);
+    //login_user($username, $password);
 }
 }
 ?>

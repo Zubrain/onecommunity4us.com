@@ -39,7 +39,6 @@
                         header( "refresh:3;url=all-members.php" );                                    }
                                 }
                             }
-
             ?>
         <div class="table-responsive">
             <table class="table table-bordered table-hover">
@@ -48,7 +47,7 @@
                         <th>Id</th>
                         <th>Username</th>
                         <th>User Email</th>
-                        <th>Role</th>
+                        <th>Stage</th>
                         <th>User Referrer</th>
                         <th>Refs</th>
                         <th>Status</th>
@@ -67,7 +66,7 @@
                                     $user_id = $row['user_id'];
                                     $username = $row['username'];
                                     $user_email = $row['user_email'];
-                                    $user_role = $row['user_role'];
+                                    $user_stage = $row['user_stage'];
                                     $user_referral = $row['user_referral'];
                                     $number_referral = $row['number_referral'];
                                     $user_status = $row['user_status'];
@@ -76,7 +75,7 @@
                                 echo "<td>{$user_id}</td>";
                                 echo "<td>{$username}</td>";
                                 echo "<td>{$user_email}</td>";
-                                echo "<td>{$user_role}</td>";
+                                echo "<td>Stage {$user_stage}</td>";
                                 echo "<td>{$user_referral}</td>";
                                 echo "<td>{$number_referral}</td>";
                                 if($user_status == 1){
