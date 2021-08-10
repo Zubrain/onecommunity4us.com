@@ -63,11 +63,11 @@ if(isset($_POST['edit_user'])){
                 <div class="form-group mb-3">
                     <label for="post-title"><b>Firstname</b></label>
                     <input class="form-control" type="text" name="user_firstname"
-                        value="<?php echo $user_firstname ;?>">
+                        value="<?php echo $user_firstname ;?>" readonly>
                 </div>
                 <div class="form-group mb-3">
                     <label for="author"><b>Lastname</b></label>
-                    <input class="form-control mt-1" type="text" name="user_lastname" value="<?php echo $user_lastname ;?>">
+                    <input class="form-control mt-1" type="text" name="user_lastname" value="<?php echo $user_lastname ;?>" readonly>
                 </div>
                 <!-- <div class="form-group">
                 <label for="post-image">Post Image</label>
@@ -75,7 +75,7 @@ if(isset($_POST['edit_user'])){
                 </div> -->
                 <div class="form-group mb-3">
                     <label for="post-tags"><b>Email</b></label>
-                    <input class="form-control" type="email" name="user_email" value="<?php echo $user_email ;?>">
+                    <input class="form-control" type="email" name="user_email" value="<?php echo $user_email ;?>" readonly>
                 </div>
                 <div class="form-group mb-3">
                     <label for="post-tags"><b>Old Password</b></label>

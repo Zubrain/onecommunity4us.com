@@ -56,6 +56,12 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <title>One Community</title>
+    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+<script>
+    Weglot.initialize({
+        api_key: 'wg_645709af4b7b7f407fd2c8d1e76924ef7'
+    });
+</script>
 </head>
 
 <body>
