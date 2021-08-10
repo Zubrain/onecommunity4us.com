@@ -93,7 +93,7 @@ function user_placement($username,$refer){
    }   
 }
 
-function register_user($username, $email, $password, $firstname, $lastname, $phone, $refer){
+function register_user($username, $email, $password, $firstname, $lastname, $phone, $refer, $token){
     global $connection;
          $username = mysqli_real_escape_string($connection, $username);
          $email = mysqli_real_escape_string($connection, $email);
@@ -102,20 +102,28 @@ function register_user($username, $email, $password, $firstname, $lastname, $pho
          $lastname = mysqli_real_escape_string($connection, $lastname);
          $phone = mysqli_real_escape_string($connection, $phone);
          $refer = mysqli_real_escape_string($connection, $refer);
+         $token = mysqli_real_escape_string($connection, $token);
 
          $hash_password = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
          
         if($refer == 'One Community' || !referral_exists($refer)){
-         $query = "INSERT INTO users(username,user_email,user_password,user_role,user_firstname,user_lastname,user_mobile,user_referral,user_status) ";
-         $query.= "VALUES('{$username}','{$email}','{$hash_password}','orphan','{$firstname}','{$lastname}','{$phone}','One Community','0') ";
+         $query = "INSERT INTO users(username,user_email,user_password,user_role,user_firstname,user_lastname,user_mobile,user_referral,user_status,user_token) ";
+         $query.= "VALUES('{$username}','{$email}','{$hash_password}','orphan','{$firstname}','{$lastname}','{$phone}','One Community','0','{$token}') ";
          $register_query = mysqli_query($connection, $query);
         }else{
-            $query = "INSERT INTO users(username,user_email,user_password,user_role,user_firstname,user_lastname,user_mobile,user_referral) ";
-            $query.= "VALUES('{$username}','{$email}','{$hash_password}','member','{$firstname}','{$lastname}','{$phone}','{$refer}') ";
+            $query = "INSERT INTO users(username,user_email,user_password,user_role,user_firstname,user_lastname,user_mobile,user_referral,user_token) ";
+            $query.= "VALUES('{$username}','{$email}','{$hash_password}','member','{$firstname}','{$lastname}','{$phone}','{$refer}','{$token}') ";
             $register_query = mysqli_query($connection, $query);
             user_placement($username,$refer);
         }
         confirmQuery($register_query);
+        //Send Email
+        $to = $email;
+        $subject = "Email Verification";
+        $message = "<a href='localhost/onecommunity4us.com/email_verification.php?token=$token'>Verify Email</a>";
+        $headers = "";
+        redirect("/onecommunity4us.com/email_verification.php");
+        
         }
 
     function login_user($username, $password){
@@ -136,8 +144,9 @@ function register_user($username, $email, $password, $firstname, $lastname, $pho
                 $db_user_referral = $row['user_referral'];
                 $db_user_left = $row['user_left'];
                 $db_user_right = $row['user_right'];
+                $db_user_email_verify = $row['user_email_verify'];
             }
-            if(password_verify($password, $db_user_password) && $db_user_role == 'admin'){
+            if(password_verify($password, $db_user_password) && $db_user_role == 'admin' && $db_user_email_verify == 1){
                 $_SESSION['user_id'] = $db_user_id;
                 $_SESSION['username'] = $db_username;
                 $_SESSION['firstname'] = $db_user_firstname;
@@ -147,7 +156,7 @@ function register_user($username, $email, $password, $firstname, $lastname, $pho
                 $_SESSION['user_left'] = $db_user_left ;
                 $_SESSION['user_right'] = $db_user_right;
                 redirect("/onecommunity4us.com/admin/index.php");
-            }elseif(password_verify($password, $db_user_password) && $db_user_role == 'member'){
+            }elseif(password_verify($password, $db_user_password) && $db_user_role == 'member' && $db_user_email_verify == 1){
                 $_SESSION['user_id'] = $db_user_id;
                 $_SESSION['username'] = $db_username;
                 $_SESSION['firstname'] = $db_user_firstname;
@@ -157,7 +166,7 @@ function register_user($username, $email, $password, $firstname, $lastname, $pho
                 $_SESSION['user_left'] = $db_user_left ;
                 $_SESSION['user_right'] = $db_user_right;
                 redirect("/onecommunity4us.com/member/index.php");
-            }elseif(password_verify($password, $db_user_password) && $db_user_role == 'orphan'){
+            }elseif(password_verify($password, $db_user_password) && $db_user_role == 'orphan' && $db_user_email_verify == 1){
                 $_SESSION['user_id'] = $db_user_id;
                 $_SESSION['username'] = $db_username;
                 $_SESSION['firstname'] = $db_user_firstname;

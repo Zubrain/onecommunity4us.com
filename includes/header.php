@@ -1,6 +1,47 @@
 <?php  ob_start(); ?>
 <?php  session_start(); ?>
 <?php include "function.php";?>
+<?php
+
+// $query = "UPDATE users SET ";
+//                 $query.= "user_stage= 0, ";
+//                 $query.= "user_gift= NULL, ";
+//                 $query.= "user_gift_confirmed= NULL, ";
+//                 $query.= "user_gifted_one= NULL, ";
+//                 $query.= "user_gifted_two= NULL, ";
+//                 $query.= "user_gifted_three= NULL, ";
+//                 $query.= "user_gifted_four= NULL, ";
+//                 $query.= "user_gifted_one_confirm= NULL, ";
+//                 $query.= "user_gifted_two_confirm= NULL, ";
+//                 $query.= "user_gifted_three_confirm= NULL, ";
+//                 $query.= "user_gifted_four_confirm= NULL, ";
+//                 $query.= "user_regift_first= NULL, ";
+//                 $query.= "user_regift_first_confirmed= NULL, ";
+//                 $query.= "user_regifted_first_one= NULL, ";
+//                 $query.= "user_regifted_first_two= NULL, ";
+//                 $query.= "user_regifted_first_three= NULL, ";
+//                 $query.= "user_regifted_first_four= NULL, ";
+//                 $query.= "user_regifted_first_one_confirm= NULL, ";
+//                 $query.= "user_regifted_first_two_confirm= NULL, ";
+//                 $query.= "user_regifted_first_three_confirm= NULL, ";
+//                 $query.= "user_regifted_first_four_confirm= NULL, ";
+//                 $query.= "user_regift_second= NULL, ";
+//                 $query.= "user_regift_second_confirmed= NULL, ";
+//                 $query.= "user_regift_admin_second= NULL, ";
+//                 $query.= "user_regift_admin_second_confirmed= NULL, ";
+//                 $query.= "user_regifted_second_one= NULL, ";
+//                 $query.= "user_regifted_second_two= NULL, ";
+//                 $query.= "user_regifted_second_three= NULL, ";
+//                 $query.= "user_regifted_second_four= NULL, ";
+//                 $query.= "user_regifted_second_one_confirm= NULL, ";
+//                 $query.= "user_regifted_second_two_confirm= NULL, ";
+//                 $query.= "user_regifted_second_three_confirm= NULL, ";
+//                 $query.= "user_regifted_second_four_confirm= NULL ";
+        
+
+//                 $referral_query = mysqli_query($connection,$query);
+//                 confirmQuery($referral_query);
+?>
 <!DOCTYPE html>
 <html lang="en">
 

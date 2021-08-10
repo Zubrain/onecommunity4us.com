@@ -1,6 +1,16 @@
 <?php  include "includes/config.php"; ?>
 <?php include "includes/header.php"; ?>
 <?php
+// the message
+//$msg = "First line of text\nSecond line of text";
+
+// use wordwrap() if lines are longer than 70 characters
+//$msg = wordwrap($msg,70);
+
+// send email
+//mail("zubillion1@gmail.com","My subject",$msg);
+?>
+<?php
 if($_SERVER['REQUEST_METHOD'] == "POST") {
     $username = trim($_POST['username']);
     $email    = trim($_POST['email']);
@@ -10,6 +20,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     $phone = trim($_POST['phone']);
     $confirmpassword = trim($_POST['confirmpassword']);
     $refer = trim($_POST['referral']);
+    $length = 50;
+    $token = bin2hex(openssl_random_pseudo_bytes($length));
     $error = [
         'username'=> '',
         'email'=> '',
@@ -46,7 +58,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     }
    }//foreach
    if(empty($error)){
-    register_user($username, $email, $password, $firstname, $lastname, $phone, $refer);
+    register_user($username, $email, $password, $firstname, $lastname, $phone, $refer, $token);
     //login_user($username, $password);
 }
 }
