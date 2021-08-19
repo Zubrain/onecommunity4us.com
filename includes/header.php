@@ -67,7 +67,7 @@
 <body>
     <nav class="navbar navbar-expand-lg fixed-top bg-astalavee navbar-dark py-3 shadow">
         <div class="container">
-            <a href="index.php" class="navbar-brand">
+            <a href="/" class="navbar-brand">
                 <h2>One Community</h2>
                 <!-- <img src="images/" class="img-fluid" alt="logo" width="170"> -->
             </a>
@@ -92,13 +92,13 @@
                 <?php
                         if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'member'){
                            echo "<a href='logout.php' type='button' class='btn btn-login me-3 px-4 px-sm-5 py-2'>Logout</a>";
-                           echo "<a href='/onecommunity4us.com/member/index.php' type='button' class='btn btn-signup px-5 py-2'>Dashboard</a>";
+                           echo "<a href='/member/index.php' type='button' class='btn btn-signup px-5 py-2'>Dashboard</a>";
                         }elseif(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'admin'){
                            echo "<a href='logout.php' type='button' class='btn btn-login me-3 px-4 px-sm-5 py-2'>Logout</a>";
-                           echo "<a href='/onecommunity4us.com/admin/index.php' type='button' class='btn btn-signup px-5 py-2'>Admin</a>";  
+                           echo "<a href='/admin/index.php' type='button' class='btn btn-signup px-5 py-2'>Admin</a>";  
                         }elseif(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'orphan'){
                             echo "<a href='logout.php' type='button' class='btn btn-login me-3 px-4 px-sm-5 py-2'>Logout</a>";
-                            echo "<a href='/onecommunity4us.com/orphan/index.php' type='button' class='btn btn-signup px-5 py-2'>Waiting</a>"; 
+                            echo "<a href='/orphan/index.php' type='button' class='btn btn-signup px-5 py-2'>Waiting</a>"; 
                         }else{
                            echo "<a href='login.php' type='button' class='btn btn-login me-3 px-4 px-sm-5 py-2'>Login</a>";
                            echo "<a href='register.php' type='button' class='btn btn-signup px-5 py-2'>Sign-up</a>";

@@ -1,0 +1,5 @@
+[18-Aug-2021 07:20:49 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/onecommunity4us/public_html/includes/config.php on line 11
+[18-Aug-2021 07:20:49 UTC] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/onecommunity4us/public_html/includes/function.php on line 131
+[18-Aug-2021 07:20:49 UTC] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/onecommunity4us/public_html/includes/function.php on line 132
+[18-Aug-2021 07:20:49 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/onecommunity4us/public_html/includes/function.php on line 135
+[18-Aug-2021 07:20:49 UTC] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/onecommunity4us/public_html/includes/function.php on line 10

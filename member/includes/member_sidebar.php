@@ -141,7 +141,7 @@
             <div class="sb-sidenav-menu">
                 <div class="nav">
                     <div class="sb-sidenav-menu-heading">Core</div>
-                    <a class="nav-link" href="/onecommunity4us.com/index.php">
+                    <a class="nav-link" href="/">
                         <div class="sb-nav-link-icon"><i class="fas fa-home purple"></i></div>
                         <span class="purple">HomePage</span> 
                     </a>

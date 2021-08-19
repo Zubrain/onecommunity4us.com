@@ -118,11 +118,29 @@ function register_user($username, $email, $password, $firstname, $lastname, $pho
         }
         confirmQuery($register_query);
         //Send Email
-        $to = $email;
+        $to = "$email";
         $subject = "Email Verification";
-        $message = "<a href='localhost/onecommunity4us.com/email_verification.php?token=$token'>Verify Email</a>";
-        $headers = "";
-        redirect("/onecommunity4us.com/email_verification.php");
+            $message = "
+            <html>
+            <head>
+            <title>Email Verification</title>
+            </head>
+            <body>
+            <p><a href='https://onecommunity4us.com/email_verification.php?token=$token'>Verify Email $token</a></p>
+            </body>
+            </html>
+            ";
+            
+            // Always set content-type when sending HTML email
+            $headers = "MIME-Version: 1.0" . "\r\n";
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+            
+            // More headers
+            $headers .= 'From: <support@onecommunity4us.com>' . "\r\n";
+            $headers .= 'Cc: info@onecommunity.com' . "\r\n";
+            
+            mail($to,$subject,$message,$headers);
+        redirect("/email_verification.php");
         
         }
 
@@ -155,7 +173,7 @@ function register_user($username, $email, $password, $firstname, $lastname, $pho
                 $_SESSION['user_referral'] = $db_user_referral;
                 $_SESSION['user_left'] = $db_user_left ;
                 $_SESSION['user_right'] = $db_user_right;
-                redirect("/onecommunity4us.com/admin/index.php");
+                redirect("/admin/index.php");
             }elseif(password_verify($password, $db_user_password) && $db_user_role == 'member' && $db_user_email_verify == 1){
                 $_SESSION['user_id'] = $db_user_id;
                 $_SESSION['username'] = $db_username;
@@ -165,7 +183,7 @@ function register_user($username, $email, $password, $firstname, $lastname, $pho
                 $_SESSION['user_referral'] = $db_user_referral;
                 $_SESSION['user_left'] = $db_user_left ;
                 $_SESSION['user_right'] = $db_user_right;
-                redirect("/onecommunity4us.com/member/index.php");
+                redirect("/member/index.php");
             }elseif(password_verify($password, $db_user_password) && $db_user_role == 'orphan' && $db_user_email_verify == 1){
                 $_SESSION['user_id'] = $db_user_id;
                 $_SESSION['username'] = $db_username;
@@ -173,9 +191,9 @@ function register_user($username, $email, $password, $firstname, $lastname, $pho
                 $_SESSION['lastname'] = $db_user_lastname;
                 $_SESSION['user_role'] = $db_user_role;
                 $_SESSION['user_referral'] = $db_user_referral;
-                redirect("/onecommunity4us.com/orphan/index.php");
+                redirect("/orphan/index.php");
         }else{
-                redirect("/onecommunity4us.com/login.php");
+                redirect("/login.php");
             }
 }
 

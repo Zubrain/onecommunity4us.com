@@ -1,0 +1,35 @@
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined index: user_id in /home/onecommunity4us/public_html/member/includes/member_sidebar.php on line 2
+[18-Aug-2021 11:54:24 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/onecommunity4us/public_html/member/includes/member_sidebar.php on line 7
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: one in /home/onecommunity4us/public_html/member/includes/member_sidebar.php on line 42
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: two in /home/onecommunity4us/public_html/member/includes/member_sidebar.php on line 42
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: three in /home/onecommunity4us/public_html/member/includes/member_sidebar.php on line 42
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: four in /home/onecommunity4us/public_html/member/includes/member_sidebar.php on line 42
+[18-Aug-2021 11:54:24 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/onecommunity4us/public_html/member/includes/member_sidebar.php on line 50
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: onef in /home/onecommunity4us/public_html/member/includes/member_sidebar.php on line 89
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: twof in /home/onecommunity4us/public_html/member/includes/member_sidebar.php on line 89
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: threef in /home/onecommunity4us/public_html/member/includes/member_sidebar.php on line 89
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: fourf in /home/onecommunity4us/public_html/member/includes/member_sidebar.php on line 89
+[18-Aug-2021 11:54:24 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/onecommunity4us/public_html/member/includes/member_sidebar.php on line 97
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: ones in /home/onecommunity4us/public_html/member/includes/member_sidebar.php on line 134
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: twos in /home/onecommunity4us/public_html/member/includes/member_sidebar.php on line 134
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: threes in /home/onecommunity4us/public_html/member/includes/member_sidebar.php on line 134
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: fours in /home/onecommunity4us/public_html/member/includes/member_sidebar.php on line 134
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined index: username in /home/onecommunity4us/public_html/member/includes/member_sidebar.php on line 169
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: current_user_regifted_second_one_confirm in /home/onecommunity4us/public_html/member/index.php on line 283
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: current_user_gifted_one in /home/onecommunity4us/public_html/member/index.php on line 353
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: current_user_gifted_two in /home/onecommunity4us/public_html/member/index.php on line 353
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: current_user_gifted_three in /home/onecommunity4us/public_html/member/index.php on line 353
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: current_user_gifted_four in /home/onecommunity4us/public_html/member/index.php on line 353
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: current_user_regifted_first_one in /home/onecommunity4us/public_html/member/index.php on line 416
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: current_user_regifted_first_two in /home/onecommunity4us/public_html/member/index.php on line 416
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: current_user_regifted_first_three in /home/onecommunity4us/public_html/member/index.php on line 416
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: current_user_regifted_first_four in /home/onecommunity4us/public_html/member/index.php on line 416
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: current_user_regifted_second_one in /home/onecommunity4us/public_html/member/index.php on line 424
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: current_user_regifted_second_two in /home/onecommunity4us/public_html/member/index.php on line 424
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: current_user_regifted_second_three in /home/onecommunity4us/public_html/member/index.php on line 424
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: current_user_regifted_second_four in /home/onecommunity4us/public_html/member/index.php on line 424
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined variable: current_user_stage in /home/onecommunity4us/public_html/member/index.php on line 526
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined index: user_id in /home/onecommunity4us/public_html/member/index.php on line 531
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined index: username in /home/onecommunity4us/public_html/member/index.php on line 532
+[18-Aug-2021 11:54:24 UTC] PHP Notice:  Undefined index: user_id in /home/onecommunity4us/public_html/member/index.php on line 610
+[18-Aug-2021 21:57:54 UTC] PHP Notice:  Undefined variable: current_user_stage in /home/onecommunity4us/public_html/member/index.php on line 526

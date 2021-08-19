@@ -18,17 +18,17 @@ if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'admin'){
             <div class="container py-4">
                 <div class="row justify-content-center">
                     <div class="col-sm-10 col-md-9 col-lg-7 col-xl-6 my-5">
-                        <form action="includes/login_processor.php" method="POST" class="bg-light rounded shadow py-5 px-4 px-sm-5">
+                        <form action="" method="POST" class="bg-light rounded shadow py-5 px-4 px-sm-5">
                             <!-- Username input -->
                             <div class="form-outline mb-3">
                                 <p>A code has been sent to your email, enter code to get verified</p>
-                                <label class="form-label" for="form1Example1">Enter Token</label>
-                                <input type="text" name="username" value="" id="form1Example1" class="form-control" placeholder="Enter Token" required/>
+                                <label class="form-label fw-bold" for="form1Example1">Enter Code</label>
+                                <input type="text" name="token" value="" id="form1Example1" class="form-control" placeholder="Enter Code" required/>
 
                             </div>
                             <!-- Submit button -->
                             <div class="d-grid">
-                                <button type="submit" name="login"
+                                <button type="submit" name="verify"
                                     class="btn btn-lg bg-astalavee text-light shadow btn-login-page mb-3">Verify Email</button>
                             </div>
                         </form>

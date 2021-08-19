@@ -10,7 +10,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
 }else {
 
 
-    redirect('login.php');
+    redirect('https://onecommunity4us.com/login.php');
 }
 ?>
     

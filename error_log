@@ -1,0 +1,7 @@
+[18-Aug-2021 07:19:58 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/onecommunity4us/public_html/includes/config.php on line 11
+[18-Aug-2021 07:20:23 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/onecommunity4us/public_html/includes/config.php on line 11
+[18-Aug-2021 07:20:37 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/onecommunity4us/public_html/includes/config.php on line 11
+[18-Aug-2021 07:20:37 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/onecommunity4us/public_html/includes/config.php on line 11
+[18-Aug-2021 07:22:16 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/onecommunity4us/public_html/includes/config.php on line 11
+[18-Aug-2021 07:22:19 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/onecommunity4us/public_html/includes/config.php on line 11
+[18-Aug-2021 07:22:19 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/onecommunity4us/public_html/includes/config.php on line 11
