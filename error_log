@@ -5,3 +5,33 @@
 [18-Aug-2021 07:22:16 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/onecommunity4us/public_html/includes/config.php on line 11
 [18-Aug-2021 07:22:19 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/onecommunity4us/public_html/includes/config.php on line 11
 [18-Aug-2021 07:22:19 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/onecommunity4us/public_html/includes/config.php on line 11
+[19-Aug-2021 11:38:56 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer' not found in /home/onecommunity4us/public_html/includes/function.php:145
+Stack trace:
+#0 /home/onecommunity4us/public_html/register.php(61): register_user('Zubillionne', 'support@zubilli...', '1234', 'ADONAI', 'Happu', '+8900999586', 'One Community', 'd6d601144f1f388...')
+#1 {main}
+  thrown in /home/onecommunity4us/public_html/includes/function.php on line 145
+[19-Aug-2021 12:44:12 UTC] PHP Fatal error:  Cannot declare class PHPMailer\PHPMailer\Exception, because the name is already in use in /home/onecommunity4us/public_html/includes/PHPMailer/src/Exception.php on line 0
+[19-Aug-2021 12:45:10 UTC] PHP Fatal error:  Cannot declare class PHPMailer\PHPMailer\Exception, because the name is already in use in /home/onecommunity4us/public_html/includes/PHPMailer/src/Exception.php on line 0
+[19-Aug-2021 12:49:19 UTC] PHP Fatal error:  Cannot declare class PHPMailer\PHPMailer\Exception, because the name is already in use in /home/onecommunity4us/public_html/PHPMailer/src/Exception.php on line 0
+[19-Aug-2021 12:49:23 UTC] PHP Fatal error:  Cannot declare class PHPMailer\PHPMailer\Exception, because the name is already in use in /home/onecommunity4us/public_html/PHPMailer/src/Exception.php on line 0
+[19-Aug-2021 12:49:28 UTC] PHP Fatal error:  Cannot declare class PHPMailer\PHPMailer\Exception, because the name is already in use in /home/onecommunity4us/public_html/PHPMailer/src/Exception.php on line 0
+[19-Aug-2021 12:50:08 UTC] PHP Fatal error:  Cannot declare class PHPMailer\PHPMailer\Exception, because the name is already in use in /home/onecommunity4us/public_html/PHPMailer/src/Exception.php on line 0
+[19-Aug-2021 12:51:18 UTC] PHP Fatal error:  Cannot declare class PHPMailer\PHPMailer\Exception, because the name is already in use in /home/onecommunity4us/public_html/PHPMailer/src/Exception.php on line 0
+[19-Aug-2021 12:51:24 UTC] PHP Fatal error:  Cannot declare class PHPMailer\PHPMailer\Exception, because the name is already in use in /home/onecommunity4us/public_html/PHPMailer/src/Exception.php on line 0
+[19-Aug-2021 12:54:25 UTC] PHP Fatal error:  Cannot declare class PHPMailer\PHPMailer\Exception, because the name is already in use in /home/onecommunity4us/public_html/vendor/phpmailer/phpmailer/src/Exception.php on line 0
+[19-Aug-2021 12:54:29 UTC] PHP Fatal error:  Cannot declare class PHPMailer\PHPMailer\Exception, because the name is already in use in /home/onecommunity4us/public_html/vendor/phpmailer/phpmailer/src/Exception.php on line 0
+[19-Aug-2021 12:54:29 UTC] PHP Fatal error:  Cannot declare class PHPMailer\PHPMailer\Exception, because the name is already in use in /home/onecommunity4us/public_html/vendor/phpmailer/phpmailer/src/Exception.php on line 0
+[19-Aug-2021 12:55:17 UTC] PHP Fatal error:  Cannot declare class PHPMailer\PHPMailer\Exception, because the name is already in use in /home/onecommunity4us/public_html/PHPMailer/src/Exception.php on line 0
+[19-Aug-2021 12:57:29 UTC] PHP Fatal error:  Cannot declare class PHPMailer\PHPMailer\Exception, because the name is already in use in /home/onecommunity4us/public_html/PHPMailer/src/Exception.php on line 0
+[19-Aug-2021 12:58:46 UTC] PHP Fatal error:  Cannot declare class PHPMailer\PHPMailer\Exception, because the name is already in use in /home/onecommunity4us/public_html/PHPMailer/src/Exception.php on line 0
+[19-Aug-2021 13:00:25 UTC] PHP Fatal error:  Cannot declare class PHPMailer\PHPMailer\Exception, because the name is already in use in /home/onecommunity4us/public_html/PHPMailer/src/Exception.php on line 0
+[19-Aug-2021 13:03:01 UTC] PHP Fatal error:  Cannot declare class PHPMailer\PHPMailer\Exception, because the name is already in use in /home/onecommunity4us/public_html/PHPMailer/src/Exception.php on line 0
+[19-Aug-2021 13:03:55 UTC] PHP Warning:  require_once(/PHPMailer/src/Exception.php): failed to open stream: No such file or directory in /home/onecommunity4us/public_html/register.php on line 10
+[19-Aug-2021 13:03:55 UTC] PHP Fatal error:  require_once(): Failed opening required '/PHPMailer/src/Exception.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/onecommunity4us/public_html/register.php on line 10
+[19-Aug-2021 13:05:01 UTC] PHP Fatal error:  Cannot declare class PHPMailer\PHPMailer\Exception, because the name is already in use in /home/onecommunity4us/public_html/PHPMailer/src/Exception.php on line 0
+[19-Aug-2021 21:02:39 UTC] PHP Parse error:  syntax error, unexpected '$lastname' (T_VARIABLE), expecting ',' or ')' in /home/onecommunity4us/public_html/register.php on line 83
+[19-Aug-2021 21:02:44 UTC] PHP Parse error:  syntax error, unexpected '$lastname' (T_VARIABLE), expecting ',' or ')' in /home/onecommunity4us/public_html/register.php on line 83
+[19-Aug-2021 21:02:58 UTC] PHP Parse error:  syntax error, unexpected '$lastname' (T_VARIABLE), expecting ',' or ')' in /home/onecommunity4us/public_html/register.php on line 83
+[19-Aug-2021 21:03:04 UTC] PHP Parse error:  syntax error, unexpected '$lastname' (T_VARIABLE), expecting ',' or ')' in /home/onecommunity4us/public_html/register.php on line 83
+[19-Aug-2021 21:03:09 UTC] PHP Parse error:  syntax error, unexpected '$lastname' (T_VARIABLE), expecting ',' or ')' in /home/onecommunity4us/public_html/register.php on line 83
+[19-Aug-2021 21:03:22 UTC] PHP Parse error:  syntax error, unexpected '$lastname' (T_VARIABLE), expecting ',' or ')' in /home/onecommunity4us/public_html/register.php on line 83

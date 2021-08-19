@@ -3,3 +3,62 @@
 [18-Aug-2021 07:20:49 UTC] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home/onecommunity4us/public_html/includes/function.php on line 132
 [18-Aug-2021 07:20:49 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/onecommunity4us/public_html/includes/function.php on line 135
 [18-Aug-2021 07:20:49 UTC] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/onecommunity4us/public_html/includes/function.php on line 10
+[19-Aug-2021 12:18:15 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer' not found in /home/onecommunity4us/public_html/includes/email.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/onecommunity4us/public_html/includes/email.php on line 12
+[19-Aug-2021 12:18:15 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer' not found in /home/onecommunity4us/public_html/includes/email.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/onecommunity4us/public_html/includes/email.php on line 12
+[19-Aug-2021 12:18:20 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer' not found in /home/onecommunity4us/public_html/includes/email.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/onecommunity4us/public_html/includes/email.php on line 12
+[19-Aug-2021 12:18:20 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer' not found in /home/onecommunity4us/public_html/includes/email.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/onecommunity4us/public_html/includes/email.php on line 12
+[19-Aug-2021 12:18:21 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer' not found in /home/onecommunity4us/public_html/includes/email.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/onecommunity4us/public_html/includes/email.php on line 12
+[19-Aug-2021 12:18:21 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer' not found in /home/onecommunity4us/public_html/includes/email.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/onecommunity4us/public_html/includes/email.php on line 12
+[19-Aug-2021 12:18:21 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer' not found in /home/onecommunity4us/public_html/includes/email.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/onecommunity4us/public_html/includes/email.php on line 12
+[19-Aug-2021 12:18:21 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer' not found in /home/onecommunity4us/public_html/includes/email.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/onecommunity4us/public_html/includes/email.php on line 12
+[19-Aug-2021 12:20:15 UTC] PHP Fatal error:  Uncaught Error: Class 'SMTP' not found in /home/onecommunity4us/public_html/includes/email.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/onecommunity4us/public_html/includes/email.php on line 18
+[19-Aug-2021 12:20:18 UTC] PHP Fatal error:  Uncaught Error: Class 'SMTP' not found in /home/onecommunity4us/public_html/includes/email.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/onecommunity4us/public_html/includes/email.php on line 18
+[19-Aug-2021 12:21:43 UTC] PHP Warning:  Use of undefined constant TLS - assumed 'TLS' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/includes/email.php on line 24
+[19-Aug-2021 12:22:59 UTC] PHP Warning:  Use of undefined constant TLS - assumed 'TLS' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/includes/email.php on line 24
+[19-Aug-2021 12:23:49 UTC] PHP Warning:  Use of undefined constant TLS - assumed 'TLS' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/includes/email.php on line 24
+[19-Aug-2021 12:23:57 UTC] PHP Warning:  Use of undefined constant TLS - assumed 'TLS' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/includes/email.php on line 24
+[19-Aug-2021 12:24:00 UTC] PHP Warning:  Use of undefined constant TLS - assumed 'TLS' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/includes/email.php on line 24
+[19-Aug-2021 12:24:06 UTC] PHP Warning:  Use of undefined constant TLS - assumed 'TLS' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/includes/email.php on line 24
+[19-Aug-2021 12:24:09 UTC] PHP Warning:  Use of undefined constant TLS - assumed 'TLS' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/includes/email.php on line 24
+[19-Aug-2021 12:24:54 UTC] PHP Warning:  Use of undefined constant TLS - assumed 'TLS' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/includes/email.php on line 24
+[19-Aug-2021 12:25:00 UTC] PHP Warning:  Use of undefined constant TLS - assumed 'TLS' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/includes/email.php on line 24
+[19-Aug-2021 12:25:18 UTC] PHP Warning:  Use of undefined constant TLS - assumed 'TLS' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/includes/email.php on line 24
+[19-Aug-2021 12:25:49 UTC] PHP Warning:  Use of undefined constant TLS - assumed 'TLS' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/includes/email.php on line 24
+[19-Aug-2021 12:31:26 UTC] PHP Warning:  Use of undefined constant TLS - assumed 'TLS' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/includes/email.php on line 24
+[19-Aug-2021 12:31:32 UTC] PHP Warning:  Use of undefined constant TLS - assumed 'TLS' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/includes/email.php on line 24
+[19-Aug-2021 18:05:28 UTC] PHP Warning:  require(PHPMailer/src/Exception.php): failed to open stream: No such file or directory in /home/onecommunity4us/public_html/includes/email.php on line 5
+[19-Aug-2021 18:05:28 UTC] PHP Warning:  require(PHPMailer/src/Exception.php): failed to open stream: No such file or directory in /home/onecommunity4us/public_html/includes/email.php on line 5
+[19-Aug-2021 18:05:28 UTC] PHP Fatal error:  require(): Failed opening required 'PHPMailer/src/Exception.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/onecommunity4us/public_html/includes/email.php on line 5
+[19-Aug-2021 18:05:32 UTC] PHP Warning:  require(PHPMailer/src/Exception.php): failed to open stream: No such file or directory in /home/onecommunity4us/public_html/includes/email.php on line 5
+[19-Aug-2021 18:05:32 UTC] PHP Warning:  require(PHPMailer/src/Exception.php): failed to open stream: No such file or directory in /home/onecommunity4us/public_html/includes/email.php on line 5
+[19-Aug-2021 18:05:32 UTC] PHP Fatal error:  require(): Failed opening required 'PHPMailer/src/Exception.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/onecommunity4us/public_html/includes/email.php on line 5

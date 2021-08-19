@@ -117,29 +117,7 @@ function register_user($username, $email, $password, $firstname, $lastname, $pho
             user_placement($username,$refer);
         }
         confirmQuery($register_query);
-        //Send Email
-        $to = "$email";
-        $subject = "Email Verification";
-            $message = "
-            <html>
-            <head>
-            <title>Email Verification</title>
-            </head>
-            <body>
-            <p><a href='https://onecommunity4us.com/email_verification.php?token=$token'>Verify Email $token</a></p>
-            </body>
-            </html>
-            ";
-            
-            // Always set content-type when sending HTML email
-            $headers = "MIME-Version: 1.0" . "\r\n";
-            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-            
-            // More headers
-            $headers .= 'From: <support@onecommunity4us.com>' . "\r\n";
-            $headers .= 'Cc: info@onecommunity.com' . "\r\n";
-            
-            mail($to,$subject,$message,$headers);
+        
         redirect("/email_verification.php");
         
         }

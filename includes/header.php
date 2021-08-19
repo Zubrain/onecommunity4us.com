@@ -1,20 +1,5 @@
 <?php  ob_start(); ?>
 <?php  session_start(); ?>
-<?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
-
-require 'vendor/phpmailer/phpmailer/src/Exception.php';
-require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
-require 'vendor/phpmailer/phpmailer/src/SMTP.php';
-
-//Load Composer's autoloader
-require 'vendor/autoload.php';
-
-//Create an instance; passing `true` enables exceptions
-$mail = new PHPMailer(true);
-?>
 <?php include "function.php";?>
 <?php
 

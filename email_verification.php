@@ -22,7 +22,7 @@ if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'admin'){
                             <!-- Username input -->
                             <div class="form-outline mb-3">
                                 <p>A code has been sent to your email, enter code to get verified</p>
-                                <label class="form-label fw-bold" for="form1Example1">Enter Code</label>
+                                <label class="form-label fw-bold" for="form1Example1">Enter 6 digit Code</label>
                                 <input type="text" name="token" value="" id="form1Example1" class="form-control" placeholder="Enter Code" required/>
 
                             </div>

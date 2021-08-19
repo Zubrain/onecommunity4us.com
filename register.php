@@ -1,16 +1,23 @@
 <?php  include "includes/config.php"; ?>
 <?php include "includes/header.php"; ?>
 <?php
-// the message
-//$msg = "First line of text\nSecond line of text";
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
-// use wordwrap() if lines are longer than 70 characters
-//$msg = wordwrap($msg,70);
+    require 'vendor/phpmailer/phpmailer/src/Exception.php';
+    require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
+    require 'vendor/phpmailer/phpmailer/src/SMTP.php';
+//Load Composer's autoloader
+require 'vendor/autoload.php';
 
-// send email
-//mail("zubillion1@gmail.com","My subject",$msg);
-?>
-<?php
+
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
+
 if($_SERVER['REQUEST_METHOD'] == "POST") {
     $username = trim($_POST['username']);
     $email    = trim($_POST['email']);
@@ -20,8 +27,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     $phone = trim($_POST['phone']);
     $confirmpassword = trim($_POST['confirmpassword']);
     $refer = trim($_POST['referral']);
-    $length = 50;
-    $token = bin2hex(openssl_random_pseudo_bytes($length));
+    $token = random_int(100000, 999999);
     $error = [
         'username'=> '',
         'email'=> '',
@@ -58,6 +64,46 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     }
    }//foreach
    if(empty($error)){
+       
+    try {
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'onecommunity4us.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'webmaster@onecommunity4us.com';                     //SMTP username
+    $mail->Password   = 'Sureboy20...';                               //SMTP password
+    $mail->SMTPSecure ="ssl";            //Enable implicit TLS encryption
+    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+    //Recipients
+    $mail->setFrom('support@onecommunity4us.com', 'One Community');
+    $mail->addAddress($email,$firstname .' '. $lastname);     //Add a recipient
+    // $mail->addAddress('ellen@example.com');               //Name is optional
+   //  $mail->addReplyTo('support@onecommunity4us.com', 'Information');
+    // $mail->addCC('cc@example.com');
+    // $mail->addBCC('bcc@example.com');
+
+    //Attachments
+    // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Email Verification';
+    $mail->Body    = '<p style="font-size:16px;"><b>Hello '.$username.',</b></p><div style="font-size:16px;">
+    You have successfully created an account. Please copy the code below to verify your email address and complete your registration.</div>
+    <div style="font-size:20px;margin:20px 10px;"><b>'.$token.'</b></div><div style="font-size:16px;">Warm Regards!
+    <p>Any questions? We are always here to help you.<br>Contact us at <a href="mailto:support@onecommunity4us.com">support@onecommunity4us.com</a>
+    and we\'ll get back to you. </p></div>';
+    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    $mail->send();
+   
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
+
     register_user($username, $email, $password, $firstname, $lastname, $phone, $refer, $token);
     //login_user($username, $password);
 }
