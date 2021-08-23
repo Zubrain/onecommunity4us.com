@@ -118,8 +118,6 @@ function register_user($username, $email, $password, $firstname, $lastname, $pho
         }
         confirmQuery($register_query);
         
-        redirect("/email_verification.php");
-        
         }
 
     function login_user($username, $password){

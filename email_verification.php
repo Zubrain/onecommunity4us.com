@@ -1,6 +1,16 @@
 <?php include "includes/config.php"; ?>
 <?php include "includes/header.php"; ?>
 <?php
+if($_SERVER['REQUEST_METHOD'] == "POST") {
+
+     $token = escape($_POST['token']);
+     $query = "UPDATE users SET user_email_verify = 1 WHERE user_token = $token AND user_email_verify = 0 ";
+     $verify_user_query = mysqli_query($connection,$query);
+            confirmQuery($verify_user_query);
+             redirect("/login.php");
+}
+?>
+<?php
 if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'admin'){
     redirect("/onecommunity4us.com/admin/index.php");
 }elseif(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'member'){

@@ -78,7 +78,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 
     //Recipients
     $mail->setFrom('support@onecommunity4us.com', 'One Community');
-    $mail->addAddress($email,$firstname .' '. $lastname);     //Add a recipient
+    $mail->addAddress($email, $firstname .' '. $lastname);     //Add a recipient
     // $mail->addAddress('ellen@example.com');               //Name is optional
    //  $mail->addReplyTo('support@onecommunity4us.com', 'Information');
     // $mail->addCC('cc@example.com');
@@ -105,17 +105,18 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 }
 
     register_user($username, $email, $password, $firstname, $lastname, $phone, $refer, $token);
-    //login_user($username, $password);
+    
+    redirect("/email_verification.php");
 }
 }
 ?>
 <?php
 if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'admin'){
-    redirect("/onecommunity4us.com/admin/index.php");
+    redirect("/admin/index.php");
 }elseif(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'member'){
-    redirect("/onecommunity4us.com/member/index.php");
+    redirect("/member/index.php");
 }elseif(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'orphan'){
-    redirect("/onecommunity4us.com/orphan/index.php");
+    redirect("/orphan/index.php");
 }else{
 
 }
