@@ -11,7 +11,7 @@
   }
 
   .astalavee-color {
-    color: #410056;
+    color: #060039;
 }
 
   .astalavee-orange {
@@ -19,7 +19,7 @@
 }
   
   .bg-astalavee {
-    background-color: #410056;
+    background-color: #060039;
   }
 
   .navbar-dark .navbar-nav .nav-link {
@@ -33,7 +33,7 @@
   }
 
   .navbar-dark .navbar-toggler-icon {
-    background-image: url(../img/menu-icon.png);
+    background-image: url(../images/menu-icon.png);
   }
 
   .navbar-dark .navbar-toggler {
@@ -49,8 +49,8 @@
   
 
     .btn-login { 
-      color: #FFFFFF;
-      border: 2px solid #FFFFFF;
+      color: #048ECB;
+      border: 2px solid #048ECB;
       box-sizing: border-box;
       font-weight: 600;
       font-size: 16px;
@@ -58,38 +58,38 @@
     }
     
     .btn-login:hover {
-      color: #410056;
-      background-color: #FFFFFF;
-      border: 2px solid #FFFFFF;
+      color: #060039;
+      background-color: #048ECB;
+      border: 2px solid #048ECB;
     }
     
     .btn-login:active {
         outline: none;
-        border: 2px solid #FFFFFF;
+        border: 2px solid #048ECB;
     }
 
 
     .btn-signup { 
       outline: none;
-      color: #410056;
-      border: 2px solid #FFFFFF;
+      color: #ffffff;
+      border: 2px solid #048ECB;
       box-sizing: border-box;
       font-weight: 600;
       font-size: 16px;
-      background-color: #FFFFFF;
+      background-color: #048ECB;
       transition: transform ease-in-out .2s;
     }
     
     .btn-signup:hover {
-      color: #410056;
-      background-color: #FFFFFF;
+      color: #ffffff;
+      background-color: #048ECB;
       box-shadow: rgba(255, 255, 255, 0.2) 0px 18px 50px -10px;
       transform: scale(1.1);
     }
     
     .btn-signup:active {
         outline: none;
-        border: 2px solid #FFFFFF;
+        border: 2px solid #048ECB;
     }
     
    .blog-body {
@@ -98,7 +98,7 @@
   }
 
    .astalavee-header {
-     color: #410056;
+     color: #060039;
    }
 
    /* Padding for devices larger than 768px */
@@ -125,40 +125,40 @@
 
   
   .btn-watch-demo { 
-    color: #410056;
-    border: 2px solid #410056;
+    color: #060039;
+    border: 2px solid #060039;
     box-sizing: border-box;
     outline: none;
   }
   
   .btn-watch-demo:hover {
-    color: #410056;
+    color: #060039;
     background-color: #FFFFFF;
-    border: 2px solid #410056;
+    border: 2px solid #060039;
   }
   
   .btn-watch-demo:focus {
       outline: none;
-      border: 2px solid #410056;
+      border: 2px solid #060039;
   }
 
   .btn-sign-up{ 
     color: #FFFFFF;
-    background-color: #410056;
-    border: 2px solid #410056;
+    background-color: #060039;
+    border: 2px solid #060039;
     box-sizing: border-box;
     outline: none;
   }
   
   .btn-sign-up:hover {
-    color: #410056;
+    color: #060039;
     background-color: #FFFFFF;
-    border: 2px solid #410056;
+    border: 2px solid #060039;
   }
   
   .btn-sign-up:focus {
       outline: none;
-      border: 2px solid #410056;
+      border: 2px solid #060039;
   }
 
   .astalavee-section {
@@ -198,7 +198,7 @@
 
   .btn-get-started { 
     outline: none;
-    color: #410056;
+    color: #060039;
     border: 2px solid #FFFFFF;
     box-sizing: border-box;
     background-color: #FFFFFF;
@@ -206,7 +206,7 @@
   }
   
   .btn-get-started:hover {
-    color: #410056;
+    color: #060039;
     background-color: #FFFFFF;
     box-shadow: rgba(255, 255, 255, 0.2) 0px 18px 50px -10px;
     transform: scale(1.1);
@@ -248,7 +248,7 @@
   }
 
   .form-outline .form-control {
-    border: 2px solid #410056;
+    border: 2px solid #060039;
     border-radius: 4px;
     height: 3.125rem;
   }
@@ -259,7 +259,7 @@
   }
 
   .form-outline .form-control:focus~.form-label {
-    color: #410056;
+    color: #060039;
 }
 
 .form-outline .form-control~.form-label {
@@ -302,7 +302,7 @@
   }
   
   .input-group .search-bar, .input-group-text {
-    border: 2px solid #410056;
+    border: 2px solid #060039;
   }
 
 
@@ -310,7 +310,7 @@
     box-shadow: none;
   }
   .comment-form .form-control:focus { 
-    border: 1px solid #410056;
+    border: 1px solid #060039;
   }
 
   .invalid { 

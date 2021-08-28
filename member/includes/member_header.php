@@ -30,25 +30,25 @@
     <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
     <style>
     .bg-purple {
-      background-color: #7c00a4;
+      background-color: #048ECB;
     }
     .bg-purp {
-      background-color: #410056;
+      background-color: #060039;
     }
     .purple {
-        color: #410056;
+        color: #060039;
     }
     </style>
-    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-<script>
-    Weglot.initialize({
-        api_key: 'wg_645709af4b7b7f407fd2c8d1e76924ef7'
-    });
-</script>
+<!--    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>-->
+<!--<script>-->
+<!--    Weglot.initialize({-->
+<!--        api_key: 'wg_645709af4b7b7f407fd2c8d1e76924ef7'-->
+<!--    });-->
+<!--</script>-->
 </head>
 
 <body class="sb-nav-fixed">
-    <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color:#410056">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color:#060039">
         <!-- Navbar Brand-->
         <a class="navbar-brand ps-3" href="index.php">One Community</a>
         <!-- Sidebar Toggle-->

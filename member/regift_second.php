@@ -30,7 +30,7 @@
                 $insert_user_regift = mysqli_query($connection,$query);
                 confirmQuery($insert_user_regift);
 
-                echo "<div><p class='alert alert-success fw-bold' role='alert'>Your re-gift of <b>£780</b> will be confirmed by $receiver_username shortly</p></div>";
+                echo "<div><p class='alert alert-success fw-bold' role='alert'>Your re-fund of <b>£780</b> will be confirmed by $receiver_username shortly</p></div>";
                 
                 $query = "SELECT user_regifted_second_one, user_regifted_second_two, user_regifted_second_three, user_regifted_second_four FROM users WHERE username = '$receiver_username' ";
                 $result = mysqli_query($connection, $query);
@@ -74,17 +74,17 @@
                 }
                 
         ?>
-        <h1><?php echo (isset($receiver_id))? 'Second ': '' ?>Re-gifting instructions</h1>
-        <p class="fs-5">Please kindly follow your re-gifting instructions and ensure to pay maintenance fee of £20</p>
+        <h1><?php echo (isset($receiver_id))? 'Second ': '' ?>Re-funding instructions</h1>
+        <p class="fs-5">Please kindly follow your re-funding instructions and ensure to pay maintenance fee of £20</p>
 
         <div class="alert alert-success" role="alert">
-        <p>You are required to send <b>£20</b> for system maintenance, send <b>£780</b> gift to <b><?php echo $receiver_username?></b> and keep <b>£200</b></p>
+        <p>You are required to send <b>£20</b> for system maintenance, send <b>£780</b> fund to <b><?php echo $receiver_username?></b> and keep <b>£200</b></p>
             <div class="row g-5">
                 <div class="col-md-6">
                 <p>Here are the details of the System Maintenance</p>
-                <p><b>Name:</b> Admin name</p>
-                <p><b>Email: </b>Admin Email</p>
-                <p><b>Mobile Number:</b> Admin Number</p>
+                <p><b>Name:</b> AdminOC</p>
+                <p><b>Email: </b>Admin@onecommunity4us.com</p>
+                <p><b>Mobile Number:</b> 07784392148</p>
                 <p>After paying maintenance fee, click the button below to confirm you have paid</p>
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="form-group">
@@ -97,10 +97,10 @@
                 <p><b>Name:</b> <?php echo $receiver_firstname.' '.$receiver_lastname?></p>
                 <p><b>Email: </b><?php echo $receiver_email?></p>
                 <p><b>Mobile Number:</b> <?php echo $receiver_phone?></p>
-                <p>After re-gifting, click the button below to confirm you have re-gifted</p>
+                <p>After re-funding, click the button below to confirm you have re-funded</p>
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <input class="btn btn-dark bg-purple" type="submit" name="confirm_regift" value="I have Re-gifted" >
+                        <input class="btn btn-dark bg-purple" type="submit" name="confirm_regift" value="I have Re-funded" >
                     </div>  
                 </form>
                 </div>

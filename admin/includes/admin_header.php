@@ -2,9 +2,9 @@
 <?php  session_start(); ?>
 <?php
     if(! isset($_SESSION['user_role'])){
-            header("Location: ../index.php");
+            header("Location: ../");
         }elseif($_SESSION['user_role'] == 'member' || $_SESSION['user_role'] == 'orphan'){
-            header("Location: ../index.php");
+            header("Location: ../");
         }
 ?>
 <?php include "../includes/config.php"; ?>
@@ -36,12 +36,12 @@
         color: #410056;
     }
     </style>
-    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-<script>
-    Weglot.initialize({
-        api_key: 'wg_645709af4b7b7f407fd2c8d1e76924ef7'
-    });
-</script>
+<!--    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>-->
+<!--<script>-->
+<!--    Weglot.initialize({-->
+<!--        api_key: 'wg_645709af4b7b7f407fd2c8d1e76924ef7'-->
+<!--    });-->
+<!--</script>-->
 </head>
 
 <body class="sb-nav-fixed">
@@ -65,9 +65,9 @@
                      ?>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item fw-bold" href="../index.php">Home</a></li>
+                    <li><a class="dropdown-item fw-bold" href="../">Home</a></li>
                     <li><a class="dropdown-item" href="users.php">Users</a></li>
-                    <li><a class="dropdown-item" href="all-activities.php">Activity Log</a></li>
+                    <!--<li><a class="dropdown-item" href="all-activities.php">Activity Log</a></li>-->
                     <li>
                         <hr class="dropdown-divider" />
                     </li>

@@ -1,0 +1,24 @@
+<svg width="134" height="1201" viewBox="0 0 134 1201" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<rect width="1600" height="1200.12" transform="matrix(-1 0 0 1 134 0.503418)" fill="white"/>
+<rect width="1600" height="1200" transform="matrix(-1 0 0 1 134 0.503418)" fill="#060039"/>
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="-1466" y="0" width="1600" height="1201">
+<rect width="1600" height="1200" transform="matrix(-1 0 0 1 134 0.503418)" fill="#060039"/>
+</mask>
+<g mask="url(#mask0)">
+<path d="M-3.23543 1323.5C71.453 1323.5 132 1263.29 132 1189C132 1114.72 71.453 1054.5 -3.23543 1054.5H-127" stroke="#FFB017" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5.01961 1231.5C29.8622 1231.5 50 1212.03 50 1188C50 1163.98 29.8622 1144.5 5.01961 1144.5H-43" stroke="#44AB96" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M-50 231.503C-84.7939 231.503 -113 203.297 -113 168.503C-113 133.709 -84.7939 105.503 -50 105.503C-15.2061 105.503 13 133.709 13 168.503C13 203.297 -15.2061 231.503 -50 231.503Z" stroke="#44AB96" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-50.5 305.503C-128.095 305.503 -191 243.495 -191 167.003C-191 90.5118 -128.095 28.5034 -50.5 28.5034C27.0955 28.5034 90 90.5118 90 167.003" stroke="#FFB017" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M62.5 778.086C99.2269 778.086 129 748.631 129 712.295C129 675.959 99.2269 646.503 62.5 646.503C25.7728 646.503 -4 675.959 -4 712.295V913.503" stroke="#44AB96" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M71.5 480.211C103.256 480.211 129 505.572 129 536.857C129 568.143 103.256 593.503 71.5 593.503C39.7436 593.503 14 568.143 14 536.857V305.503" stroke="#DA774A" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M62.25 863.503H67.0608C101.269 863.503 129 891.261 129 925.503V925.503C129 959.745 101.269 987.503 67.0608 987.503H-76.0608C-110.269 987.503 -138 959.745 -138 925.503V925.503C-138 891.261 -110.269 863.503 -76.0608 863.503H-71.25" stroke="#FFB017" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M89.5 237.503C89.5 246.816 89.5 364.051 89.5 421.503" stroke="#44AB96" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="1600" height="1200.12" fill="white" transform="matrix(-1 0 0 1 134 0.503418)"/>
+</clipPath>
+</defs>
+</svg>

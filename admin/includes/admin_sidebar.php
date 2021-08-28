@@ -4,7 +4,7 @@
             <div class="sb-sidenav-menu">
                 <div class="nav">
                     <div class="sb-sidenav-menu-heading">Core</div>
-                    <a class="nav-link" href="/onecommunity4us.com/index.php">
+                    <a class="nav-link" href="../">
                         <div class="sb-nav-link-icon"><i class="fas fa-home purple"></i></div>
                         <span class="purple">HomePage</span> 
                     </a>
@@ -43,10 +43,14 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-users-slash purple"></i></div>
                         <span class="purple">All Orphans</span>
                     </a>
-                    <a class="nav-link" href="all-activities.php">
-                        <div class="sb-nav-link-icon"><i class="fas fa-history purple"></i></div>
-                        <span class="purple">Monitor Activities</span>
+                    <a class="nav-link" href="manual_verification.php">
+                        <div class="sb-nav-link-icon"><i class="fas fa-user-check purple"></i></div>
+                        <span class="purple">Manual Verification</span>
                     </a>
+                    <!--<a class="nav-link" href="all-activities.php">-->
+                    <!--    <div class="sb-nav-link-icon"><i class="fas fa-history purple"></i></div>-->
+                    <!--    <span class="purple">Monitor Activities</span>-->
+                    <!--</a>-->
                     <!-- <a class="nav-link" href="admin_profile.php">
                         <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                         Admin Profile

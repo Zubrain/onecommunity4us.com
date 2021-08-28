@@ -95,14 +95,6 @@ function user_placement($username,$refer){
 
 function register_user($username, $email, $password, $firstname, $lastname, $phone, $refer, $token){
     global $connection;
-         $username = mysqli_real_escape_string($connection, $username);
-         $email = mysqli_real_escape_string($connection, $email);
-         $password = mysqli_real_escape_string($connection, $password);
-         $firstname = mysqli_real_escape_string($connection, $firstname);
-         $lastname = mysqli_real_escape_string($connection, $lastname);
-         $phone = mysqli_real_escape_string($connection, $phone);
-         $refer = mysqli_real_escape_string($connection, $refer);
-         $token = mysqli_real_escape_string($connection, $token);
 
          $hash_password = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
          
@@ -117,7 +109,6 @@ function register_user($username, $email, $password, $firstname, $lastname, $pho
             user_placement($username,$refer);
         }
         confirmQuery($register_query);
-        
         }
 
     function login_user($username, $password){
@@ -134,6 +125,7 @@ function register_user($username, $email, $password, $firstname, $lastname, $pho
                 $db_user_password = $row['user_password'];
                 $db_user_firstname = $row['user_firstname'];
                 $db_user_lastname = $row['user_lastname'];
+                $db_user_email = $row['user_email'];
                 $db_user_role = $row['user_role'];
                 $db_user_referral = $row['user_referral'];
                 $db_user_left = $row['user_left'];
@@ -145,6 +137,7 @@ function register_user($username, $email, $password, $firstname, $lastname, $pho
                 $_SESSION['username'] = $db_username;
                 $_SESSION['firstname'] = $db_user_firstname;
                 $_SESSION['lastname'] = $db_user_lastname;
+                $_SESSION['user_email'] = $db_user_email;
                 $_SESSION['user_role'] = $db_user_role;
                 $_SESSION['user_referral'] = $db_user_referral;
                 $_SESSION['user_left'] = $db_user_left ;
@@ -155,6 +148,7 @@ function register_user($username, $email, $password, $firstname, $lastname, $pho
                 $_SESSION['username'] = $db_username;
                 $_SESSION['firstname'] = $db_user_firstname;
                 $_SESSION['lastname'] = $db_user_lastname;
+                $_SESSION['user_email'] = $db_user_email;
                 $_SESSION['user_role'] = $db_user_role;
                 $_SESSION['user_referral'] = $db_user_referral;
                 $_SESSION['user_left'] = $db_user_left ;
@@ -165,6 +159,7 @@ function register_user($username, $email, $password, $firstname, $lastname, $pho
                 $_SESSION['username'] = $db_username;
                 $_SESSION['firstname'] = $db_user_firstname;
                 $_SESSION['lastname'] = $db_user_lastname;
+                $_SESSION['user_email'] = $db_user_email;
                 $_SESSION['user_role'] = $db_user_role;
                 $_SESSION['user_referral'] = $db_user_referral;
                 redirect("/orphan/index.php");

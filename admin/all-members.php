@@ -58,7 +58,7 @@
                 </thead>
                 <tbody>
                     <?php
-                         $query = "SELECT * FROM users WHERE user_role != 'admin' ";
+                         $query = "SELECT * FROM users WHERE user_role != 'admin' AND user_referral != 'One Community' ";
                                 $select_users = mysqli_query($connection, $query);
                                 ?>
                     <?php

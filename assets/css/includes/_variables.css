@@ -1,0 +1,15 @@
+:root {
+    /* Colors */
+    --primary-color: #048ECB;
+    --secondary-color: #060039;
+
+    /* Text Colors */
+    --text-color: #fff;
+    --secondary-text-color: #333;
+
+    /* Font Families */
+    --font-family: 'Montserrat', sans-serif;
+
+    /* Transitions */
+    --transition: all 0.3s ease;
+}

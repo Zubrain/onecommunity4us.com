@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--secondary-color);
+    font-family: var(--font-family) !important;
+    color: var(--text-color) !important;
+}
+
+section {
+    overflow: hidden !important;
+}
+
+/* Global Styles */
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+label {
+    font-family: var(--font-family) !important;
+}
+
+button, input, textarea {
+    background: none;
+    border: none;
+    outline: none;
+    font-family: var(--font-family) !important;
+}

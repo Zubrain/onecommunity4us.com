@@ -1,5 +1,29 @@
 <?php include "includes/member_header.php"; ?>
 <?php include "includes/member_sidebar.php"; ?>
+<?php
+    $username = $_SESSION['username'];
+    $email = $_SESSION['user_email'];
+    $firstname = $_SESSION['firstname'];
+    $lastname = $_SESSION['lastname'];
+    
+        //Import PHPMailer classes into the global namespace
+    //These must be at the top of your script, not inside a function
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
+    
+        require 'vendor/phpmailer/phpmailer/src/Exception.php';
+        require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
+        require 'vendor/phpmailer/phpmailer/src/SMTP.php';
+    //Load Composer's autoloader
+    require 'vendor/autoload.php';
+    
+    
+    //Create an instance; passing `true` enables exceptions
+    $mail = new PHPMailer(true);
+        
+
+?>
 
 <main>
     <!-- All Query functions for the Gifting Board -->
@@ -318,18 +342,64 @@
                     //Gifting function
                     if(isset($user_left_user_left) && isset($user_left_user_right) && isset($user_right_user_left) && isset($user_right_user_right)){
                      if(($user_left_user_left != '' && $user_left_user_right != '' && $user_right_user_left != '' && $user_right_user_right != '') && ($upline_user_gift_confirmed != '') && ($current_user_gift_confirmed == '')){
+                        if($current_user_gift == ''){
+                            
+                            try {
+    //Server settings
+    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'onecommunity4us.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'info@onecommunity4us.com';                     //SMTP username
+    $mail->Password   = '.LEN13EE~h.G';                               //SMTP password
+    $mail->SMTPSecure ="ssl";            //Enable implicit TLS encryption
+    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+    //Recipients
+    $mail->setFrom('info@onecommunity4us.com', 'One Community');
+    $mail->addAddress($email, $firstname .' '. $lastname);     //Add a recipient
+    // $mail->addAddress('ellen@example.com');               //Name is optional
+   //  $mail->addReplyTo('support@onecommunity4us.com', 'Information');
+    // $mail->addCC('cc@example.com');
+    // $mail->addBCC('bcc@example.com');
+
+    //Attachments
+    // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'One Community Notification';
+    $mail->Body    = '<p style="font-size:16px;"><b>Hello '.$username.',</b></p><div style="font-size:16px;">
+    You are required to send your fund to '.$upline_username.'</div>
+    <div style="margin-top: 10px;"><a href="https://www.onecommunity4us.com/login.php"
+            style="background-color: #008CBA; padding: 12px 28px 12px 28px; color:aliceblue; border-radius: 8px; text-decoration: none;"><b>Go to website</b></a></div>
+    <div style="font-size:16px;">Warm Regards!
+    <p>Any questions? We are always here to help you.<br>Contact us at <a href="mailto:support@onecommunity4us.com">support@onecommunity4us.com</a>
+    and we\'ll get back to you. </p></div>';
+    // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    $mail->send();
+   
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
+//end of phpmailer
+                        }else{
+                            
+                        }
                         ?>
             <div class="card bg-primary text-white mb-4 shadow">
-                <div class="card-body fw-bold">Gift</div>
+                <div class="card-body fw-bold">Fund</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="gift.php?id=<?php echo (isset($upline_id))? $upline_id: ''?>">View Gifting Details</a>
+                        <a class="small text-white stretched-link" href="gift.php?id=<?php echo (isset($upline_id))? $upline_id: ''?>">View Details</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     <?php 
                      
                     }else{
                         ?>
             <div class="card bg-secondary text-white mb-4 shadow">
-                <div class="card-body fw-bold">Gift</div>
+                <div class="card-body fw-bold">Fund</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
                         <a class="small text-white stretched-link disabled" href="gift.php?id=<?php echo (isset($upline_id))? $upline_id: ''?>">Disabled</a>
                         
@@ -338,9 +408,9 @@
                 }else{
                     ?>
             <div class="card bg-secondary text-white mb-4 shadow">
-                <div class="card-body fw-bold">Gift</div>
+                <div class="card-body fw-bold">Fund</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link disabled" href="gift.php?id=<?php echo (isset($upline_id))? $upline_id: ''?>">Gifting disabled</a>
+                    <a class="small text-white stretched-link disabled" href="gift.php?id=<?php echo (isset($upline_id))? $upline_id: ''?>">Funding disabled</a>
                     <?php
                 }
                     ?>   
@@ -353,14 +423,14 @@
                     if((($current_user_gifted_one != '' || $current_user_gifted_two != '' || $current_user_gifted_three != '' || $current_user_gifted_four != '') && $current_user_gift != '') && ($current_user_gifted_one_confirm == '' || $current_user_gifted_two_confirm == '' || $current_user_gifted_three_confirm == '' || $current_user_gifted_four_confirm == '') && ($current_user_gift_confirmed != '')){
                        ?>
                     <div class="card bg-danger text-white mb-4 shadow">
-                        <div class="card-body fw-bold">Gifted</div>
+                        <div class="card-body fw-bold">Funded</div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="notification.php">Confirm Gifts</a>
+                        <a class="small text-white stretched-link" href="notification.php">Confirm Funds</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>    
                         <?php             
                     }else{?>
                          <div class="card bg-secondary text-white mb-4 shadow">
-                    <div class="card-body fw-bold">Gifted</div>
+                    <div class="card-body fw-bold">Funded</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
                     <a class="small text-white stretched-link disabled" href="notification.php">Disabled</a>
                         <?php
@@ -376,24 +446,24 @@
                             if(($current_user_gifted_one_confirm != '' && $current_user_gifted_two_confirm != '' && $current_user_gifted_three_confirm != '' && $current_user_gifted_four_confirm != '') && $upline_user_regift_first_confirmed != '' && $current_user_regift_first_confirmed == ''){
                                 ?>
                             <div class="card bg-warning text-white mb-4 shadow">
-                                <div class="card-body fw-bold">Regift</div>
+                                <div class="card-body fw-bold">Re-fund</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class="small text-white stretched-link" href="regift.php?regift_first=<?php echo (isset($upline_id))? $upline_id: ''?>">First ReGift</a>
+                                <a class="small text-white stretched-link" href="regift.php?regift_first=<?php echo (isset($upline_id))? $upline_id: ''?>">First Re-fund</a>
                                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 <?php 
                             //second regift condition
                             }elseif(($current_user_regifted_first_one_confirm != '' && $current_user_regifted_first_two_confirm != '' && $current_user_regifted_first_three_confirm != '' && $current_user_regifted_first_four_confirm != '') && $upline_user_regift_second_confirmed != '' && $current_user_regift_second_confirmed == '' && $upline_user_regift_admin_second_confirmed != ''){
                                 ?>
                                 <div class="card bg-warning text-white mb-4 shadow">
-                                <div class="card-body fw-bold">Regift</div>
+                                <div class="card-body fw-bold">Re-fund</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class="small text-white stretched-link" href="regift_second.php?regift_second=<?php echo (isset($upline_id))? $upline_id: ''?>">Second ReGift</a>
+                                <a class="small text-white stretched-link" href="regift_second.php?regift_second=<?php echo (isset($upline_id))? $upline_id: ''?>">Second Re-fund</a>
                                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 <?php 
                             }else{
                                 ?>
                                 <div class="card bg-secondary text-white mb-4 shadow">
-                                <div class="card-body fw-bold">Regift</div>
+                                <div class="card-body fw-bold">Re-fund</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                 <?php
                                 echo "<a class='small text-white stretched-link disabled' href='regift.php?regift_first=$upline_id'>Disabled</a>";
@@ -401,9 +471,9 @@
                         }else{
                             ?>
                                 <div class="card bg-secondary text-white mb-4 shadow">
-                                <div class="card-body fw-bold">Regift</div>
+                                <div class="card-body fw-bold">Re-fund</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link disabled" href="regift.php?regift_first=<?php echo (isset($upline_id))? $upline_id: ''?>">Re-Gifting disabled</a>
+                            <a class="small text-white stretched-link disabled" href="regift.php?regift_first=<?php echo (isset($upline_id))? $upline_id: ''?>">Re-funding disabled</a>
                             <?php
                         }
                             ?>
@@ -416,22 +486,22 @@
                             if((($current_user_regifted_first_one != '' || $current_user_regifted_first_two != '' || $current_user_regifted_first_three != '' || $current_user_regifted_first_four != '') && $current_user_regift_first != '')  && ($current_user_regifted_first_one_confirm == '' || $current_user_regifted_first_two_confirm == '' || $current_user_regifted_first_three_confirm == '' || $current_user_regifted_first_four_confirm == '') && ($current_user_regift_first_confirmed != '')){
                                 ?>
                                 <div class="card bg-success text-white mb-4 shadow">
-                                <div class="card-body fw-bold ">Regifted</div>
+                                <div class="card-body fw-bold ">Re-funded</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class='small text-white stretched-link' href='notification.php'>Confirm ReGifts</a>
+                                <a class='small text-white stretched-link' href='notification.php'>Confirm Re-funds</a>
                                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 <?php
                             }elseif((($current_user_regifted_second_one != '' || $current_user_regifted_second_two != '' || $current_user_regifted_second_three != '' || $current_user_regifted_second_four != '') && $current_user_regift_admin_second != '')  && ($current_user_regifted_second_one_confirm == '' || $current_user_regifted_second_two_confirm == '' || $current_user_regifted_second_three_confirm == '' || $current_user_regifted_second_four_confirm == '') && $current_user_regift_second_confirmed != '' && $current_user_regift_admin_second_confirmed != ''){
                                ?>
                                 <div class="card bg-success text-white mb-4 shadow">
-                                <div class="card-body fw-bold ">Regifted</div>
+                                <div class="card-body fw-bold ">Re-funded</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class='small text-white stretched-link' href='notification.php'>Confirm ReGifts</a>
+                                <a class='small text-white stretched-link' href='notification.php'>Confirm Re-funds</a>
                                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 <?php
                             }else{?>
                                 <div class="card bg-secondary text-white mb-4 shadow">
-                                <div class="card-body fw-bold ">Regifted</div>
+                                <div class="card-body fw-bold ">Re-funded</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                 <a class='small text-white stretched-link disabled' href='notification.php'>Disabled</a>
                                 <?php
@@ -529,7 +599,7 @@
                 <div class="col-12">
                     <div class="d-flex align-items-center justify-content-md-center">
                         <span class="d-flex justify-content-center align-items-center bg-warning rounded-circle shadow" style="width:2.4rem; height:2.4rem; font-size:0.8rem; font-weight:600;"><?php echo 'ID-'.$_SESSION['user_id'];?></span>
-                        <span class="ms-2 fw-bold"><?php echo $_SESSION['username'];?> (Me)</span>
+                        <span class="ms-2 fw-bold"><?php echo $username;?> (Me)</span>
                     </div>
                 </div>
                  <!--End of Current User Name -->
@@ -673,7 +743,7 @@
                 $_SESSION['firstname'] = null;
                 $_SESSION['lastname'] = null;
                 $_SESSION['user_role'] = null;
-                header("Location: ../index.php");               
+                header("Location: ../");               
             }
 
         ?>
@@ -728,7 +798,7 @@
                 $_SESSION['firstname'] = null;
                 $_SESSION['lastname'] = null;
                 $_SESSION['user_role'] = null;
-                header("Location: ../index.php");
+                header("Location: ../");
             }
         ?>
         <!-- End of Joining Waiting Area -->

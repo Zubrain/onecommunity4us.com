@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^onecommunity4us\.com$ [NC]
+RewriteRule ^(.*)$ http://www.onecommunity4us.com/$1 [R=301,L]

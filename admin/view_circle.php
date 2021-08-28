@@ -14,6 +14,13 @@
             $user_id =  $_GET['id'];
             $username=  $_GET['username'];
             $referrer=  $_GET['referrer'];
+            $query = "SELECT * FROM users WHERE username = '$username' ";
+        $stage_query = mysqli_query($connection, $query);
+        confirmQuery($stage_query);
+        while ($row = mysqli_fetch_assoc($stage_query)) {
+           $user_stage = $row['user_stage'];
+        }
+            
         
         //to fetch the details of the sponsor
         if(isset($referrer)){
@@ -307,6 +314,7 @@
          <!-- Receiving Gift Circle -->
          <div class="text-center py-5 px-2 my-5 shadow">
             <h2 class="purple">RG-Board</h2>
+            <h5 class="purple">Stage - <?php echo $user_stage?></h5>
             <div class="row my-2 gy-3 px-3">
                 <!-- Current User Name -->
                 <div class="col-12">

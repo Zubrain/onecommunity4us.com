@@ -94,98 +94,98 @@
         <p class="fs-6">You joined this community on <?php echo $current_user_date;?></p>
         <?php 
         if($current_user_gift != ''){
-            echo "<p class='text-danger'>You sent gift to $upline_username</p>";
+            echo "<p class='text-danger'>You sent fund to $upline_username</p>";
         }
         if($current_user_gift_confirmed != ''){
-            echo "<p class='text-success'>$upline_username confirmed your gift</p>";
+            echo "<p class='text-success'>$upline_username confirmed your fund</p>";
         }
         if($current_user_gifted_one != ''){
-            echo "<p class='text-success'>You received gift from $current_user_gifted_one</p>";
+            echo "<p class='text-success'>You received fund from $current_user_gifted_one</p>";
         }
         if($current_user_gifted_one_confirm != ''){
-            echo "<p class='text-success'>You confirmed gift received from $current_user_gifted_one_confirm successfully</p>";
+            echo "<p class='text-success'>You confirmed fund received from $current_user_gifted_one_confirm successfully</p>";
         }
         if($current_user_gifted_two != ''){
-            echo "<p class='text-success'>You received gift from $current_user_gifted_two</p>";
+            echo "<p class='text-success'>You received fund from $current_user_gifted_two</p>";
         }
         if($current_user_gifted_two_confirm != ''){
-            echo "<p class='text-success'>You confirmed gift received from $current_user_gifted_two_confirm successfully</p>";
+            echo "<p class='text-success'>You confirmed fund received from $current_user_gifted_two_confirm successfully</p>";
         }
         if($current_user_gifted_three != ''){
-            echo "<p class='text-success'>You received gift from $current_user_gifted_three</p>";
+            echo "<p class='text-success'>You received fund from $current_user_gifted_three</p>";
         }
         if($current_user_gifted_three_confirm != ''){
-            echo "<p class='text-success'>You confirmed gift received from $current_user_gifted_three_confirm successfully</p>";
+            echo "<p class='text-success'>You confirmed fund received from $current_user_gifted_three_confirm successfully</p>";
         }
         if($current_user_gifted_four != ''){
-            echo "<p class='text-success'>You received gift from $current_user_gifted_four</p>";
+            echo "<p class='text-success'>You received fund from $current_user_gifted_four</p>";
         }
         if($current_user_gifted_four_confirm != ''){
-            echo "<p class='text-success'>You confirmed gift received from $current_user_gifted_four_confirm successfully</p>";
+            echo "<p class='text-success'>You confirmed fund received from $current_user_gifted_four_confirm successfully</p>";
         }
 
-        //first regift activities
+        //first re-fund activities
         if($current_user_regift_first != ''){
-            echo "<p class='text-danger'>You sent first regift to $upline_username</p>";
+            echo "<p class='text-danger'>You sent first re-fund to $upline_username</p>";
         }
         if($current_user_regift_first_confirmed != ''){
-            echo "<p class='text-success'>$upline_username confirmed your first regift</p>";
+            echo "<p class='text-success'>$upline_username confirmed your first re-fund</p>";
         }
         if($current_user_regifted_first_one != ''){
-            echo "<p class='text-success'>You received regift from $current_user_regifted_first_one (first regift)</p>";
+            echo "<p class='text-success'>You received re-fund from $current_user_regifted_first_one (first re-fund)</p>";
         }
         if($current_user_regifted_first_one_confirm != ''){
-            echo "<p class='text-success'>You confirmed regift received from $current_user_regifted_first_one_confirm successfully</p>";
+            echo "<p class='text-success'>You confirmed re-fund received from $current_user_regifted_first_one_confirm successfully</p>";
         }
         if($current_user_regifted_first_two != ''){
-            echo "<p class='text-success'>You received regift from $current_user_regifted_first_two (first regift)</p>";
+            echo "<p class='text-success'>You received re-fund from $current_user_regifted_first_two (first re-fund)</p>";
         }
         if($current_user_regifted_first_two_confirm != ''){
-            echo "<p class='text-success'>You confirmed regift received from $current_user_regifted_first_two_confirm successfully</p>";
+            echo "<p class='text-success'>You confirmed re-fund received from $current_user_regifted_first_two_confirm successfully</p>";
         }
         if($current_user_regifted_first_three != ''){
-            echo "<p class='text-success'>You received regift from $current_user_regifted_first_three (first regift)</p>";
+            echo "<p class='text-success'>You received re-fund from $current_user_regifted_first_three (first re-fund)</p>";
         }
         if($current_user_regifted_first_three_confirm != ''){
-            echo "<p class='text-success'>You confirmed regift received from $current_user_regifted_first_three_confirm successfully</p>";
+            echo "<p class='text-success'>You confirmed re-fund received from $current_user_regifted_first_three_confirm successfully</p>";
         }
         if($current_user_regifted_first_four != ''){
-            echo "<p class='text-success'>You received regift from $current_user_regifted_first_four (first regift)</p>";
+            echo "<p class='text-success'>You received re-fund from $current_user_regifted_first_four (first re-fund)</p>";
         }
         if($current_user_regifted_first_four_confirm != ''){
-            echo "<p class='text-success'>You confirmed regift received from $current_user_regifted_first_four_confirm successfully</p>";
+            echo "<p class='text-success'>You confirmed re-fund received from $current_user_regifted_first_four_confirm successfully</p>";
         }
 
-         //second regift activities
+         //second re-fund activities
          if($current_user_regift_second != ''){
-            echo "<p class='text-danger'>You sent second regift to $upline_username</p>";
+            echo "<p class='text-danger'>You sent second re-fund to $upline_username</p>";
         }
         if($current_user_regift_second_confirmed != ''){
-            echo "<p class='text-success'>$upline_username confirmed your second regift</p>";
+            echo "<p class='text-success'>$upline_username confirmed your second re-fund</p>";
         }
         if($current_user_regifted_first_one != ''){
-            echo "<p class='text-success'>You received regift from $current_user_regifted_first_one (second regift)</p>";
+            echo "<p class='text-success'>You received re-fund from $current_user_regifted_first_one (second re-fund)</p>";
         }
         if($current_user_regifted_first_one_confirm != ''){
-            echo "<p class='text-success'>You confirmed regift received from $current_user_regifted_first_one_confirm successfully</p>";
+            echo "<p class='text-success'>You confirmed re-fund received from $current_user_regifted_first_one_confirm successfully</p>";
         }
         if($current_user_regifted_first_two != ''){
-            echo "<p class='text-success'>You received regift from $current_user_regifted_first_two (second regift)</p>";
+            echo "<p class='text-success'>You received re-fund from $current_user_regifted_first_two (second re-fund)</p>";
         }
         if($current_user_regifted_second_two_confirm != ''){
-            echo "<p class='text-success'>You confirmed regift received from $current_user_regifted_second_two_confirm successfully</p>";
+            echo "<p class='text-success'>You confirmed re-fund received from $current_user_regifted_second_two_confirm successfully</p>";
         }
         if($current_user_regifted_second_three != ''){
-            echo "<p class='text-success'>You received regift from $current_user_regifted_second_three (second regift)</p>";
+            echo "<p class='text-success'>You received re-fund from $current_user_regifted_second_three (second re-fund)</p>";
         }
         if($current_user_regifted_second_three_confirm != ''){
-            echo "<p class='text-success'>You confirmed regift received from $current_user_regifted_second_three_confirm successfully</p>";
+            echo "<p class='text-success'>You confirmed re-fund received from $current_user_regifted_second_three_confirm successfully</p>";
         }
         if($current_user_regifted_second_four != ''){
-            echo "<p class='text-success'>You received regift from $current_user_regifted_second_four (second regift)</p>";
+            echo "<p class='text-success'>You received re-fund from $current_user_regifted_second_four (second re-fund)</p>";
         }
         if($current_user_regifted_second_four_confirm != ''){
-            echo "<p class='text-success'>You confirmed regift received from $current_user_regifted_second_four_confirm successfully</p>";
+            echo "<p class='text-success'>You confirmed re-fund received from $current_user_regifted_second_four_confirm successfully</p>";
         }
         //system fee
         if($current_user_regift_admin_second != ''){

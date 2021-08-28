@@ -56,22 +56,33 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <title>One Community</title>
-    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-<script>
-    Weglot.initialize({
-        api_key: 'wg_645709af4b7b7f407fd2c8d1e76924ef7'
-    });
-</script>
+<!--    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>-->
+<!--<script>-->
+<!--    Weglot.initialize({-->
+<!--        api_key: 'wg_645709af4b7b7f407fd2c8d1e76924ef7'-->
+<!--    });-->
+<!--</script>-->
+<style>
+    .form-check-input:checked {
+    background-color: #060039;
+    border-color: #060039;
+}
+.form-check-input:focus {
+    outline: 0;
+    box-shadow: none;
+}
+ .navbar-dark .navbar-toggler-icon {
+    background-image: url(../images/menu-icon.png);
+  }
+</style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg fixed-top bg-astalavee navbar-dark py-3 shadow">
         <div class="container">
-            <a href="/" class="navbar-brand">
-                <h2>One Community</h2>
-                <!-- <img src="images/" class="img-fluid" alt="logo" width="170"> -->
+            <a href="/" class="navbar-brand logo">
+                 <img src="../assets/images/logo.svg" class="img-fluid" alt="logo" width="50"> 
             </a>
-
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -79,13 +90,13 @@
             <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="navbar-nav ms-auto pt-2">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">About Us</a>
+                        <a href="/" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">What we do</a>
+                        <a href="/#events" class="nav-link">Events</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Contact Us</a>
+                        <a href="/#contact" class="nav-link">Contact Us</a>
                     </li>
                 </ul>
                 <div class="col-lg-6 col-xl-5 text-lg-end">

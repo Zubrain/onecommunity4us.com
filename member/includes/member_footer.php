@@ -4,9 +4,9 @@
                     <div class="text-muted">Copyright &copy; <b>One Community 2021</b></div>
                     <div>
                         <b>Please read our
-                        <a href="#">Privacy Policy</a>
+                        <a href="https://www.onecommunity4us.com/privacy-policy.html">Privacy Policy</a>
                         &middot;
-                        <a href="#">Terms &amp; Conditions</a>
+                        <a href="https://www.onecommunity4us.com/terms-conditions.html">Terms &amp; Conditions</a>
                         </b>
                     </div>
                 </div>
@@ -26,6 +26,13 @@
 <script src="assets/demo/chart-bar-demo.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
 <script src="js/datatables-simple-demo.js"></script>
+<div id="google_translate_element" style="position: fixed; bottom: 0; width: 100%;"></div>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,fr'}, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>

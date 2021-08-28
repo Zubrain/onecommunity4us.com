@@ -27,7 +27,7 @@
               $insert_user_gift = mysqli_query($connection,$query);
               confirmQuery($insert_user_gift);
 
-                echo "<div><p class='alert alert-success fw-bold' role='alert'>Your gift of <b>£100</b> will be confirmed by $receiver_username shortly</p></div>";
+                echo "<div><p class='alert alert-success fw-bold' role='alert'>Your fund of <b>£100</b> will be confirmed by $receiver_username shortly</p></div>";
                 
                 $query = "SELECT user_gifted_one, user_gifted_two, user_gifted_three, user_gifted_four FROM users WHERE username = '$receiver_username' ";
                 $result = mysqli_query($connection, $query);
@@ -60,21 +60,45 @@
                 header( "refresh:5;url=index.php" );   
             }
         ?>
-        <h1>Gifting instructions</h1>
-        <p class="fs-5">Please kindly follow your gifting instructions</p>
+        <?php
+        $query = "SELECT user_gift FROM users WHERE username = '$username' ";
+        $resulte = mysqli_query($connection, $query);
+        while($row = mysqli_fetch_array($resulte)){
+            $user_gift = $row['user_gift'];
+            
+        }
+        
+        
+        
+        ?>
+        <h1>Funding instructions</h1>
+        <p class="fs-5">Please kindly follow your funding instructions</p>
 
         <div class="alert alert-info" role="alert">
-            <p>You are required to send <b>£100</b> gift to <b><?php echo $receiver_username?></b></p>
+            <p>You are required to send <b>£100</b> fund to <b><?php echo $receiver_username?></b></p>
             <p>Here are the details of the Receiver</p>
             <p><b>Name:</b> <?php echo $receiver_firstname.' '.$receiver_lastname?></p>
             <p><b>Email: </b><?php echo $receiver_email?></p>
             <p><b>Mobile Number:</b> <?php echo $receiver_phone?></p>
-            <p>After gifting, click the button below to confirm you have gifted</p>
-            <form action="" method="post" enctype="multipart/form-data">
+            <p>After funding, click the button below to confirm you have funded</p>
+            <?php
+            if($user_gift  == ''){
+                ?>
+                 <form action="" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                    <input class="btn btn-info" type="submit" name="confirm_gift" value="I have Gifted" >
+                    <input class="btn btn-info" type="submit" name="confirm_gift" value="I have Funded" >
                 </div>  
             </form>
+            <?php
+            }else{
+            ?>
+             <form action="" method="post" enctype="multipart/form-data">
+                 <div>You have Funded. Awaiting confirmation</div>
+                <div class="form-group">
+                    <input class="btn btn-secondary disabled" type="submit" name="confirm_gift" value="I have Funded" >
+                </div>  
+            </form>
+           
         </div>
 
     </div>

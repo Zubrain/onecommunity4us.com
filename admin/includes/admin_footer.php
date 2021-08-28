@@ -4,9 +4,9 @@
                     <div class="text-muted">Copyright &copy; <b>One Community 2021</b></div>
                     <div>
                         <b>Please read our
-                        <a href="#">Privacy Policy</a>
+                        <a href="https://www.onecommunity4us.com/privacy-policy.html">Privacy Policy</a>
                         &middot;
-                        <a href="#">Terms &amp; Conditions</a>
+                        <a href="https://www.onecommunity4us.com/terms-conditions.html">Terms &amp; Conditions</a>
                         </b>
                     </div>
                 </div>

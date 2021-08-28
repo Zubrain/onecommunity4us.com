@@ -139,11 +139,11 @@
             <div class="table-responsive p-3">
                 <table class="table table-bordered table-hover">
                     <thead>
-                        <h4 class="m-3">Gift Confirmation</h4>
+                        <h4 class="m-3">Fund Confirmation</h4>
                         <tr>
                             <th>S/N</th>
                             <th>Name of User</th>
-                            <th>Confirm Gift</th>
+                            <th>Confirm Fund</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -220,11 +220,11 @@
             <div class="table-responsive p-3">
                 <table class="table table-bordered table-hover">
                     <thead>
-                        <h4 class="m-3">First Re-gift Confirmations</h4>
+                        <h4 class="m-3">First Re-fund Confirmations</h4>
                         <tr>
                             <th>S/N</th>
                             <th>Name of User</th>
-                            <th>Confirm First ReGift</th>
+                            <th>Confirm First Re-fund</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -303,11 +303,11 @@
             <div class="table-responsive p-3">
                 <table class="table table-bordered table-hover">
                     <thead>
-                        <h4 class="m-3">Second Re-gift Confirmations</h4>
+                        <h4 class="m-3">Second Re-fund Confirmations</h4>
                         <tr>
                             <th>S/N</th>
                             <th>Name of User</th>
-                            <th>Confirm Second ReGift</th>
+                            <th>Confirm Second Re-fund</th>
                         </tr>
                     </thead>
                     <tbody>

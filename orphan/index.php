@@ -8,8 +8,8 @@
             <li class="breadcrumb-item active">Waiting Area</li>
         </ol>
         <div class="alert alert-danger" role="alert">
-            <p>You are waiting for the system approval to be placed in your gifting circle</p>
-            <p>Kindly exercise patience while the system is processing your request.</p>
+            <p>You are waiting for the system's approval to be placed in the Crowdfunding Initiative</p>
+            <p>Once approved, you will be auto-placed in a board. Please get your funds ready.</p>
         </div>
     </div>
 </main>
