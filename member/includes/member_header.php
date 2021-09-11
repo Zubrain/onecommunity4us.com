@@ -38,6 +38,18 @@
     .purple {
         color: #060039;
     }
+    .fund-bg {
+        background-color: #6EA8FE;
+    }
+    .funded-bg {
+        background-color: #E2818A;
+    }
+    .refund-bg {
+        background-color: #FFDA6A;
+    }
+    .refunded-bg {
+        background-color: #72B294;
+    }
     </style>
 <!--    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>-->
 <!--<script>-->

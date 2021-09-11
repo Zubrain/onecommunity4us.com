@@ -1,32 +1,6 @@
 <?php include "includes/config.php"; ?>
 <?php include "includes/header.php"; ?>
 <?php
-if($_SERVER['REQUEST_METHOD'] == "POST") {
-
-     $email = escape($_POST['email']);
-     $password = escape($_POST['password']);
-     $new_password = escape($_POST['new_password']);
-     if(!empty($email) && !empty($password) && !empty($new_password) && ($password == $new_password)){
-         if($password == $new_password){
-             $hash_password = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
-             
-             
-             $query = "UPDATE users SET user_password= '{$hash_password}' WHERE user_email = '$email' ";
-    
-             $update_user = mysqli_query($connection,$query);
-    
-             confirmQuery($update_user);
-                echo "<div><p class='alert alert-success fw-bold' role='alert'>Password Reset Successful</p></div>";
-                header( "refresh:3;url=login.php" );
-         }else{
-             
-         }
-     }else{
-         echo "Enter correct details";
-     }
-}
-?>
-<?php
 if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'admin'){
     redirect("/onecommunity4us.com/admin/index.php");
 }elseif(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'member'){
@@ -37,19 +11,44 @@ if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'admin'){
 
 }
 ?>
-
     <!-- Background image -->
     <section class="login-section">
         <div class="d-flex align-items-center" style="background-color: rgba(65, 0, 86, 0.1);">
             <div class="container py-4">
                 <div class="row justify-content-center">
                     <div class="col-sm-10 col-md-9 col-lg-7 col-xl-6 my-5">
-                        <form action="includes/login_processor.php" method="POST" class="bg-light rounded shadow py-5 px-4 px-sm-5">
+                        
+                        <form action="forgot-password.php" method="post" class="bg-light rounded shadow py-5 px-4 px-sm-5" autocomplete="off">
                             <!-- Email input -->
                             <div class="form-outline mb-3">
                                 
-                                <h2 class="astalavee-color">Forgot Password <i class="bi bi-key-fill"></i></h2>
+                                <h2 class="astalavee-color"><i class="bi bi-key-fill"></i> Forgot Password </h2>
                             </div>
+                            <?php
+if(isset($_POST['reset'])) {
+
+     $email = escape($_POST['email']);
+     $password = escape($_POST['password']);
+     $new_password = escape($_POST['new_password']);
+             $hash_password = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
+             $hash_password = escape($hash_password);
+             
+              if(email_exists($email) && ($password === $new_password)){
+             $query = "UPDATE users SET user_password= '{$hash_password}' WHERE user_email = '{$email}' ";
+    
+             $update_user = mysqli_query($connection,$query);
+    
+             confirmQuery($update_user);
+             
+                echo "<div><p class='alert alert-success fw-bold' role='alert'>Password Reset Successful</p></div>";
+                
+    
+         header("refresh:3;url=login.php");
+              }else{
+                echo "<div><p class='alert alert-danger fw-bold' role='alert'>Enter valid details</p></div>";   
+              }
+     }
+?>
                             <div class="form-outline mb-3">
                                 <label class="form-label" for="form1Example1">Enter E-mail</label>
                                 <input type="email" name="email" value="" id="form1Example1" class="form-control" autocomplete="off" placeholder="Enter your email" required/>

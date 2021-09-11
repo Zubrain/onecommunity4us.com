@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set('Europe/London');
 $db['db_host']= "localhost";
 $db['db_user']= "onecommunity4us_zubby";
 $db['db_pass']= "Sureboy20...";
@@ -12,4 +12,6 @@ $connection = mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 if( !$connection){
     echo "we are not connected";
 }
+date_default_timezone_set('Europe/London');
+//date_default_timezone_set("Africa/Abidjan");
 ?>

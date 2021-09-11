@@ -39,13 +39,12 @@ function email_exists($email){
         return false;
     }
 }
-
-function referral_used($refer){
+function user_token_exists($token){
     global $connection;
-    $query = "SELECT user_referral FROM users WHERE user_referral = '$refer' ";
+    $query = "SELECT user_token FROM users WHERE user_token = '$token' ";
     $result = mysqli_query($connection, $query);
     confirmQuery($result);
-    if(mysqli_num_rows($result) >= 2 && $refer !== 'One Community'){
+    if(mysqli_num_rows($result) > 0){
         return true;
     }else{
         return false;
@@ -113,8 +112,8 @@ function register_user($username, $email, $password, $firstname, $lastname, $pho
 
     function login_user($username, $password){
         global $connection; 
-         $username = mysqli_real_escape_string($connection, $username);
-         $password = mysqli_real_escape_string($connection, $password);
+        //  $username = mysqli_real_escape_string($connection, $username);
+        //  $password = mysqli_real_escape_string($connection, $password);
  
             $query = "SELECT * FROM users WHERE username = '{$username}' ";
             $select_user_query = mysqli_query($connection,$query);

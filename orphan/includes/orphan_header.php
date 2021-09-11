@@ -26,10 +26,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+    <style>
+    .bg-purple {
+      background-color: #048ECB;
+    }
+    .bg-purp {
+      background-color: #060039;
+    }
+    .purple {
+        color: #060039;
+    }
+    </style>
 </head>
 
 <body class="sb-nav-fixed">
-    <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color:#410056">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color:#060039">
         <!-- Navbar Brand-->
         <a class="navbar-brand ps-3" href="index.php">One Community</a>
         <!-- Sidebar Toggle-->

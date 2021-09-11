@@ -35,7 +35,7 @@
     <script src="./GlowCookies-master/src/glowCookies.js"></script>
    
 
-    <title>One Community: Making the World a Better Place</title>
+    <title>One Community: Empowering us by us</title>
      <style>
         .hero .container a {
     width: 20rem;
@@ -49,6 +49,10 @@
     width: 20rem;
     height: 3rem;
         }
+        .upcoming-events .container .upcoming-events-right .calendar .calendar-days .day.active:nth-child(1n) p {
+    background: #3F73FB;
+    box-shadow: 0px 0px 20px rgb(251 176 63 / 40%);
+}
     </style>
 </head>
 
@@ -215,8 +219,8 @@
                 </p>
 
                 <div class="events">
-                    <div class="event">Website go LIVE</div>
-                    <div class="event">Registration begins</div>
+                    <div class="event"><a class="text-light" href="https://us02web.zoom.us/j/88424090078?pwd=RFlkT3ZjT3V5U1FTOXFxc2hOWHV5dz09">Click for Zoom @ 8pm UK</a></div>
+                    <div class="event d-none">Registration begins</div>
                     <div class="event d-none">Registration begins</div>
                 </div>
             </div>
@@ -225,6 +229,15 @@
                 <div class="calendar">
                     <div class="calendar-top">
                         <p></p>
+                    </div>
+                    <div style="display: flex;justify-content: space-around;margin-top:20px; margin-bottom:10px;">
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
                     </div>
 
                     <div class="calendar-days">
@@ -377,15 +390,22 @@
             </div>
 
             <div class="advert-item"
-                style="background: linear-gradient(rgba(6, 0, 57, 0.8), rgba(6, 0, 57, 0.8)), url('./assets/images/ad-2.jpg');">
+                style="background: linear-gradient(rgba(6, 0, 57, 0.8), rgba(6, 0, 57, 0.8)), url('./assets/images/ad-2.jpg'); background-position: center; background-size: cover;">
                 <div class="container">
                     <h2>Write Guaranteed 9/A* in GSCE/GCE maths contact Mr O.</h2>
                     <a href="mailto:MisterOo@gmail.com">Contact Us</a>
                 </div>
             </div>
+            <div class="advert-item"
+                style="background: linear-gradient(rgba(6, 0, 57, 0.8), rgba(6, 0, 57, 0.8)), url('./assets/images/ad-5.png'); background-position: center; background-size: cover;">
+                <div class="container">
+                    <h2>Get Started Today</h2>
+                    <a href="register.php">Join Us</a>
+                </div>
+            </div>
 
             <div class="advert-item"
-                style="background: linear-gradient(rgba(6, 0, 57, 0.8), rgba(6, 0, 57, 0.8)), url('./assets/images/ad-4.jpg');">
+                style="background: linear-gradient(rgba(6, 0, 57, 0.8), rgba(6, 0, 57, 0.8)), url('./assets/images/ad-4.jpg'); background-position: center; background-size: cover;">
                 <div class="container">
                     <h2>Scrum Master Training at reasonable price please contact Adekunle by
 hitting the button below</h2>
@@ -1043,9 +1063,31 @@ hitting the button below</h2>
                     date = `${year}-${i}-${month}`;
                 }
 
-                if (date === '2021-27-08') {
+                if (date === '2021-01-09') {
                     calendar_days += `<div class="day active"><p>${i}</p></div>`;
-                } else if (date === '2021-26-08') {
+                } else if (date === '2021-03-09') {
+                     calendar_days += `<div class="day active"><p>${i}</p></div>`;
+                } else if (date === '2021-06-09') {
+                     calendar_days += `<div class="day active"><p>${i}</p></div>`;
+                } else if (date === '2021-08-09') {
+                     calendar_days += `<div class="day active"><p>${i}</p></div>`;
+                } else if (date === '2021-10-09') {
+                     calendar_days += `<div class="day active"><p>${i}</p></div>`;
+                } else if (date === '2021-13-09') {
+                     calendar_days += `<div class="day active"><p>${i}</p></div>`;
+                } else if (date === '2021-15-09') {
+                     calendar_days += `<div class="day active"><p>${i}</p></div>`;
+                } else if (date === '2021-17-09') {
+                     calendar_days += `<div class="day active"><p>${i}</p></div>`;
+                } else if (date === '2021-20-09') {
+                     calendar_days += `<div class="day active"><p>${i}</p></div>`;
+                } else if (date === '2021-22-09') {
+                     calendar_days += `<div class="day active"><p>${i}</p></div>`;
+                } else if (date === '2021-24-09') {
+                     calendar_days += `<div class="day active"><p>${i}</p></div>`;
+                } else if (date === '2021-27-09') {
+                     calendar_days += `<div class="day active"><p>${i}</p></div>`;
+                } else if (date === '2021-29-09') {
                      calendar_days += `<div class="day active"><p>${i}</p></div>`;
                 } else {
                     calendar_days += `<div class="day"><p>${i}</p></div>`;
@@ -1056,7 +1098,7 @@ hitting the button below</h2>
 
         }
 
-        generateCalendar(2021, 8)
+        generateCalendar(2021, 9)
         function RemoveClass() {
         let ul = document.getElementById("removeActiveClass");
         ul.classList.remove("active")

@@ -17,6 +17,37 @@
             </div>
         </div>
         <div class="table-responsive">
+             <?php
+                        $limit = 50;
+                        $page = isset($_GET['page']) ? $_GET['page'] : 1;
+                        $start = ($page - 1) * $limit;
+                        $query = "SELECT * FROM users LIMIT $start, $limit";
+                        $select_users = mysqli_query($connection, $query);
+
+                        $results = $connection->query("SELECT count(user_id) AS user_id FROM users");
+                        $user_count = $results->fetch_all(MYSQLI_ASSOC);
+                        $total = $user_count[0]['user_id'];
+                        $pages = ceil( $total / $limit );
+
+                        
+                        if(isset($page) && $page > 1) {
+                            $previous = $page - 1;
+                        }
+                        if(isset($page) && $page < $pages) {
+                             $next = $page + 1;
+                        }
+                       
+
+                        ?>
+            <nav aria-label="Page navigation example">
+             <ul class="pagination">
+               <li class="page-item"><a class="text-dark page-link <?php echo ($page == 1) ? disabled : ''; ?>" href="users.php?page=<?= $previous; ?>">&laquo; Previous</a></li>
+               <?php for($i = 1; $i <= $pages; $i++) : ?>
+               <li class="page-item"><a class="text-dark page-link" href="users.php?page=<?= $i; ?>"><?= $i; ?></a></li>
+               <?php endfor; ?>
+               <li class="page-item"><a class="text-dark page-link <?php echo ($page == $pages) ? disabled : ''; ?>" href="users.php?page=<?= $next; ?>">Next &raquo;</a></li>
+             </ul>
+            </nav>
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
@@ -31,10 +62,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                         $query = "SELECT * FROM users";
-                                $select_users = mysqli_query($connection, $query);
-                                ?>
                     <?php
                                 while ($row = mysqli_fetch_assoc($select_users)) {
                                     $user_id = $row['user_id'];
@@ -64,6 +91,15 @@
                                 ?>
                 </tbody>
             </table>
+             <nav aria-label="Page navigation example">
+             <ul class="pagination">
+               <li class="page-item"><a class="text-dark page-link <?php echo ($page == 1) ? disabled : ''; ?>" href="users.php?page=<?= $previous; ?>">&laquo; Previous</a></li>
+               <?php for($i = 1; $i <= $pages; $i++) : ?>
+               <li class="page-item"><a class="text-dark page-link" href="users.php?page=<?= $i; ?>"><?= $i; ?></a></li>
+               <?php endfor; ?>
+               <li class="page-item"><a class="text-dark page-link <?php echo ($page == $pages) ? disabled : ''; ?>" href="users.php?page=<?= $next; ?>">Next &raquo;</a></li>
+             </ul>
+            </nav>
         </div>
 
     </div>

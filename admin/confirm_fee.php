@@ -13,7 +13,7 @@
                 echo "<div><p class='alert alert-success fw-bold' role='alert'>Payment Confirmation Successful</p></div>";
                 
                 // Payment confirmation
-                $query= "UPDATE users SET user_regift_admin_second_confirmed= 'admin_payment_confirmed' WHERE user_id= {$confirm_payment} ";
+                $query= "UPDATE users SET user_regift_admin_second_confirmed= 'admin_payment_confirmed', user_regift_admin_second_confirmed_time= now() WHERE user_id= {$confirm_payment} ";
                 $confirm_fee_payment = mysqli_query($connection, $query);
                 confirmQuery($confirm_fee_payment);                
                 header( "refresh:3;url=confirm_fee.php" );   

@@ -5,7 +5,7 @@
     <div class="container-fluid px-4">
         <h1 class="mt-4 purple">View Member Board</h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">See <?php echo $_GET['username']?>'s gifting board and receiving board</li>
+            <li class="breadcrumb-item active">See <?php echo $_GET['username']?>'s funding board and refunding board</li>
         </ol>
         <!-- All Query functions for the Gifting Board -->
         

@@ -1,47 +1,6 @@
 <?php  ob_start(); ?>
 <?php  session_start(); ?>
 <?php include "function.php";?>
-<?php
-
-// $query = "UPDATE users SET ";
-//                 $query.= "user_stage= 0, ";
-//                 $query.= "user_gift= NULL, ";
-//                 $query.= "user_gift_confirmed= NULL, ";
-//                 $query.= "user_gifted_one= NULL, ";
-//                 $query.= "user_gifted_two= NULL, ";
-//                 $query.= "user_gifted_three= NULL, ";
-//                 $query.= "user_gifted_four= NULL, ";
-//                 $query.= "user_gifted_one_confirm= NULL, ";
-//                 $query.= "user_gifted_two_confirm= NULL, ";
-//                 $query.= "user_gifted_three_confirm= NULL, ";
-//                 $query.= "user_gifted_four_confirm= NULL, ";
-//                 $query.= "user_regift_first= NULL, ";
-//                 $query.= "user_regift_first_confirmed= NULL, ";
-//                 $query.= "user_regifted_first_one= NULL, ";
-//                 $query.= "user_regifted_first_two= NULL, ";
-//                 $query.= "user_regifted_first_three= NULL, ";
-//                 $query.= "user_regifted_first_four= NULL, ";
-//                 $query.= "user_regifted_first_one_confirm= NULL, ";
-//                 $query.= "user_regifted_first_two_confirm= NULL, ";
-//                 $query.= "user_regifted_first_three_confirm= NULL, ";
-//                 $query.= "user_regifted_first_four_confirm= NULL, ";
-//                 $query.= "user_regift_second= NULL, ";
-//                 $query.= "user_regift_second_confirmed= NULL, ";
-//                 $query.= "user_regift_admin_second= NULL, ";
-//                 $query.= "user_regift_admin_second_confirmed= NULL, ";
-//                 $query.= "user_regifted_second_one= NULL, ";
-//                 $query.= "user_regifted_second_two= NULL, ";
-//                 $query.= "user_regifted_second_three= NULL, ";
-//                 $query.= "user_regifted_second_four= NULL, ";
-//                 $query.= "user_regifted_second_one_confirm= NULL, ";
-//                 $query.= "user_regifted_second_two_confirm= NULL, ";
-//                 $query.= "user_regifted_second_three_confirm= NULL, ";
-//                 $query.= "user_regifted_second_four_confirm= NULL ";
-        
-
-//                 $referral_query = mysqli_query($connection,$query);
-//                 confirmQuery($referral_query);
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,14 +13,13 @@
     <link rel="stylesheet" href="icons/font/bootstrap-icons.css" />
     <!-- Custom styles -->
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/cdnjs/sweet-alert.min.css" />
 
     <title>One Community</title>
-<!--    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>-->
-<!--<script>-->
-<!--    Weglot.initialize({-->
-<!--        api_key: 'wg_645709af4b7b7f407fd2c8d1e76924ef7'-->
-<!--    });-->
-<!--</script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/cdnjs/sweetalert.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"></script>
+
 <style>
     .form-check-input:checked {
     background-color: #060039;

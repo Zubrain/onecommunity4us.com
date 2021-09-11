@@ -1,23 +1,6 @@
 <?php include "includes/config.php"; ?>
 <?php include "includes/header.php"; ?>
 <?php
-if($_SERVER['REQUEST_METHOD'] == "POST") {
-
-     $token = escape($_POST['token']);
-     $query = "UPDATE users SET user_email_verify = 1 WHERE user_token = $token AND user_email_verify = 0 ";
-     $verify_user_query = mysqli_query($connection,$query);
-            confirmQuery($verify_user_query);
-            $query = "SELECT username,user_password FROM users WHERE user_token = $token ";
-            $select_login = mysqli_query($connection,$query);
-            confirmQuery($select_login);
-            while($row = mysqli_fetch_array($select_login)){
-                $username = $row['username'];
-                $password = $row['user_password'];
-            }
-              login_user($username, $password);
-}
-?>
-<?php
 if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'admin'){
     redirect("/onecommunity4us.com/admin/index.php");
 }elseif(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'member'){
@@ -35,11 +18,35 @@ if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'admin'){
             <div class="container py-4">
                 <div class="row justify-content-center">
                     <div class="col-sm-10 col-md-9 col-lg-7 col-xl-6 my-5">
-                        <form action="" method="POST" class="bg-light rounded shadow py-5 px-4 px-sm-5">
+                        <form action="email_verification.php" method="POST" class="bg-light rounded shadow py-5 px-4 px-sm-5">
+                            <?php
+                if(isset($_POST['verify'])) {
+                
+                     $token = escape($_POST['token']);
+                
+                              if(user_token_exists($token)){
+                             echo "<div><p class='alert alert-success fw-bold' role='alert'>Verification Successful</p></div>";
+                               $query = "UPDATE users SET user_email_verify = 1 WHERE user_token = $token AND user_email_verify = 0 ";
+                               $verify_user_query = mysqli_query($connection,$query);
+                               confirmQuery($verify_user_query);
+                                $query = "SELECT username,user_password FROM users WHERE user_token = $token ";
+                                $select_login = mysqli_query($connection,$query);
+                                confirmQuery($select_login);
+                            while($row = mysqli_fetch_array($select_login)){
+                                $username = $row['username'];
+                                $password = $row['user_password'];
+                                login_user($username, $password);
+                            }
+                              }else{
+                                echo "<div><p class='alert alert-danger fw-bold' role='alert'>Incorrect code! Please check email and retry</p></div>";   
+                              }
+                     }
+                ?>
                             <!-- Username input -->
                             <div class="form-outline mb-3">
-                                <p>A code has been sent to your <b>email</b>, enter code to get <b>verified</b></p>
-                                <label class="form-label fw-bold" for="form1Example1">Enter 6 digit Verification Code</label>
+                             <p>A verification code has been sent to you, check <b>email</b> inbox or <b>spam/junk folder</b>.  
+                                If you did not get code, contact <a href="mailto:support@onecommunity4us.com"><b>Support</b></a>
+                                </p>                                <label class="form-label fw-bold" for="form1Example1">Enter 6 digit Verification Code</label>
                                 <input type="text" name="token" value="" id="form1Example1" class="form-control" placeholder="Enter Code" required/>
 
                             </div>
@@ -55,91 +62,6 @@ if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'admin'){
         </div>
     </section>
     <!-- Background image -->
-
-
-    <!-- footer section -->
-    <!--<footer class="bg-light text-dark footer-section py-5 px-3">-->
-    <!--    <div class="container align-items-center">-->
-    <!--        <div class="row justify-content-between align-items-center g-5">-->
-    <!--            <div class="col-md-3">-->
-    <!--                <h2 class="astalavee-color">One Community</h2>-->
-                    <!--  <img src="img/Astalavee-dark.png" class="img-fluid footer-logo" alt="logo"> -->
-
-    <!--                <div class="d-none d-sm-block">-->
-    <!--                    <div class="py-3">-->
-    <!--                        <i class="bi bi-instagram me-2" style="font-size: 1.5rem; color: #410056;"></i>-->
-    <!--                        <i class="bi bi-youtube me-2" style="font-size: 1.5rem; color: #410056;"></i>-->
-    <!--                        <i class="bi bi-linkedin me-2" style="font-size: 1.5rem; color: #410056;"></i>-->
-    <!--                        <i class="bi bi-facebook" style="font-size: 1.5rem; color: #410056;"></i>-->
-    <!--                    </div>-->
-    <!--                    <p class="lead text-secondary">Copyright 2021. All Rights Reserved.</p>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--            <div class="col-md-9">-->
-    <!--                <div class="row g-5">-->
-    <!--                    <div class="col-6 col-md-4">-->
-    <!--                        <h4 class="astalavee-header pb-2">Links</h4>-->
-    <!--                        <ul class="navbar-nav">-->
-    <!--                            <li class="footer-links pb-1"><a href="#"-->
-    <!--                                    class="text-dark text-decoration-none fs-5">Home</a>-->
-    <!--                            </li>-->
-    <!--                            <li class="footer-links pb-1"><a href="#"-->
-    <!--                                    class="text-dark text-decoration-none fs-5">About-->
-    <!--                                    Us</a>-->
-    <!--                            </li>-->
-    <!--                            <li class="footer-links pb-1"><a href="#"-->
-    <!--                                    class="text-dark text-decoration-none fs-5">Pricing</a>-->
-    <!--                            </li>-->
-    <!--                            <li class="footer-links"><a href="#" class="text-dark text-decoration-none fs-5">How it-->
-    <!--                                    works</a></li>-->
-    <!--                        </ul>-->
-    <!--                    </div>-->
-    <!--                    <div class="col-6 col-md-4">-->
-    <!--                        <h4 class="astalavee-header pb-2">Products</h4>-->
-    <!--                        <ul class="navbar-nav">-->
-    <!--                            <li class="footer-links pb-1"><a href="#"-->
-    <!--                                    class="text-dark text-decoration-none fs-5">Collaboration</a>-->
-    <!--                            </li>-->
-    <!--                            <li class="footer-links pb-1"><a href="#"-->
-    <!--                                    class="text-dark text-decoration-none fs-5">Affiliates</a>-->
-    <!--                            </li>-->
-    <!--                            <li class="footer-links pb-1"><a href="#"-->
-    <!--                                    class="text-dark text-decoration-none fs-5">FAQs</a>-->
-    <!--                            </li>-->
-    <!--                            <li class="footer-links"><a href="#"-->
-    <!--                                    class="text-dark text-decoration-none fs-5">Guides</a></li>-->
-    <!--                        </ul>-->
-    <!--                    </div>-->
-    <!--                    <div class="col-6 col-md-4">-->
-    <!--                        <h4 class="astalavee-header pb-2">Other Links</h4>-->
-    <!--                        <ul class="navbar-nav">-->
-    <!--                            <li class="footer-links pb-1"><a href="#"-->
-    <!--                                    class="text-dark text-decoration-none fs-5">Terms & Conditions</a>-->
-    <!--                            </li>-->
-    <!--                            <li class="footer-links pb-1"><a href="#"-->
-    <!--                                    class="text-dark text-decoration-none fs-5">Privacy Policy</a>-->
-    <!--                            </li>-->
-    <!--                            <li class="footer-links pb-1"><a href="#"-->
-    <!--                                    class="text-dark text-decoration-none fs-5">Help Center</a>-->
-    <!--                            </li>-->
-    <!--                        </ul>-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--    </div>-->
-    <!--    <div class="text-center pt-5 d-block d-sm-none">-->
-    <!--        <div class="py-3">-->
-    <!--            <i class="bi bi-instagram me-2" style="font-size: 1.5rem; color: #410056;"></i>-->
-    <!--            <i class="bi bi-youtube me-2" style="font-size: 1.5rem; color: #410056;"></i>-->
-    <!--            <i class="bi bi-linkedin me-2" style="font-size: 1.5rem; color: #410056;"></i>-->
-    <!--            <i class="bi bi-facebook" style="font-size: 1.5rem; color: #410056;"></i>-->
-    <!--        </div>-->
-    <!--        <p class="lead text-secondary">Copyright 2021. All Rights Reserved.</p>-->
-    <!--    </div>-->
-    <!--</footer>-->
-
-
 
 
     <!-- Script -->
