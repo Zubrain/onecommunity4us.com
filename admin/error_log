@@ -388,3 +388,36 @@
 [11-Sep-2021 11:47:02 Europe/London] PHP Warning:  Use of undefined constant disabled - assumed 'disabled' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/admin/users.php on line 100
 [11-Sep-2021 11:47:02 Europe/London] PHP Notice:  Undefined variable: next in /home/onecommunity4us/public_html/admin/users.php on line 100
 [11-Sep-2021 15:42:36 Europe/London] PHP Notice:  Undefined index: username in /home/onecommunity4us/public_html/admin/includes/admin_sidebar.php on line 62
+[11-Sep-2021 17:23:37 Europe/London] PHP Notice:  Undefined index: username in /home/onecommunity4us/public_html/admin/includes/admin_sidebar.php on line 62
+[11-Sep-2021 17:23:54 Europe/London] PHP Warning:  Use of undefined constant disabled - assumed 'disabled' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/admin/users.php on line 44
+[11-Sep-2021 17:23:54 Europe/London] PHP Notice:  Undefined variable: previous in /home/onecommunity4us/public_html/admin/users.php on line 44
+[11-Sep-2021 17:23:54 Europe/London] PHP Warning:  Use of undefined constant disabled - assumed 'disabled' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/admin/users.php on line 96
+[11-Sep-2021 17:23:54 Europe/London] PHP Notice:  Undefined variable: previous in /home/onecommunity4us/public_html/admin/users.php on line 96
+[11-Sep-2021 17:24:09 Europe/London] PHP Warning:  Use of undefined constant disabled - assumed 'disabled' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/admin/users.php on line 48
+[11-Sep-2021 17:24:09 Europe/London] PHP Notice:  Undefined variable: next in /home/onecommunity4us/public_html/admin/users.php on line 48
+[11-Sep-2021 17:24:09 Europe/London] PHP Warning:  Use of undefined constant disabled - assumed 'disabled' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/admin/users.php on line 100
+[11-Sep-2021 17:24:09 Europe/London] PHP Notice:  Undefined variable: next in /home/onecommunity4us/public_html/admin/users.php on line 100
+[11-Sep-2021 17:24:24 Europe/London] PHP Warning:  Use of undefined constant disabled - assumed 'disabled' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/admin/users.php on line 44
+[11-Sep-2021 17:24:24 Europe/London] PHP Notice:  Undefined variable: previous in /home/onecommunity4us/public_html/admin/users.php on line 44
+[11-Sep-2021 17:24:24 Europe/London] PHP Warning:  Use of undefined constant disabled - assumed 'disabled' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/admin/users.php on line 96
+[11-Sep-2021 17:24:24 Europe/London] PHP Notice:  Undefined variable: previous in /home/onecommunity4us/public_html/admin/users.php on line 96
+[11-Sep-2021 17:24:33 Europe/London] PHP Warning:  Use of undefined constant disabled - assumed 'disabled' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/admin/all-members.php on line 111
+[11-Sep-2021 17:24:33 Europe/London] PHP Notice:  Undefined variable: previous in /home/onecommunity4us/public_html/admin/all-members.php on line 111
+[11-Sep-2021 17:24:33 Europe/London] PHP Warning:  Use of undefined constant disabled - assumed 'disabled' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/admin/all-members.php on line 170
+[11-Sep-2021 17:24:33 Europe/London] PHP Notice:  Undefined variable: previous in /home/onecommunity4us/public_html/admin/all-members.php on line 170
+[11-Sep-2021 17:24:56 Europe/London] PHP Warning:  Use of undefined constant disabled - assumed 'disabled' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/admin/all-members.php on line 111
+[11-Sep-2021 17:24:56 Europe/London] PHP Notice:  Undefined variable: previous in /home/onecommunity4us/public_html/admin/all-members.php on line 111
+[11-Sep-2021 17:24:56 Europe/London] PHP Warning:  Use of undefined constant disabled - assumed 'disabled' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/admin/all-members.php on line 170
+[11-Sep-2021 17:24:56 Europe/London] PHP Notice:  Undefined variable: previous in /home/onecommunity4us/public_html/admin/all-members.php on line 170
+[11-Sep-2021 17:29:28 Europe/London] PHP Warning:  Use of undefined constant disabled - assumed 'disabled' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/admin/all-members.php on line 111
+[11-Sep-2021 17:29:28 Europe/London] PHP Notice:  Undefined variable: previous in /home/onecommunity4us/public_html/admin/all-members.php on line 111
+[11-Sep-2021 17:29:28 Europe/London] PHP Warning:  Use of undefined constant disabled - assumed 'disabled' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/admin/all-members.php on line 170
+[11-Sep-2021 17:29:28 Europe/London] PHP Notice:  Undefined variable: previous in /home/onecommunity4us/public_html/admin/all-members.php on line 170
+[11-Sep-2021 17:29:32 Europe/London] PHP Warning:  Use of undefined constant disabled - assumed 'disabled' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/admin/all-members.php on line 115
+[11-Sep-2021 17:29:32 Europe/London] PHP Notice:  Undefined variable: next in /home/onecommunity4us/public_html/admin/all-members.php on line 115
+[11-Sep-2021 17:29:32 Europe/London] PHP Warning:  Use of undefined constant disabled - assumed 'disabled' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/admin/all-members.php on line 174
+[11-Sep-2021 17:29:32 Europe/London] PHP Notice:  Undefined variable: next in /home/onecommunity4us/public_html/admin/all-members.php on line 174
+[11-Sep-2021 17:29:34 Europe/London] PHP Warning:  Use of undefined constant disabled - assumed 'disabled' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/admin/all-members.php on line 115
+[11-Sep-2021 17:29:34 Europe/London] PHP Notice:  Undefined variable: next in /home/onecommunity4us/public_html/admin/all-members.php on line 115
+[11-Sep-2021 17:29:34 Europe/London] PHP Warning:  Use of undefined constant disabled - assumed 'disabled' (this will throw an Error in a future version of PHP) in /home/onecommunity4us/public_html/admin/all-members.php on line 174
+[11-Sep-2021 17:29:34 Europe/London] PHP Notice:  Undefined variable: next in /home/onecommunity4us/public_html/admin/all-members.php on line 174
