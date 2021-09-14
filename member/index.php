@@ -5,14 +5,15 @@
     $email = $_SESSION['user_email'];
     $firstname = $_SESSION['firstname'];
     $lastname = $_SESSION['lastname'];
+    $referral = $_SESSION['user_referral'];
 ?>
 
 <main>
-    <!-- All Query functions for the Gifting Board -->
+    <!-- All Query functions for the Gifting Board --> 
     <?php
         //to fetch the details of the sponsor
-        if(isset($_SESSION['user_referral'])){
-        $query = "SELECT * FROM users WHERE username = '{$_SESSION['user_referral']}' ";
+        if(isset($referral)){
+        $query = "SELECT * FROM users WHERE username = '{$referral}' ";
         $sponsor_query = mysqli_query($connection, $query);
         confirmQuery($sponsor_query);
         while ($row = mysqli_fetch_assoc($sponsor_query)) {
@@ -127,7 +128,28 @@
          }
         }
     ?>
-
+        <!--Query to update database for funding mail-->
+        <?php
+        
+        $query = "UPDATE users SET user_left_user_left= '$user_left_user_left' WHERE username = '$username' ";
+        $insert_user_left_user_left = mysqli_query($connection,$query);
+        // confirmQuery($insert_user_gift);
+        $query = "UPDATE users SET user_left_user_right= '$user_left_user_right' WHERE username = '$username' ";
+        $insert_user_left_user_right = mysqli_query($connection,$query);
+        
+        $query = "UPDATE users SET user_right_user_left= '$user_right_user_left' WHERE username = '$username' ";
+        $insert_user_right_user_left = mysqli_query($connection,$query);
+        
+        $query = "UPDATE users SET user_right_user_right= '$user_right_user_right' WHERE username = '$username' ";
+        $insert_user_right_user_right = mysqli_query($connection,$query);
+        
+        $query = "UPDATE users SET upline_user_gift_confirmed= '$upline_user_gift_confirmed' WHERE username = '$username' ";
+        $insert_upline_user_gift_confirmed = mysqli_query($connection,$query);
+        
+        
+        ?>
+        
+        
         <!-- All Query Functions for the Receiving Board -->
 
         <?php
@@ -388,7 +410,7 @@
                                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 <?php 
                             //second regift condition
-                            }elseif(($current_user_regifted_first_one_confirm != '' && $current_user_regifted_first_two_confirm != '' && $current_user_regifted_first_three_confirm != '' && $current_user_regifted_first_four_confirm != '') && $upline_user_regift_second_confirmed != '' && $current_user_regift_second_confirmed == '' && $upline_user_regift_admin_second_confirmed != ''){
+                            }elseif(($current_user_regifted_first_one_confirm != '' && $current_user_regifted_first_two_confirm != '' && $current_user_regifted_first_three_confirm != '' && $current_user_regifted_first_four_confirm != '') && $current_user_regift_second_confirmed == ''){
                                 ?>
                                 <div class="card bg-warning text-white mb-4 shadow">
                                 <div class="card-body fw-bold">Re-fund</div>

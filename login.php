@@ -19,20 +19,20 @@ if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'admin'){
                 <div class="row justify-content-center">
                     <div class="col-sm-10 col-md-9 col-lg-7 col-xl-6 my-5">
                                                    <?php
-if(isset($_POST['login'])) {
+                                if(isset($_POST['login'])) {
 
-     $username = escape($_POST['username']);
-     $password = escape($_POST['password']);
-
-              if(username_exists($username) && (!empty($password))){
-             echo "<div><p class='alert alert-success fw-bold' role='alert'>Login Successful</p></div>";
-                login_user($username, $password);
-                
-              }else{
-                echo "<div><p class='alert alert-danger fw-bold' role='alert'>Username or Password provided does not match what we have in our database</p></div>";   
-              }
-     }
-?>
+                             $username = escape($_POST['username']);
+                             $password = escape($_POST['password']);
+                        
+                                      if(username_exists($username) && (!empty($password))){
+                                     echo "<div><p class='alert alert-success fw-bold' role='alert'>Login Successful</p></div>";
+                                        login_user($username, $password);
+                                        
+                                      }else{
+                                        echo "<div><p class='alert alert-danger fw-bold' role='alert'>Username or Password provided does not match what we have in our database</p></div>";   
+                                      }
+                             }
+                        ?>
                         <form action="login.php" method="POST" class="bg-light rounded shadow py-5 px-4 px-sm-5">
                             <!-- Username input -->
                             <div class="form-outline mb-3">

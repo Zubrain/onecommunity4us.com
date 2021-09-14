@@ -39,7 +39,7 @@
             </div>
             <div class="col-md-6">
             <?php
-         $query = "SELECT * FROM users WHERE user_role='member' " ;
+        $query = "SELECT * FROM users WHERE user_role='member' " ;
         $select_all_post = mysqli_query($connection,$query);
         $result = mysqli_num_rows($select_all_post);
         

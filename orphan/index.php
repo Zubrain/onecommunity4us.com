@@ -11,9 +11,17 @@
             <p>You are waiting for the system's approval to be placed in the Crowdfunding Initiative</p>
             <p>Once approved, you will be auto-placed in a board. Please get your funds ready.</p>
         </div>
-        <div class="card">
-            <img src="images/oc.jpg" class"img-fluid" alt="one community">
-        </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="images/img1.png" class="img-fluid rounded mx-auto d-block img-responsive" alt="Responsive image">
+                </div>
+                <div class="col-md-12">
+                    <img src="images/oc.jpg" class"img-fluid rounded mx-auto d-block img-responsive" alt="one communit">
+                </div>
+                <div class="col-md-12">
+                    <img src="images/img2.png" class"img-fluid rounded mx-auto d-block img-responsive" alt="one communi">
+                </div>
+            </div>
     </div>
 </main>
 

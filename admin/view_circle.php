@@ -136,6 +136,27 @@
         }
     ?>
 
+ <!--Query to update database for funding mail-->
+        <?php
+        
+        $query = "UPDATE users SET user_left_user_left= '$user_left_user_left' WHERE username = '$username' ";
+        $insert_user_left_user_left = mysqli_query($connection,$query);
+        // confirmQuery($insert_user_gift);
+        $query = "UPDATE users SET user_left_user_right= '$user_left_user_right' WHERE username = '$username' ";
+        $insert_user_left_user_right = mysqli_query($connection,$query);
+        
+        $query = "UPDATE users SET user_right_user_left= '$user_right_user_left' WHERE username = '$username' ";
+        $insert_user_right_user_left = mysqli_query($connection,$query);
+        
+        $query = "UPDATE users SET user_right_user_right= '$user_right_user_right' WHERE username = '$username' ";
+        $insert_user_right_user_right = mysqli_query($connection,$query);
+        
+        $query = "UPDATE users SET upline_user_gift_confirmed= '$upline_user_gift_confirmed' WHERE username = '$username' ";
+        $insert_upline_user_gift_confirmed = mysqli_query($connection,$query);
+        
+        
+        ?>
+
     <!-- All Query Functions for the Receiving Board -->
 
     <?php
