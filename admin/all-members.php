@@ -51,23 +51,54 @@
         </div>
 
         <?php
-                        if(isset($_GET['change_to_active'])){
-                            $the_user_id = $_GET['change_to_active'];
-                            echo "<div><p class='alert alert-success fw-bold' role='alert'>Re-instated Successfully</p></div>";
+                        // if(isset($_GET['change_to_active'])){
+                        //     $the_user_id = $_GET['change_to_active'];
+                        //     echo "<div><p class='alert alert-success fw-bold' role='alert'>Re-instated Successfully</p></div>";
 
-                        $query = "UPDATE users SET user_status = 1, user_role = 'member' WHERE user_id = {$the_user_id} ";
-                        $make_member_active = mysqli_query($connection,$query);
-                        confirmQuery($make_member_active);
-                        header( "refresh:3;url=all-members.php" );
-                        }
+                        // $query = "UPDATE users SET user_status = 1, user_role = 'member' WHERE user_id = {$the_user_id} ";
+                        // $make_member_active = mysqli_query($connection,$query);
+                        // confirmQuery($make_member_active);
+                        // header( "refresh:3;url=all-members.php" );
+                        // }
 
-                        if(isset($_GET['change_to_disable'])){
+                        if(isset($_GET['change_to_disable']) && isset($_GET['username']) && isset($_GET['referrer'])){
                             $the_user_id = $_GET['change_to_disable'];
+                            $username=  $_GET['username'];
+                            $referrer=  $_GET['referrer'];
                             echo "<div><p class='alert alert-danger fw-bold' role='alert'>Disabled Successfully</p></div>";
                        
-                        $query = "UPDATE users SET user_status = 0, user_role = 'orphan' WHERE user_id = {$the_user_id} ";
+                        $query = "UPDATE users SET user_referral = 'One Community', user_status = 0, user_role = 'orphan', user_gift = NULL WHERE user_id = {$the_user_id} ";
                         $make_member_disabled = mysqli_query($connection,$query);
                         confirmQuery($make_member_disabled);
+                        
+                        $query = "SELECT * FROM users WHERE username = '$referrer' ";
+                        $select_user = mysqli_query($connection, $query);
+                        
+                        while ($row = mysqli_fetch_assoc($select_user)) {
+                                    $user_left = $row['user_left'];
+                                    $user_right = $row['user_right'];
+                                    $number_referral = $row['number_referral'];
+                        }
+                        if($user_left == $username){
+                            $updatequery = "UPDATE users SET user_left= NULL WHERE username= '$referrer' ";
+                            $update_gifted = mysqli_query($connection,$updatequery);
+                            confirmQuery($update_gifted);
+                        }elseif($user_right == $username){
+                            $updatequery = "UPDATE users SET user_right= NULL WHERE username= '$referrer' ";
+                            $update_gifted = mysqli_query($connection,$updatequery);
+                            confirmQuery($update_gifted);
+                        }else{
+                            
+                        }
+                        
+                        $query = "UPDATE users SET number_referral = $number_referral - 1  WHERE username= '$referrer' ";
+                        $reduce_referral = mysqli_query($connection,$query);
+                        confirmQuery($reduce_referral);
+                        
+                        
+                        
+                        
+                        
                         header( "refresh:3;url=all-members.php" );
                         }
 
@@ -125,7 +156,7 @@
                         <th>User Referrer</th>
                         <th>Refs</th>
                         <th>Status</th>
-                        <th>Reinstate</th>
+                        <!--<th>Reinstate</th>-->
                         <th>Disable</th>
                         <th>Ban</th>
                     </tr>
@@ -154,8 +185,8 @@
                                     $user_status = 'disabled';
                                 }
                                 echo "<td>{$user_status}</td>";
-                                echo "<td><a class='btn btn-success' href='all-members.php?change_to_active={$user_id}'>Reinstate</a></td>";
-                                echo "<td><a class='btn btn-warning' href='all-members.php?change_to_disable={$user_id}'>Disable</a></td>";
+                                // echo "<td><a class='btn btn-success' href='all-members.php?change_to_active={$user_id}'>Reinstate</a></td>";
+                                echo "<td><a class='btn btn-warning' href='all-members.php?change_to_disable={$user_id}&username={$username}&referrer={$user_referral}'>Disable</a></td>";
                                 echo "<td><button class='btn btn-danger deletebtn' type='button'>Ban</button></td>";
                                 ?>
                     <?php

@@ -44,7 +44,7 @@ $transport = (new Swift_SmtpTransport('onecommunity4us.com', 465, 'ssl'))
                               ->setFrom([$senderoc => $adminoc])
                               ->setTo([$email => $username])
                               ->setBody('<p style="font-size:16px;"><b>Hello '.$username.',</b></p><div style="font-size:16px;">
-                                                        You are required to login and send your fund to your upline as soon as possible</div>
+                                                        You are required to login and send your fund to your <b>receiver</b> as soon as possible</div>
                                                          <div style="margin: 40px 0px 40px 0px; text-align:center;"><a href="https://www.onecommunity4us.com/login.php"
                                                                 style="background-color: #008CBA; padding: 12px 28px 12px 28px; color:aliceblue; border-radius: 8px; text-decoration: none;"><b>Login to Website</b></a></div>
                                                         <div style="font-size:16px;">Warm Regards!
@@ -59,7 +59,7 @@ $transport = (new Swift_SmtpTransport('onecommunity4us.com', 465, 'ssl'))
                         $query = "UPDATE users SET fund_email_sent = 'fund_notified' WHERE user_email = '{$email}' ";
                         $make_member_active = mysqli_query($connection,$query);
                         confirmQuery($make_member_active);
-                        header( "refresh:2;url=all-mail.php" );
+                       // header( "refresh:1;url=all-mail.php" );
                         }
         
         ?>

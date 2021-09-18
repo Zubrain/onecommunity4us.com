@@ -2,7 +2,8 @@
 <?php session_start(); ?>
     <?php include "includes/config.php"; ?>
     <?php include "includes/function.php"; ?>
-<?php
+    
+    <?php
 require_once 'vendor/autoload.php';
 
     // Create the Transport
@@ -94,9 +95,9 @@ require_once 'vendor/autoload.php';
                             
                             redirect("email_verification.php");
                         }else{
-                            //  redirect("/registr.php");
+                             redirect("/register.php");
                         }
-                    }
+                    }else{
+                             redirect("/register.php");
+                        }
     ?>
-        
-        

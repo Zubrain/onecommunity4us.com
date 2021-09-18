@@ -2,14 +2,13 @@
 <?php include "includes/header.php"; ?>
 <?php
 if(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'admin'){
-    redirect("/onecommunity4us.com/admin/index.php");
+    redirect("/admin/index.php");
 }elseif(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'member'){
-    redirect("/onecommunity4us.com/member/index.php");
+    redirect("/member/index.php");
 }elseif(isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'orphan'){
-    redirect("/onecommunity4us.com/orphan/index.php");
+    redirect("/orphan/index.php");
 }else{
-
-}
+} 
 ?>
 
     <!-- Background image -->

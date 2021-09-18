@@ -19,6 +19,7 @@
     <link href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css" rel="stylesheet">
 
     <!-- Css Lib Files -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/libs/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/libs/slickslider/slick.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -78,11 +79,11 @@
             <button class="nav-open-trigger"><i class="fas fa-bars"></i></button>
         </div>
     </nav>
-
+    
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Welcome <br> to the One Community</h1>
+            <h1>Make Passive Income <br> with the One Community</h1>
             <h3 style="line-height: 1.1em;letter-spacing: 1px;">
                 <!--A nonprofit organization founded by like-minded people, <br> One Community cultivates trust, empowerment, <br> support and philanthropy.<br> -->
                 Introducing our proprietary OC system a unique <br> crowdfunding initiative with the sole aim of <br>
@@ -95,7 +96,7 @@
             <a href="register.php">Join Our Community</a>
         </div>
 
-        <img src="./assets/images/img-1.png" class="img-1" alt="">
+        <img src="./assets/images/OC-1.png" class="img-1" alt="">
     </section>
 
     <!-- About Us Section -->
@@ -302,25 +303,25 @@
                     <div class="roadmap-nav-item">
                         <p>OC System Upgrade</p>
                         <button></button>
-                        <h4>22nd September, 2021</h4>
+                        <h4>6th October, 2021</h4>
                     </div>
 
                     <div class="roadmap-nav-item">
                         <p>Mobile App</p>
                         <button></button>
-                        <h4>31st October, 2021</h4>
+                        <h4>14th November, 2021</h4>
                     </div>
 
                     <div class="roadmap-nav-item">
                         <p>Global Versions</p>
                         <button></button>
-                        <h4>1st December, 2021</h4>
+                        <h4>15th December, 2021</h4>
                     </div>
 
                     <div class="roadmap-nav-item">
                         <p>Philanthropy Begins</p>
                         <button></button>
-                        <h4>1st January, 2022</h4>
+                        <h4>15th January, 2022</h4>
                     </div>
                 </div>
             </div>
@@ -422,7 +423,7 @@ hitting the button below</h2>
             <h2>Contact Us</h2>
 
             <div class="contact-wrapper">
-                <form action="" method="">
+                <form action="contactprocessor.php" method="POST">
                     <div class="input-group">
                         <label>Name</label>
                         <input type="text" name="contacter_name" placeholder="Enter your name" required>
@@ -437,8 +438,7 @@ hitting the button below</h2>
                         <label>Message</label>
                         <textarea name="contacter_message" placeholder="Write your message..." required></textarea>
                     </div>
-
-                    <button>Submit</button>
+                    <button type="submit">Send Message</button>
                 </form>
 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790 563" fill="none">
