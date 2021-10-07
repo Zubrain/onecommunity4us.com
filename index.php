@@ -8,6 +8,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+    <link rel="manifest" href="./assets/site.webmanifest">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,6 +60,31 @@
     background: #3F73FB;
     box-shadow: 0px 0px 20px rgb(251 176 63 / 40%);
 }
+.videoWrapper {
+	/*position: relative;*/
+	/*padding-top: 25px;*/
+	/*height: 0;*/
+ /* clear:both;*/
+ /* outline:1px solid red;*/
+  border: 0.5rem solid white;
+  overflow: hidden;
+}
+
+/*.videoWrapper.ratio-16-9{*/*/
+/*    padding-bottom: 56.25%; */
+/*}*/
+
+/*.videoWrapper.ratio-4-3{*/
+/*    padding-bottom: 75%; */
+/*}*/
+
+/*.videoWrapper iframe {*/
+/*	position: absolute;*/
+/*	top: 0;*/
+/*	left: 0;*/
+/*	width: 100%;*/
+/*	height: 100%;*/
+/*}*/
     </style>
 </head>
 
@@ -98,6 +129,22 @@
 
         <img src="./assets/images/OC-1.png" class="img-1" alt="">
     </section>
+    
+     <section class="my-sm-5">
+         <div class="about-us-content text-center">
+            <h2 class="display-3 mb-3 fw-bold">How it Works...</h2>
+            </div>
+        <div class="container text-center align-items-center" data-aos="fade-left">
+            
+            <!-- 16:9 aspect ratio --> 
+            <div class="embed-responsive embed-responsive-16by9 videoWrapper rounded"> 
+                <video width="320" height="240" controls controlsList="nodownload" poster="./assets/video/Screen.png" muted>
+                    <source src="./assets/video/zoomrecord.mp4" type="video/mp4">
+                </video>
+            </div> 
+
+        </div>
+    </section>
 
     <!-- About Us Section -->
     <section class="about-us">
@@ -126,6 +173,8 @@
 
         <img src="./assets/images/img-3.svg" class="img-3" alt="">
     </section>
+    
+   
 
     <!-- Support Dads Section -->
     <section class="support-dads">
@@ -232,13 +281,13 @@
                         <p></p>
                     </div>
                     <div style="display: flex;justify-content: space-around;margin-top:20px; margin-bottom:10px;">
-                        <div>Wed</div>
-                        <div>Thu</div>
                         <div>Fri</div>
                         <div>Sat</div>
                         <div>Sun</div>
                         <div>Mon</div>
                         <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
                     </div>
 
                     <div class="calendar-days">
@@ -294,22 +343,22 @@
                 <div class="roadmap-nav">
                     <div class="bar"></div>
 
-                    <div class="roadmap-nav-item active">
+                    <div class="roadmap-nav-item">
                         <p>Going Live with the OC System</p>
                         <button></button>
                         <h4>1st September, 2021</h4>
                     </div>
 
-                    <div class="roadmap-nav-item">
+                    <div class="roadmap-nav-item active">
                         <p>OC System Upgrade</p>
                         <button></button>
-                        <h4>6th October, 2021</h4>
+                        <h4>20th October, 2021</h4>
                     </div>
 
                     <div class="roadmap-nav-item">
                         <p>Mobile App</p>
                         <button></button>
-                        <h4>14th November, 2021</h4>
+                        <h4>28th November, 2021</h4>
                     </div>
 
                     <div class="roadmap-nav-item">
@@ -347,25 +396,25 @@
                         <div class="roadmap-nav-item">
                             <p>OC System Upgrade</p>
                             <button></button>
-                            <h4>22nd September, 2021</h4>
+                            <h4>20th October, 2021</h4>
                         </div>
 
                         <div class="roadmap-nav-item">
                             <p>Mobile App</p>
                             <button></button>
-                            <h4>31st October, 2021</h4>
+                            <h4>28th November, 2021</h4>
                         </div>
 
                         <div class="roadmap-nav-item">
                             <p>Global Versions</p>
                             <button></button>
-                            <h4>1st December, 2021</h4>
+                             <h4>15th December, 2021</h4>
                         </div>
 
                         <div class="roadmap-nav-item">
                             <p>Philanthropy Begins</p>
                             <button></button>
-                            <h4>1st January, 2021</h4>
+                           <h4>15th January, 2022</h4>
                         </div>
                     </div>
                 </div>
@@ -1063,33 +1112,25 @@ hitting the button below</h2>
                     date = `${year}-${i}-${month}`;
                 }
 
-                if (date === '2021-01-09') {
+                if (date === '2021-01-10') {
                     calendar_days += `<div class="day active"><p>${i}</p></div>`;
-                } else if (date === '2021-03-09') {
+                } else if (date === '2021-04-10') {
                      calendar_days += `<div class="day active"><p>${i}</p></div>`;
-                } else if (date === '2021-06-09') {
+                } else if (date === '2021-08-10') {
                      calendar_days += `<div class="day active"><p>${i}</p></div>`;
-                } else if (date === '2021-08-09') {
+                } else if (date === '2021-11-10') {
                      calendar_days += `<div class="day active"><p>${i}</p></div>`;
-                } else if (date === '2021-10-09') {
+                } else if (date === '2021-15-10') {
                      calendar_days += `<div class="day active"><p>${i}</p></div>`;
-                } else if (date === '2021-13-09') {
+                } else if (date === '2021-18-10') {
                      calendar_days += `<div class="day active"><p>${i}</p></div>`;
-                } else if (date === '2021-15-09') {
+                } else if (date === '2021-22-10') {
                      calendar_days += `<div class="day active"><p>${i}</p></div>`;
-                } else if (date === '2021-17-09') {
+                } else if (date === '2021-25-10') {
                      calendar_days += `<div class="day active"><p>${i}</p></div>`;
-                } else if (date === '2021-20-09') {
+                } else if (date === '2021-29-10') {
                      calendar_days += `<div class="day active"><p>${i}</p></div>`;
-                } else if (date === '2021-22-09') {
-                     calendar_days += `<div class="day active"><p>${i}</p></div>`;
-                } else if (date === '2021-24-09') {
-                     calendar_days += `<div class="day active"><p>${i}</p></div>`;
-                } else if (date === '2021-27-09') {
-                     calendar_days += `<div class="day active"><p>${i}</p></div>`;
-                } else if (date === '2021-29-09') {
-                     calendar_days += `<div class="day active"><p>${i}</p></div>`;
-                } else {
+                }  else {
                     calendar_days += `<div class="day"><p>${i}</p></div>`;
                 }
             }
@@ -1098,7 +1139,7 @@ hitting the button below</h2>
 
         }
 
-        generateCalendar(2021, 9)
+        generateCalendar(2021, 10)
         function RemoveClass() {
         let ul = document.getElementById("removeActiveClass");
         ul.classList.remove("active")

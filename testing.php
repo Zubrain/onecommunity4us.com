@@ -32,6 +32,7 @@ $message = (new Swift_Message($subjekt))
                     style="background-color: #008CBA; padding: 12px 28px 12px 28px; color:aliceblue; border-radius: 8px; text-decoration: none;"><b>Verify
                     E-mail</b></a></div>
             <div style="font-size:16px;">Warm Regards!
+            <p>We are here for you. Make sure you join the telegram channel. <a href="https://t.me/joinchat/6ZrfBBjbVvJkNTI8">CLICK TO JOIN TELEGRAM </a></p>
             <p>Any questions? We are always here to help you.<br>Contact us at <a href="mailto:support@onecommunity4us.com">'.$supportOc.'</a>
             and we\'ll get back to you. </p></div>', 'text/html')
   ;

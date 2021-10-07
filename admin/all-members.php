@@ -141,7 +141,11 @@
              <ul class="pagination">
                <li class="page-item"><a class="text-dark page-link <?php echo ($page == 1) ? disabled : ''; ?>" href="all-members.php?page=<?= $previous; ?>">&laquo; Previous</a></li>
                <?php for($i = 1; $i <= $pages; $i++) : ?>
-               <li class="page-item"><a class="text-dark page-link" href="all-members.php?page=<?= $i; ?>"><?= $i; ?></a></li>
+                <?php if($i == $page) : ?>
+               <li class="page-item"><a class="text-dark page-link active_link" href="all-members.php?page=<?= $i; ?>"><?= $i; ?></a></li>
+                <?php else : ?>
+                <li class="page-item"><a class="text-dark page-link" href="all-members.php?page=<?= $i; ?>"><?= $i; ?></a></li>
+                <?php endif; ?>
                <?php endfor; ?>
                <li class="page-item"><a class="text-dark page-link <?php echo ($page == $pages) ? disabled : ''; ?>" href="all-members.php?page=<?= $next; ?>">Next &raquo;</a></li>
              </ul>
@@ -200,7 +204,11 @@
              <ul class="pagination">
                <li class="page-item"><a class="text-dark page-link <?php echo ($page == 1) ? disabled : ''; ?>" href="all-members.php?page=<?= $previous; ?>">&laquo; Previous</a></li>
                <?php for($i = 1; $i <= $pages; $i++) : ?>
-               <li class="page-item"><a class="text-dark page-link" href="all-members.php?page=<?= $i; ?>"><?= $i; ?></a></li>
+                <?php if($i == $page) : ?>
+               <li class="page-item"><a class="text-dark page-link active_link" href="all-members.php?page=<?= $i; ?>"><?= $i; ?></a></li>
+                <?php else : ?>
+                <li class="page-item"><a class="text-dark page-link" href="all-members.php?page=<?= $i; ?>"><?= $i; ?></a></li>
+                <?php endif; ?>
                <?php endfor; ?>
                <li class="page-item"><a class="text-dark page-link <?php echo ($page == $pages) ? disabled : ''; ?>" href="all-members.php?page=<?= $next; ?>">Next &raquo;</a></li>
              </ul>

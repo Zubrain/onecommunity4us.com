@@ -47,6 +47,10 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-user-check purple"></i></div>
                         <span class="purple">Manual Verification</span>
                     </a>
+                    <a class="nav-link" href="admin_logout.php">
+                        <div class="sb-nav-link-icon"><i class="fas fa-key purple"></i></div>
+                        <span class="purple"> Logout</span>
+                    </a>
                     <!--<a class="nav-link" href="all-activities.php">-->
                     <!--    <div class="sb-nav-link-icon"><i class="fas fa-history purple"></i></div>-->
                     <!--    <span class="purple">Monitor Activities</span>-->

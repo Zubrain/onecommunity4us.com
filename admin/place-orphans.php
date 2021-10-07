@@ -54,16 +54,18 @@ $mailer = new Swift_Mailer($transport);
                       ->setFrom([$senderoc => $adminoc])
                       ->setTo([$orphan_email => $orphan_username])
                       ->setBody('<p style="font-size:16px;"><b>Hello '.$orphan_username.',</b></p><div style="font-size:16px;">
-                                                You are now a member of  the OC 123 system , please login to your dashboard, copy and share your referral link with</div>
-                                                <p style="font-size:16px;">1. Your network (2 people)</p>
+                                                You are now a member of  the 123 OC system , please login to your dashboard & fund when your dashboard is BLUE or get notified to.</div>
+                                                <p style="font-size:16px;">Copy and share your referral link with</p>
+                                                <p style="font-size:16px;">1. Your network (NOT more than 2 people)</p>
                                                 <p style="font-size:16px;">0r</p>
-                                                <p style="font-size:16px;">2. Your agent</p>
-                                                <p style="font-size:16px;">If you don\'t have any of these...you will just have to wait ( min 3 weeks) till the system places members in your network.</p>
+                                                <p style="font-size:16px;">2. Your trustee</p>
+                                                <p style="font-size:16px;">If you don\'t have any of these...you will just have to wait ( min 6 weeks) till the system places members in your network.</p>
                                                 <p style="font-size:16px;">Welcome again.</p>
                                                  <div style="margin: 40px 0px 40px 0px; text-align:center;"><a href="https://www.onecommunity4us.com/login.php"
                                                         style="background-color: #008CBA; padding: 12px 28px 12px 28px; color:aliceblue; border-radius: 8px; text-decoration: none;"><b>Login to Website</b></a></div>
                                                 <p style="font-size:16px;">Thanks</p>
                                                 <div style="font-size:16px;"><p style="font-size:18px;">Admin OC</p>
+                                                <p>We are here for you. Make sure you join the telegram channel. <a href="https://t.me/joinchat/6ZrfBBjbVvJkNTI8">CLICK TO JOIN TELEGRAM </a></p>
                                                 <p>Any questions? We are always here to help you.<br>Contact us at <a href="mailto:support@onecommunity4us.com">'.$supportOc.'</a>
                                                 and we\'ll get back to you. </p></div>', 'text/html')
                       ;
@@ -109,7 +111,7 @@ $mailer = new Swift_Mailer($transport);
                       $username = $row['username'];
                       $number_referrals = $row['number_referral'];
             
-                      echo "<option value='{$username}'>{$username}</option>";
+                      echo "<option value='{$username}'>ID - {$user_id}.............{$username}</option>";
                   }
                       ?>
                         </select>
@@ -123,7 +125,7 @@ $mailer = new Swift_Mailer($transport);
                   ?>
                             <!-- <option value="">Select Orphan</option> -->
                             <?php
-                  echo "<option value='{$orphan_username}'>{$orphan_username}</option>";
+                  echo "<option value='{$orphan_username}'>ID - {$orphan_id}..........{$orphan_username}</option>";
                       ?>
                         </select>
                     </div>

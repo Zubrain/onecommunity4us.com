@@ -22,12 +22,16 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/placement.css" rel="stylesheet" />
+    
+     <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="manifest" href="../assets/site.webmanifest">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
         crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-    crossorigin="anonymous"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   
         <style>
     .bg-purple {
       background-color: #7c00a4;
@@ -37,6 +41,10 @@
     }
     .purple {
         color: #410056;
+    }
+    .pagination li .active_link  {
+        background-color: #410056 !important;
+        color: #fff !important;
     }
     </style>
 <!--    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>-->
@@ -70,7 +78,6 @@
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item fw-bold" href="../">Home</a></li>
                     <li><a class="dropdown-item" href="users.php">Users</a></li>
-                    <!--<li><a class="dropdown-item" href="all-activities.php">Activity Log</a></li>-->
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
@@ -78,4 +85,6 @@
                 </ul>
             </li>
         </ul>
+        
+        
     </nav>

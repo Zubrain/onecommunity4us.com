@@ -1,9 +1,8 @@
 <?php  ob_start(); ?>
 <?php session_start(); ?>
-    <?php include "includes/config.php"; ?>
-    <?php include "includes/function.php"; ?>
-    
-    <?php
+<?php include "includes/config.php"; ?>
+<?php include "includes/function.php"; ?>
+<?php
 require_once 'vendor/autoload.php';
 
     // Create the Transport
@@ -94,10 +93,6 @@ require_once 'vendor/autoload.php';
                             register_user($username, $email, $password, $firstname, $lastname, $phone, $refer, $token);
                             
                             redirect("email_verification.php");
-                        }else{
-                             redirect("/register.php");
                         }
-                    }else{
-                             redirect("/register.php");
-                        }
+                    }
     ?>

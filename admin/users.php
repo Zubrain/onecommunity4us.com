@@ -43,7 +43,11 @@
              <ul class="pagination">
                <li class="page-item"><a class="text-dark page-link <?php echo ($page == 1) ? disabled : ''; ?>" href="users.php?page=<?= $previous; ?>">&laquo; Previous</a></li>
                <?php for($i = 1; $i <= $pages; $i++) : ?>
+               <?php if($i == $page) : ?>
+               <li class="page-item"><a class="text-dark page-link active_link" href="users.php?page=<?= $i; ?>"><?= $i; ?></a></li>
+               <?php else : ?>
                <li class="page-item"><a class="text-dark page-link" href="users.php?page=<?= $i; ?>"><?= $i; ?></a></li>
+               <?php endif; ?>
                <?php endfor; ?>
                <li class="page-item"><a class="text-dark page-link <?php echo ($page == $pages) ? disabled : ''; ?>" href="users.php?page=<?= $next; ?>">Next &raquo;</a></li>
              </ul>
@@ -94,8 +98,12 @@
              <nav aria-label="Page navigation example">
              <ul class="pagination">
                <li class="page-item"><a class="text-dark page-link <?php echo ($page == 1) ? disabled : ''; ?>" href="users.php?page=<?= $previous; ?>">&laquo; Previous</a></li>
-               <?php for($i = 1; $i <= $pages; $i++) : ?>
+              <?php for($i = 1; $i <= $pages; $i++) : ?>
+               <?php if($i == $page) : ?>
+               <li class="page-item"><a class="text-dark page-link active_link" href="users.php?page=<?= $i; ?>"><?= $i; ?></a></li>
+               <?php else : ?>
                <li class="page-item"><a class="text-dark page-link" href="users.php?page=<?= $i; ?>"><?= $i; ?></a></li>
+               <?php endif; ?>
                <?php endfor; ?>
                <li class="page-item"><a class="text-dark page-link <?php echo ($page == $pages) ? disabled : ''; ?>" href="users.php?page=<?= $next; ?>">Next &raquo;</a></li>
              </ul>

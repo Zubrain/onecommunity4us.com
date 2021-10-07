@@ -91,7 +91,11 @@
              <ul class="pagination">
                <li class="page-item"><a class="purple page-link <?php echo ($page == 1) ? disabled : ''; ?>" href="all-orphans.php?page=<?= $previous; ?>">&laquo; Previous</a></li>
                <?php for($i = 1; $i <= $pages; $i++) : ?>
+               <?php if($i == $page) : ?>
+               <li class="page-item"><a class="purple page-link active_link" href="all-orphans.php?page=<?= $i; ?>"><?= $i; ?></a></li>
+               <?php else : ?>
                <li class="page-item"><a class="purple page-link" href="all-orphans.php?page=<?= $i; ?>"><?= $i; ?></a></li>
+                <?php endif; ?>
                <?php endfor; ?>
                <li class="page-item"><a class="purple page-link <?php echo ($page == $pages) ? disabled : ''; ?>" href="all-orphans.php?page=<?= $next; ?>">Next &raquo;</a></li>
              </ul>
